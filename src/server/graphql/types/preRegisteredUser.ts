@@ -1,0 +1,22 @@
+import { objectType } from 'nexus'
+
+export const PreRegisteredUser = objectType({
+  name: 'PreRegisteredUser',
+  definition(t) {
+    t.int('id')
+    t.string('email')
+    t.date('createdAt')
+    t.date('updatedAt')
+
+    t.string('name')
+    t.string('password')
+    t.string('tel')
+    t.string('address')
+    t.string('extraAddress')
+    t.string('zipCode')
+    t.date('birthdate')
+    t.string('gender')
+
+    t.json('misc')
+  },
+})
