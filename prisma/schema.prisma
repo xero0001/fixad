@@ -22,11 +22,4 @@ model PreRegisteredUser {
   name          String   @default("")
   password      String   @default("")
   tel           String   @default("")
-  address       String   @default("")
-  extraAddress  String   @default("")
-  zipCode       String   @default("")
-  birthdate     DateTime @default(now())
-  gender        GENDER   @default(NONE)
-
-  misc          Json     @default("{}")
 }

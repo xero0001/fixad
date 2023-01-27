@@ -11,12 +11,5 @@ export const PreRegisteredUser = objectType({
     t.string('name')
     t.string('password')
     t.string('tel')
-    t.string('address')
-    t.string('extraAddress')
-    t.string('zipCode')
-    t.date('birthdate')
-    t.string('gender')
-
-    t.json('misc')
   },
 })

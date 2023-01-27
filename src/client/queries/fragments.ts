@@ -7,11 +7,4 @@ export const PRE_REGISTERED_USER_FRAGMENT = `
   name
   password
   tel
-  address
-  extraAddress
-  zipCode
-  birthdate
-  gender
-
-  misc
 `
