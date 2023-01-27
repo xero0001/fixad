@@ -18,12 +18,17 @@ import prisma from '@server/prisma'
 export const PreRegisteredUserQuery = extendType({
   type: 'Query',
   definition(t) {
-    t.string('testQuery', {
+    t.field('testQuery', {
+      type: 'PreRegisteredUser',
       args: {
-        arg0: nonNull(stringArg()),
+        id: nonNull(intArg()),
       },
-      resolve: async (_, { arg0 }, ctx) => {
-        return arg0
+      resolve: async (_, { id }, ctx) => {
+        return prisma.preRegisteredUser.findUnique({
+          where: {
+            id,
+          },
+        })
       },
     })
   },

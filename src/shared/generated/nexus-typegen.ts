@@ -86,7 +86,7 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    testMutation: string | null; // String
+    testMutation: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
     address: string | null; // String
@@ -104,13 +104,13 @@ export interface NexusGenFieldTypes {
     zipCode: string | null; // String
   }
   Query: { // field return type
-    testQuery: string | null; // String
+    testQuery: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
 }
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
-    testMutation: 'String'
+    testMutation: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
     address: 'String'
@@ -128,19 +128,19 @@ export interface NexusGenFieldTypeNames {
     zipCode: 'String'
   }
   Query: { // field return type name
-    testQuery: 'String'
+    testQuery: 'PreRegisteredUser'
   }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
     testMutation: { // args
-      arg0: string; // String!
+      id: number; // Int!
     }
   }
   Query: {
     testQuery: { // args
-      arg0: string; // String!
+      id: number; // Int!
     }
   }
 }

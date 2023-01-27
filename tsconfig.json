@@ -15,7 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@root/*": ["./*"],
       "@server/*": ["./src/server/*"],
+      "@client/*": ["./src/client/*"],
       "@shared/*": ["./src/shared/*"]
     },
     "plugins": [
