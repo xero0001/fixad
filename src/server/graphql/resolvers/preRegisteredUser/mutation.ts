@@ -19,12 +19,17 @@ import { ApolloError } from 'apollo-server-micro'
 export const PreRegisteredUserMutation = extendType({
   type: 'Mutation',
   definition(t) {
-    t.string('testMutation', {
+    t.field('testMutation', {
+      type: 'PreRegisteredUser',
       args: {
-        arg0: nonNull(stringArg()),
+        id: nonNull(intArg()),
       },
-      resolve: async (_, { arg0 }, ctx) => {
-        return arg0
+      resolve: async (_, { id }, ctx) => {
+        return prisma.preRegisteredUser.findUnique({
+          where: {
+            id,
+          },
+        })
       },
     })
   },
