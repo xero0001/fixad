@@ -7,4 +7,5 @@ export const PRE_REGISTERED_USER_FRAGMENT = `
   name
   password
   tel
+  isFinished
 `

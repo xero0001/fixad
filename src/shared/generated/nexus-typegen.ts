@@ -57,19 +57,13 @@ export interface NexusGenScalars {
 export interface NexusGenObjects {
   Mutation: {};
   PreRegisteredUser: { // root type
-    address?: string | null; // String
-    birthdate?: NexusGenScalars['DateTime'] | null; // DateTime
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     email?: string | null; // String
-    extraAddress?: string | null; // String
-    gender?: string | null; // String
     id?: number | null; // Int
-    misc?: NexusGenScalars['JSON'] | null; // JSON
+    isFinished?: boolean | null; // Boolean
     name?: string | null; // String
-    password?: string | null; // String
     tel?: string | null; // String
     updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
-    zipCode?: string | null; // String
   }
   Query: {};
 }
@@ -86,22 +80,17 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    testMutation: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    finishSignupPreRegistered: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
-    address: string | null; // String
-    birthdate: NexusGenScalars['DateTime'] | null; // DateTime
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     email: string | null; // String
-    extraAddress: string | null; // String
-    gender: string | null; // String
     id: number | null; // Int
-    misc: NexusGenScalars['JSON'] | null; // JSON
+    isFinished: boolean | null; // Boolean
     name: string | null; // String
-    password: string | null; // String
     tel: string | null; // String
     updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
-    zipCode: string | null; // String
   }
   Query: { // field return type
     testQuery: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
@@ -110,22 +99,17 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
-    testMutation: 'PreRegisteredUser'
+    finishSignupPreRegistered: 'PreRegisteredUser'
+    signupPreRegisteredUser: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
-    address: 'String'
-    birthdate: 'DateTime'
     createdAt: 'DateTime'
     email: 'String'
-    extraAddress: 'String'
-    gender: 'String'
     id: 'Int'
-    misc: 'JSON'
+    isFinished: 'Boolean'
     name: 'String'
-    password: 'String'
     tel: 'String'
     updatedAt: 'DateTime'
-    zipCode: 'String'
   }
   Query: { // field return type name
     testQuery: 'PreRegisteredUser'
@@ -134,8 +118,15 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    testMutation: { // args
+    finishSignupPreRegistered: { // args
+      email: string; // String!
       id: number; // Int!
+      name: string; // String!
+      tel: string; // String!
+    }
+    signupPreRegisteredUser: { // args
+      email: string; // String!
+      password: string; // String!
     }
   }
   Query: {
