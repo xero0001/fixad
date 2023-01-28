@@ -2,6 +2,7 @@ import { extendType, intArg, nonNull, stringArg } from 'nexus'
 import { hash } from 'bcryptjs'
 import prisma from '@server/prisma'
 import { ApolloError } from 'apollo-server-micro'
+import { ACCOUNT_TYPE } from '@prisma/client'
 
 export const PreRegisteredUserMutation = extendType({
   type: 'Mutation',
@@ -19,6 +20,7 @@ export const PreRegisteredUserMutation = extendType({
             email,
           },
         })
+
         // email을 통해 가입한 이력이 있고 DB에 저장된 isFinished 값에 따라 front에서 분기를 해주는 방향
         // isFinished false -> name tel 입력 페이지로, true -> 이미 가입된 ID입니다 팝업
         if (existingUser?.isFinished) {
@@ -32,6 +34,7 @@ export const PreRegisteredUserMutation = extendType({
             },
             data: {
               password: hashedPassword,
+              accountType: ACCOUNT_TYPE.EMAIL,
             },
           })
         }
@@ -40,6 +43,7 @@ export const PreRegisteredUserMutation = extendType({
           data: {
             email,
             password: hashedPassword,
+            accountType: ACCOUNT_TYPE.EMAIL,
           },
         })
       },

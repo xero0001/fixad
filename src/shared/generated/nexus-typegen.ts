@@ -57,6 +57,7 @@ export interface NexusGenScalars {
 export interface NexusGenObjects {
   Mutation: {};
   PreRegisteredUser: { // root type
+    accountType?: string | null; // String
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     email?: string | null; // String
     id?: number | null; // Int
@@ -84,6 +85,7 @@ export interface NexusGenFieldTypes {
     signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
+    accountType: string | null; // String
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     email: string | null; // String
     id: number | null; // Int
@@ -103,6 +105,7 @@ export interface NexusGenFieldTypeNames {
     signupPreRegisteredUser: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
+    accountType: 'String'
     createdAt: 'DateTime'
     email: 'String'
     id: 'Int'

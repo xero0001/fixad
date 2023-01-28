@@ -11,5 +11,6 @@ export const PreRegisteredUser = objectType({
     t.string('name')
     t.string('tel')
     t.boolean('isFinished')
+    t.string('accountType')
   },
 })
