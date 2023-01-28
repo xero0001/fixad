@@ -9,9 +9,9 @@ export const SIGNUP_PRE_REGISTERED_USER_MUTATION = gql`
     }
 `
 
-export const FINISH_SIGNUP_PRE_REGISTERED_MUTATION = gql`
-    mutation finishSignupPreRegistered($id: Int!, $email: String!, $tel: String!, $name: String!) {
-        finishSignupPreRegistered(id: $id, email: $email, tel: $tel, name: $name) {
+export const FINISH_SIGNUP_PRE_REGISTERED__USER_MUTATION = gql`
+    mutation finishSignupPreRegisteredUser($id: Int!, $email: String!, $tel: String!, $name: String!) {
+        finishSignupPreRegisteredUser(id: $id, email: $email, tel: $tel, name: $name) {
             ${PRE_REGISTERED_USER_FRAGMENT}
         }
     }

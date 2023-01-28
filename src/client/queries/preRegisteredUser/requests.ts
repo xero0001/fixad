@@ -9,7 +9,7 @@ export const signupPreRegisteredUserMutation = async (
 }
 
 export const finishSignupPreRegisteredMutation = async (
-  variables: NexusGenArgTypes['Mutation']['finishSignupPreRegistered'],
-): Promise<{ finishSignupPreRegistered: NexusGenObjects['PreRegisteredUser'] }> => {
+  variables: NexusGenArgTypes['Mutation']['finishSignupPreRegisteredUser'],
+): Promise<{ finishSignupPreRegisteredUser: NexusGenObjects['PreRegisteredUser'] }> => {
   return await graphQLClient.request(FINISH_SIGNUP_PRE_REGISTERED_MUTATION, variables)
 }

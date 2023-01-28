@@ -80,7 +80,7 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    finishSignupPreRegistered: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    finishSignupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
     signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
@@ -99,7 +99,7 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
-    finishSignupPreRegistered: 'PreRegisteredUser'
+    finishSignupPreRegisteredUser: 'PreRegisteredUser'
     signupPreRegisteredUser: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
@@ -118,7 +118,7 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    finishSignupPreRegistered: { // args
+    finishSignupPreRegisteredUser: { // args
       email: string; // String!
       id: number; // Int!
       name: string; // String!
