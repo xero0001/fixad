@@ -22,4 +22,6 @@ model PreRegisteredUser {
   name          String   @default("")
   password      String   @default("")
   tel           String   @default("")
+
+  isFinished    Boolean  @default(false)
 }

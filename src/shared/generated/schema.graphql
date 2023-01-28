@@ -15,23 +15,19 @@ scalar DateTime
 scalar JSON
 
 type Mutation {
-  testMutation(id: Int!): PreRegisteredUser
+  signupPreRegisteredUser(email: String!, password: String!): PreRegisteredUser
+  updateTelNamePreRegisteredUser(email: String!, id: Int!, name: String!, tel: String!): PreRegisteredUser
 }
 
 type PreRegisteredUser {
-  address: String
-  birthdate: DateTime
   createdAt: DateTime
   email: String
-  extraAddress: String
-  gender: String
   id: Int
-  misc: JSON
+  isFinished: Boolean
   name: String
   password: String
   tel: String
   updatedAt: DateTime
-  zipCode: String
 }
 
 type Query {
