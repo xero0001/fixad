@@ -6,7 +6,7 @@ import { ApolloError } from 'apollo-server-micro'
 export const PreRegisteredUserMutation = extendType({
   type: 'Mutation',
   definition(t) {
-    t.field('signup', {
+    t.field('signupPreRegisteredUser', {
       type: 'PreRegisteredUser',
       args: {
         email: nonNull(stringArg()),
@@ -43,7 +43,7 @@ export const PreRegisteredUserMutation = extendType({
         })
       },
     })
-    t.field('updateTelName', {
+    t.field('updateTelNamePreRegisteredUser', {
         type: 'PreRegisteredUser',
         args: {
           id: nonNull(intArg()),

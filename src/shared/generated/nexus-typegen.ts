@@ -81,8 +81,8 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    signup: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
-    updateTelName: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    updateTelNamePreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
@@ -101,8 +101,8 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
-    signup: 'PreRegisteredUser'
-    updateTelName: 'PreRegisteredUser'
+    signupPreRegisteredUser: 'PreRegisteredUser'
+    updateTelNamePreRegisteredUser: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
     createdAt: 'DateTime'
@@ -121,11 +121,11 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    signup: { // args
+    signupPreRegisteredUser: { // args
       email: string; // String!
       password: string; // String!
     }
-    updateTelName: { // args
+    updateTelNamePreRegisteredUser: { // args
       email: string; // String!
       id: number; // Int!
       name: string; // String!
