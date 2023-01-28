@@ -62,7 +62,6 @@ export interface NexusGenObjects {
     id?: number | null; // Int
     isFinished?: boolean | null; // Boolean
     name?: string | null; // String
-    password?: string | null; // String
     tel?: string | null; // String
     updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
   }
@@ -81,8 +80,8 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
+    finishSignupPreRegistered: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
     signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
-    updateTelNamePreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
@@ -90,7 +89,6 @@ export interface NexusGenFieldTypes {
     id: number | null; // Int
     isFinished: boolean | null; // Boolean
     name: string | null; // String
-    password: string | null; // String
     tel: string | null; // String
     updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
   }
@@ -101,8 +99,8 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
+    finishSignupPreRegistered: 'PreRegisteredUser'
     signupPreRegisteredUser: 'PreRegisteredUser'
-    updateTelNamePreRegisteredUser: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
     createdAt: 'DateTime'
@@ -110,7 +108,6 @@ export interface NexusGenFieldTypeNames {
     id: 'Int'
     isFinished: 'Boolean'
     name: 'String'
-    password: 'String'
     tel: 'String'
     updatedAt: 'DateTime'
   }
@@ -121,15 +118,15 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    signupPreRegisteredUser: { // args
-      email: string; // String!
-      password: string; // String!
-    }
-    updateTelNamePreRegisteredUser: { // args
+    finishSignupPreRegistered: { // args
       email: string; // String!
       id: number; // Int!
       name: string; // String!
       tel: string; // String!
+    }
+    signupPreRegisteredUser: { // args
+      email: string; // String!
+      password: string; // String!
     }
   }
   Query: {

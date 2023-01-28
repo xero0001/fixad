@@ -23,18 +23,21 @@ export const PreRegisteredUserMutation = extendType({
         )
         // email을 통해 가입한 이력이 있고 DB에 저장된 isFinished 값에 따라 front에서 분기를 해주는 방향
         // isFinished false -> name tel 입력 페이지로, true -> 이미 가입된 ID입니다 팝업
+        if (existingUser?.isFinished) {
+          throw new ApolloError('EXISTING_USER')
+        }
+
         if (existingUser) {
-          existingUser.password = ''
-          return existingUser
+          return prisma.preRegisteredUser.update({
+            where: {
+              email,
+            },
+            data: {
+              password: hashedPassword,
+            },
+          })
         }
-        // isFinished를 따로 저장하지 않고 tel과 name이 존재하는지에 따라 isFinished를 반환하고 분기를 해주는 방향
-        /*
-        if(existingUser){
-          existingUser.password = "";
-          existingUser.isFinished = !!(existingUser.name && existingUser.tel);
-          return existingUser;
-        }
-         */
+
         return prisma.preRegisteredUser.create({
           data: {
             email,
@@ -43,7 +46,8 @@ export const PreRegisteredUserMutation = extendType({
         })
       },
     })
-    t.field('updateTelNamePreRegisteredUser', {
+
+    t.field('finishSignupPreRegistered', {
         type: 'PreRegisteredUser',
         args: {
           id: nonNull(intArg()),
@@ -59,21 +63,15 @@ export const PreRegisteredUserMutation = extendType({
           })
           //when user by id not found
           if (!existingUser) {
-            throw new ApolloError('User not found', null, {
-              extraCode: 'USER_NOT_FOUND',
-            })
+            throw new ApolloError('USER_NOT_FOUND')
           }
           //when email of user found by id does not match with input email
           if (existingUser.email !== email) {
-            throw new ApolloError('Email does not match', null, {
-              extraCode: 'ID_EMAIL_MATCH_ERROR',
-            })
+            throw new ApolloError('UNMATCHED_ID_AND_EMAIL')
           }
           //when user found by id is already updated own tel or name
-          if (existingUser.isFinished || existingUser.tel !== '' || existingUser.name !== '') {
-            throw new ApolloError('Tel & Name is exist', null, {
-              extraCode: 'TEL_NAME_EXIST',
-            })
+          if (existingUser.isFinished) {
+            throw new ApolloError('ALREADY_FINISHED')
           }
 
           const updatedUser = await prisma.preRegisteredUser.update({

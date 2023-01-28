@@ -15,8 +15,8 @@ scalar DateTime
 scalar JSON
 
 type Mutation {
+  finishSignupPreRegistered(email: String!, id: Int!, name: String!, tel: String!): PreRegisteredUser
   signupPreRegisteredUser(email: String!, password: String!): PreRegisteredUser
-  updateTelNamePreRegisteredUser(email: String!, id: Int!, name: String!, tel: String!): PreRegisteredUser
 }
 
 type PreRegisteredUser {
@@ -25,7 +25,6 @@ type PreRegisteredUser {
   id: Int
   isFinished: Boolean
   name: String
-  password: String
   tel: String
   updatedAt: DateTime
 }
