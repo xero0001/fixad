@@ -3,7 +3,6 @@ import axios from 'axios'
 import prisma from '@server/prisma'
 import { ACCOUNT_TYPE } from '@prisma/client'
 import { PATH } from '@shared/const'
-import url from 'url'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -57,14 +56,7 @@ export default async function handler(req, res) {
       // 이미 가입된 유저가 있다면
       if (existingUser) {
         if (existingUser?.isFinished) {
-          res.redirect(
-            url.format({
-              pathname: PATH.AUTH_PRESIGNUP,
-              query: {
-                error: 'DUPLICATED_EMAIL',
-              },
-            }),
-          )
+          res.redirect(`${PATH.AUTH_PRESIGNUP}?error=DUPLICATED_EMAIL`)
         }
 
         await prisma.preRegisteredUser.update({
@@ -88,27 +80,11 @@ export default async function handler(req, res) {
         id = user.id
       }
 
-      res.redirect(
-        url.format({
-          pathname: PATH.AUTH_PRESIGNUP_EXTRA,
-          query: {
-            id,
-            email,
-            accountType: ACCOUNT_TYPE.KAKAO,
-          },
-        }),
-      )
+      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?id=${id}&email=${email}&accountType=${ACCOUNT_TYPE.KAKAO}`)
       return
     } catch (e) {
       console.log(e)
-      res.redirect(
-        url.format({
-          pathname: PATH.AUTH_PRESIGNUP,
-          query: {
-            error: 'INTERNAL_SERVER_ERROR',
-          },
-        }),
-      )
+      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?error=INTERNAL_SERVER_ERROR`)
     }
   } else {
     // Handle any other HTTP method
