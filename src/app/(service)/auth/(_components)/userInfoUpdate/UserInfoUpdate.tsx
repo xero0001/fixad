@@ -1,13 +1,23 @@
 'use client'
 
-import styles from './UserInfoUpdate.module.css'
-import classNames from 'classnames/bind'
 import { useState } from 'react'
 import { ERR_MSG, REG_EXP } from '@root/src/shared/const'
+import { useSearchParams } from 'next/navigation'
 
+import styles from './UserInfoUpdate.module.css'
+import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
 export default function UserInfoUpdate() {
+  const searchParams = useSearchParams()
+
+  // 쿼리스트링 파싱
+  const id = searchParams.get('id')
+  const email = searchParams.get('email')
+  const accountType = searchParams.get('accountType')
+
+  // console.log({ id, email, accountType }) -> id, email, accountType 쿼리 콘솔 로그
+
   const [inputValue, setInputValue] = useState({
     NAME: '',
     TEL: '',
@@ -55,6 +65,24 @@ export default function UserInfoUpdate() {
     <div className={cx('container')}>
       <h1>회원 가입</h1>
       <div className={cx('form-container')}>
+        <div className={cx('input-container', { errored: !!inputErrorMsg.NAME })}>
+          <label>
+            <span>이메일</span>
+          </label>
+          <div className={cx('input-wrapper')}>
+            {email}
+            {/* <input
+              type="text"
+              placeholder="이름을 입력해주세요."
+              name="NAME"
+              autoComplete="off"
+              value={inputValue.NAME}
+              onChange={handleChange}
+            />
+            <span className={cx('value-indicator')}>{inputValue.NAME}</span> */}
+          </div>
+          <span className={cx('err-msg')}>{inputErrorMsg?.NAME}</span>
+        </div>
         <div className={cx('input-container', { errored: !!inputErrorMsg.NAME })}>
           <label>
             <span>이름</span>

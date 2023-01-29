@@ -16,7 +16,7 @@ export function useSocialAuth() {
   }
 
   async function kakaoLogin() {
-    const REST_API_KEY = 'fbebb05a70ef13b207ec45abfeebb073'
+    const REST_API_KEY = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID
     const REDIRECT_URI = encodeURIComponent(process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI)
 
     location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
