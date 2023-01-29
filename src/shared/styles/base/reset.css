@@ -47,7 +47,6 @@ select,
 table,
 button,
 code {
-  font-family: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
   font-size: 1.6rem;
   line-height: 2rem;
   -webkit-border-radius: 0;
