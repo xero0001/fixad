@@ -17,7 +17,6 @@ import prisma from '@server/prisma'
 import { ACCOUNT_TYPE } from '@prisma/client'
 import { ApolloError } from 'apollo-server-micro'
 
-
 export const PreRegisteredUserQuery = extendType({
   type: 'Query',
   definition(t) {
@@ -38,7 +37,7 @@ export const PreRegisteredUserQuery = extendType({
           throw new ApolloError('USER_NOT_FOUND')
         }
 
-        return (user.email === email && user.accountType === accountType)
+        return user.email === email && user.accountType === accountType && !user.isFinished
       },
     })
   },

@@ -62,7 +62,7 @@ export default async function handler(req, res) {
           },
           data: {
             password: '',
-            accountType: ACCOUNT_TYPE.KAKAO,
+            accountType: ACCOUNT_TYPE.GOOGLE,
           },
         })
       } else {
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
           data: {
             email,
             password: '',
-            accountType: ACCOUNT_TYPE.KAKAO,
+            accountType: ACCOUNT_TYPE.GOOGLE,
           },
         })
 
