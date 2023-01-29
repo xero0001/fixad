@@ -2,15 +2,18 @@ import qs from 'qs'
 import axios from 'axios'
 import prisma from '@server/prisma'
 import { ACCOUNT_TYPE } from '@prisma/client'
+import { PATH } from '@shared/const'
+import url from 'url'
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
     try {
-      const { code, state } = req.body
+      const query = req.query
+      const { code, state, error, errorDescription } = query
 
-      const REDIRECT_URI = process.env.NEXT_PUBLIC_NAVER_REDIRECT_URI
-      const CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_CLIENT_ID
-      const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET
+      const REDIRECT_URI = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI
+      const CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID
+      const CLIENT_SECRET = process.env.KAKAO_CLIENT_SECRET
 
       const bodyData = {
         grant_type: 'authorization_code',
@@ -54,7 +57,14 @@ export default async function handler(req, res) {
       // 이미 가입된 유저가 있다면
       if (existingUser) {
         if (existingUser?.isFinished) {
-          throw new Error('EXISTING_USER')
+          res.redirect(
+            url.format({
+              pathname: PATH.AUTH_PRESIGNUP,
+              query: {
+                error: 'DUPLICATED_EMAIL',
+              },
+            }),
+          )
         }
 
         await prisma.preRegisteredUser.update({
@@ -78,10 +88,27 @@ export default async function handler(req, res) {
         id = user.id
       }
 
-      res.status(200).json({ status: 'SIGNED_UP', id, email })
+      res.redirect(
+        url.format({
+          pathname: PATH.AUTH_PRESIGNUP_EXTRA,
+          query: {
+            id,
+            email,
+            accountType: ACCOUNT_TYPE.KAKAO,
+          },
+        }),
+      )
       return
     } catch (e) {
       console.log(e)
+      res.redirect(
+        url.format({
+          pathname: PATH.AUTH_PRESIGNUP,
+          query: {
+            error: 'INTERNAL_SERVER_ERROR',
+          },
+        }),
+      )
     }
   } else {
     // Handle any other HTTP method
