@@ -1,9 +1,9 @@
 'use client'
 
-import { BsFillChatFill } from 'react-icons/bs'
 import styles from './SignUpBtnGroup.module.css'
 import classNames from 'classnames/bind'
 import { useSocialAuth } from '@root/src/client/hooks/useSocialAuth'
+import Image from 'next/image'
 
 const cx = classNames.bind(styles)
 
@@ -43,7 +43,7 @@ export default function SignUpBtnGroup() {
       <div className={cx('btn-group')}>
         {buttonList.map((button, i) => (
           <button className={cx('sign-up-btn')} value={button.name} onClick={signUp} key={i}>
-            {button.label}
+            <Image src={`/assets/sns/${button.name}.png`} alt={button.name} width={24} height={24} />
           </button>
         ))}
       </div>
