@@ -3,15 +3,14 @@
 import { BsFillChatFill } from 'react-icons/bs'
 import styles from './KakaoBtn.module.css'
 import classNames from 'classnames/bind'
+import { useSocialAuth } from '@root/src/client/hooks/useSocialAuth'
 
 const cx = classNames.bind(styles)
 
 export default function KakaoBtn() {
-  async function kakaoLogin() {
-    const REST_API_KEY = 'fbebb05a70ef13b207ec45abfeebb073'
-    const REDIRECT_URI = encodeURIComponent(process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI)
-
-    location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
+  const { snsLogin } = useSocialAuth()
+  function kakaoLogin() {
+    snsLogin('kakao')
   }
 
   return (

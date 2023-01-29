@@ -1,3 +1,12 @@
+import styles from './layout.module.css'
+import classNames from 'classnames/bind'
+
+const cx = classNames.bind(styles)
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <div className={cx('container')}>
+      <main>{children}</main>
+    </div>
+  )
 }
