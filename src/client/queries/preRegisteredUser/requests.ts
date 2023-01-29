@@ -1,6 +1,10 @@
 import { NexusGenArgTypes, NexusGenObjects } from '@shared/generated/nexus-typegen'
 import { graphQLClient } from '@client/shared'
-import { SIGNUP_PRE_REGISTERED_USER_MUTATION, FINISH_SIGNUP_PRE_REGISTERED_USER_MUTATION } from './tags'
+import {
+  SIGNUP_PRE_REGISTERED_USER_MUTATION,
+  FINISH_SIGNUP_PRE_REGISTERED_USER_MUTATION,
+  VALIDATE_PRE_SIGNUP_USER_QUERY,
+} from './tags'
 
 export const signupPreRegisteredUserMutation = async (
   variables: NexusGenArgTypes['Mutation']['signupPreRegisteredUser'],
@@ -12,4 +16,10 @@ export const finishSignupPreRegisteredMutation = async (
   variables: NexusGenArgTypes['Mutation']['finishSignupPreRegisteredUser'],
 ): Promise<{ finishSignupPreRegisteredUser: NexusGenObjects['PreRegisteredUser'] }> => {
   return await graphQLClient.request(FINISH_SIGNUP_PRE_REGISTERED_USER_MUTATION, variables)
+}
+
+export const validatePreSignupUserQuery = async (
+  variables: NexusGenArgTypes['Query']['validatePreSignupUser'],
+): Promise<{ validatePreSignupUser: boolean }> => {
+  return await graphQLClient.request(VALIDATE_PRE_SIGNUP_USER_QUERY, variables)
 }
