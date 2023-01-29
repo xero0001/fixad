@@ -8,4 +8,5 @@ export const PRE_REGISTERED_USER_FRAGMENT = `
   password
   tel
   isFinished
+  accountType
 `
