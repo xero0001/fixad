@@ -1,4 +1,4 @@
-import '../shared/styles/globals.css'
+import '../client/styles/globals.css'
 import RootProvider from './(_components)/provider/RootProvider'
 import { Noto_Sans_KR } from '@next/font/google'
 import localFont from '@next/font/local'
