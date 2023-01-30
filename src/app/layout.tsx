@@ -26,6 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className={cx('root-layout')}>
           <RootProvider>{children}</RootProvider>
         </div>
+        <div id="modal-portal" className={cx('modal-portal')} />
       </body>
     </html>
   )

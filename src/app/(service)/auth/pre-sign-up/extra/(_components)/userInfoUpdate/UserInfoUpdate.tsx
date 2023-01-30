@@ -12,6 +12,7 @@ import { ACCOUNT_TYPE } from '@prisma/client'
 import Image from 'next/image'
 import Link from 'next/link'
 import SignUpBtnGroup from '../../../(_components)/preSignUp/elements/signUpBtnGroup/SignUpBtnGroup'
+import DuplicateModal from '../../../(_components)/duplicateModal/DuplicateModal'
 const cx = classNames.bind(styles)
 
 const allButtonList: { name: ACCOUNT_TYPE }[] = [
@@ -64,15 +65,32 @@ export default function UserInfoUpdate() {
 
   useEffect(() => {
     if (!(id && accountType && email)) {
-      console.log('잘못된 접근')
+      setModalInfo({
+        isOpened: true,
+        desc: '올바르지 않은 접근입니다.',
+      })
     }
 
-    if (!isLoading && (isError || !data?.validatePreSignupUser)) {
-      console.log('잘못된 접근')
+    if (!isLoading && !data?.validatePreSignupUser) {
+      setModalInfo({
+        isOpened: true,
+        desc: '',
+      })
+    }
+
+    if (isError) {
+      setModalInfo({
+        isOpened: true,
+        desc: '알 수 없는 에러가 발생했습니다.',
+      })
     }
   }, [data, isLoading, isError])
 
   const [isComplete, setIsComplete] = useState(false)
+  const [modalInfo, setModalInfo] = useState({
+    isOpened: false,
+    desc: '',
+  })
 
   const [inputValue, setInputValue] = useState({
     NAME: '',
@@ -200,6 +218,7 @@ export default function UserInfoUpdate() {
           </Link>
         </>
       )}
+      {modalInfo.isOpened && <DuplicateModal />}
     </div>
   )
 }

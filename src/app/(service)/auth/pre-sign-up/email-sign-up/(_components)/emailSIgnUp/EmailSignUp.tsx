@@ -9,6 +9,7 @@ import classNames from 'classnames/bind'
 import SignUpBtnGroup from '../../../(_components)/preSignUp/elements/signUpBtnGroup/SignUpBtnGroup'
 import { ACCOUNT_TYPE } from '@prisma/client'
 import { useMutation } from '@tanstack/react-query'
+import DuplicateModal from '../../../(_components)/duplicateModal/DuplicateModal'
 const cx = classNames.bind(styles)
 
 const buttonList: { name: ACCOUNT_TYPE }[] = [
@@ -35,6 +36,7 @@ export default function EmailSignUp() {
     NEW_PASSWORD: '',
     PASSWORD_CONFIRM: '',
   })
+  const [isDuplicate, setIsDuplicate] = useState(false)
 
   function handleChange(e) {
     let { value, name } = e.target
@@ -91,7 +93,7 @@ export default function EmailSignUp() {
     },
     onError: error => {
       if ((error as any).response?.errors[0].message === 'EXISTING_USER') {
-        //[TODO]
+        setIsDuplicate(true)
       }
     },
   })
@@ -163,6 +165,7 @@ export default function EmailSignUp() {
         <span>회원가입</span>
       </button>
       <SignUpBtnGroup {...{ buttonList }} />
+      {isDuplicate && <DuplicateModal />}
     </div>
   )
 }
