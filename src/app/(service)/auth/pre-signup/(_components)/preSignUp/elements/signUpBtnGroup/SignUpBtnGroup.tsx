@@ -46,7 +46,7 @@ export default function SignUpBtnGroup({ buttonList }: { buttonList: { name: ACC
       <div className={cx('btn-group')}>
         {buttonList?.map((button, i) => (
           <button className={cx('sign-up-btn')} value={button.name} onClick={signUp} key={i}>
-            <Image src={`/assets/sns/${button.name.toLowerCase()}.png`} alt={button.name} width={24} height={24} />
+            <Image src={`/assets/sns/${button.name}.png`} alt={button.name} width={24} height={24} />
           </button>
         ))}
       </div>
