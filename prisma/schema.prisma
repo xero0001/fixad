@@ -13,6 +13,13 @@ enum GENDER {
   NONE
 }
 
+enum ACCOUNT_TYPE {
+  EMAIL
+  KAKAO
+  NAVER
+  GOOGLE
+}
+
 model PreRegisteredUser {
   id            Int      @id @default(autoincrement())
   email         String   @unique
@@ -22,11 +29,8 @@ model PreRegisteredUser {
   name          String   @default("")
   password      String   @default("")
   tel           String   @default("")
-  address       String   @default("")
-  extraAddress  String   @default("")
-  zipCode       String   @default("")
-  birthdate     DateTime @default(now())
-  gender        GENDER   @default(NONE)
 
-  misc          Json     @default("{}")
+  isFinished    Boolean  @default(false)
+
+  accountType   ACCOUNT_TYPE
 }

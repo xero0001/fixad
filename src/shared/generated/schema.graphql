@@ -2,6 +2,13 @@
 ### Do not make changes to this file directly
 
 
+enum ACCOUNT_TYPE {
+  EMAIL
+  GOOGLE
+  KAKAO
+  NAVER
+}
+
 """
 The `BigInt` scalar type represents non-fractional signed whole numeric values.
 """
@@ -15,25 +22,21 @@ scalar DateTime
 scalar JSON
 
 type Mutation {
-  testMutation(id: Int!): PreRegisteredUser
+  finishSignupPreRegisteredUser(email: String!, id: Int!, name: String!, tel: String!): PreRegisteredUser
+  signupPreRegisteredUser(email: String!, password: String!): PreRegisteredUser
 }
 
 type PreRegisteredUser {
-  address: String
-  birthdate: DateTime
+  accountType: String
   createdAt: DateTime
   email: String
-  extraAddress: String
-  gender: String
   id: Int
-  misc: JSON
+  isFinished: Boolean
   name: String
-  password: String
   tel: String
   updatedAt: DateTime
-  zipCode: String
 }
 
 type Query {
-  testQuery(id: Int!): PreRegisteredUser
+  validatePreSignupUser(accountType: ACCOUNT_TYPE!, email: String!, id: Int!): Boolean
 }

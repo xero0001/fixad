@@ -1,0 +1,7 @@
+.auth-page-layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  row-gap: 32px;
+}

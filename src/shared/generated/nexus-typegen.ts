@@ -41,6 +41,7 @@ export interface NexusGenInputs {
 }
 
 export interface NexusGenEnums {
+  ACCOUNT_TYPE: "EMAIL" | "GOOGLE" | "KAKAO" | "NAVER"
 }
 
 export interface NexusGenScalars {
@@ -57,19 +58,14 @@ export interface NexusGenScalars {
 export interface NexusGenObjects {
   Mutation: {};
   PreRegisteredUser: { // root type
-    address?: string | null; // String
-    birthdate?: NexusGenScalars['DateTime'] | null; // DateTime
+    accountType?: string | null; // String
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     email?: string | null; // String
-    extraAddress?: string | null; // String
-    gender?: string | null; // String
     id?: number | null; // Int
-    misc?: NexusGenScalars['JSON'] | null; // JSON
+    isFinished?: boolean | null; // Boolean
     name?: string | null; // String
-    password?: string | null; // String
     tel?: string | null; // String
     updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
-    zipCode?: string | null; // String
   }
   Query: {};
 }
@@ -82,64 +78,65 @@ export interface NexusGenUnions {
 
 export type NexusGenRootTypes = NexusGenObjects
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    testMutation: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    finishSignupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
-    address: string | null; // String
-    birthdate: NexusGenScalars['DateTime'] | null; // DateTime
+    accountType: string | null; // String
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     email: string | null; // String
-    extraAddress: string | null; // String
-    gender: string | null; // String
     id: number | null; // Int
-    misc: NexusGenScalars['JSON'] | null; // JSON
+    isFinished: boolean | null; // Boolean
     name: string | null; // String
-    password: string | null; // String
     tel: string | null; // String
     updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
-    zipCode: string | null; // String
   }
   Query: { // field return type
-    testQuery: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    validatePreSignupUser: boolean | null; // Boolean
   }
 }
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
-    testMutation: 'PreRegisteredUser'
+    finishSignupPreRegisteredUser: 'PreRegisteredUser'
+    signupPreRegisteredUser: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
-    address: 'String'
-    birthdate: 'DateTime'
+    accountType: 'String'
     createdAt: 'DateTime'
     email: 'String'
-    extraAddress: 'String'
-    gender: 'String'
     id: 'Int'
-    misc: 'JSON'
+    isFinished: 'Boolean'
     name: 'String'
-    password: 'String'
     tel: 'String'
     updatedAt: 'DateTime'
-    zipCode: 'String'
   }
   Query: { // field return type name
-    testQuery: 'PreRegisteredUser'
+    validatePreSignupUser: 'Boolean'
   }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    testMutation: { // args
+    finishSignupPreRegisteredUser: { // args
+      email: string; // String!
       id: number; // Int!
+      name: string; // String!
+      tel: string; // String!
+    }
+    signupPreRegisteredUser: { // args
+      email: string; // String!
+      password: string; // String!
     }
   }
   Query: {
-    testQuery: { // args
+    validatePreSignupUser: { // args
+      accountType: NexusGenEnums['ACCOUNT_TYPE']; // ACCOUNT_TYPE!
+      email: string; // String!
       id: number; // Int!
     }
   }
@@ -155,7 +152,7 @@ export type NexusGenObjectNames = keyof NexusGenObjects;
 
 export type NexusGenInputNames = never;
 
-export type NexusGenEnumNames = never;
+export type NexusGenEnumNames = keyof NexusGenEnums;
 
 export type NexusGenInterfaceNames = never;
 

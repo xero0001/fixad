@@ -5,13 +5,7 @@ export const PRE_REGISTERED_USER_FRAGMENT = `
   updatedAt
 
   name
-  password
   tel
-  address
-  extraAddress
-  zipCode
-  birthdate
-  gender
-
-  misc
+  isFinished
+  accountType
 `

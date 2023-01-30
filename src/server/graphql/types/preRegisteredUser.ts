@@ -9,14 +9,8 @@ export const PreRegisteredUser = objectType({
     t.date('updatedAt')
 
     t.string('name')
-    t.string('password')
     t.string('tel')
-    t.string('address')
-    t.string('extraAddress')
-    t.string('zipCode')
-    t.date('birthdate')
-    t.string('gender')
-
-    t.json('misc')
+    t.boolean('isFinished')
+    t.string('accountType')
   },
 })
