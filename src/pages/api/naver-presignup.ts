@@ -2,11 +2,13 @@ import qs from 'qs'
 import axios from 'axios'
 import prisma from '@server/prisma'
 import { ACCOUNT_TYPE } from '@prisma/client'
+import { PATH } from '@shared/const'
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
     try {
-      const { code, state } = req.body
+      const query = req.query
+      const { code, state } = query
 
       const REDIRECT_URI = encodeURIComponent(process.env.NEXT_PUBLIC_NAVER_REDIRECT_URI)
       const CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_CLIENT_ID
@@ -44,7 +46,7 @@ export default async function handler(req, res) {
       // 이미 가입된 유저가 있다면
       if (existingUser) {
         if (existingUser?.isFinished) {
-          throw new Error('EXISTING_USER')
+          res.redirect(`${PATH.AUTH_PRESIGNUP}?error=DUPLICATED_EMAIL`)
         }
 
         await prisma.preRegisteredUser.update({
@@ -68,10 +70,11 @@ export default async function handler(req, res) {
         id = user.id
       }
 
-      res.status(200).json({ status: 'SIGNED_UP', id, email })
+      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?id=${id}&email=${email}&accountType=${ACCOUNT_TYPE.NAVER}`)
       return
     } catch (e) {
       console.log(e)
+      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?error=INTERNAL_SERVER_ERROR`)
     }
   } else {
     // Handle any other HTTP method
