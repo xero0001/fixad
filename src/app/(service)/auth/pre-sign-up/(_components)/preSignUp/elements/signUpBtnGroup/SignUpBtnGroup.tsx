@@ -7,44 +7,34 @@ import Image from 'next/image'
 import { useQuery } from '@tanstack/react-query'
 import { validatePreSignupUserQuery } from '@root/src/client/queries'
 import { ACCOUNT_TYPE } from '@prisma/client'
+import { useRouter } from 'next/navigation'
+import { PATH } from '@root/src/shared/const'
 
 const cx = classNames.bind(styles)
 
-const buttonList = [
+const buttonList: { name: ACCOUNT_TYPE }[] = [
   {
-    name: 'naver',
-    label: '네이버',
+    name: ACCOUNT_TYPE.NAVER,
   },
   {
-    name: 'google',
-    label: '구글',
+    name: ACCOUNT_TYPE.GOOGLE,
   },
   {
-    name: 'email',
-    label: '이메일',
+    name: ACCOUNT_TYPE.EMAIL,
   },
 ]
 
-export default function SignUpBtnGroup() {
+export default function SignUpBtnGroup({ buttonList }: { buttonList: { name: ACCOUNT_TYPE }[] }) {
   const { snsLogin } = useSocialAuth()
-
-  const result = useQuery(['test'], () =>
-    validatePreSignupUserQuery({
-      id: 1,
-      email: 'xero0001@naver.com',
-      accountType: ACCOUNT_TYPE.KAKAO,
-    }),
-  )
-
-  console.log({ data: result.data })
+  const router = useRouter()
 
   function signUp(e: React.MouseEvent<HTMLButtonElement>) {
-    if (e.currentTarget.value === 'email') {
-      // 이메일 입력폼으로 가는 행위
+    if (e.currentTarget.value === ACCOUNT_TYPE.EMAIL) {
+      router.push(PATH.AUTH_PRESIGNUP_EMAIL_SIGNUP)
       return
     }
 
-    snsLogin(e.currentTarget.value as 'kakao' | 'naver' | 'google')
+    snsLogin(e.currentTarget.value as ACCOUNT_TYPE)
   }
 
   return (
@@ -54,7 +44,7 @@ export default function SignUpBtnGroup() {
         <span>다른방법으로 회원가입</span>
       </div>
       <div className={cx('btn-group')}>
-        {buttonList.map((button, i) => (
+        {buttonList?.map((button, i) => (
           <button className={cx('sign-up-btn')} value={button.name} onClick={signUp} key={i}>
             <Image src={`/assets/sns/${button.name}.png`} alt={button.name} width={24} height={24} />
           </button>
