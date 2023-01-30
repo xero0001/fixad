@@ -4,6 +4,9 @@ import styles from './SignUpBtnGroup.module.css'
 import classNames from 'classnames/bind'
 import { useSocialAuth } from '@root/src/client/hooks/useSocialAuth'
 import Image from 'next/image'
+import { useQuery } from '@tanstack/react-query'
+import { validatePreSignupUserQuery } from '@root/src/client/queries'
+import { ACCOUNT_TYPE } from '@prisma/client'
 
 const cx = classNames.bind(styles)
 
@@ -24,6 +27,16 @@ const buttonList = [
 
 export default function SignUpBtnGroup() {
   const { snsLogin } = useSocialAuth()
+
+  const result = useQuery(['test'], () =>
+    validatePreSignupUserQuery({
+      id: 1,
+      email: 'xero0001@naver.com',
+      accountType: ACCOUNT_TYPE.KAKAO,
+    }),
+  )
+
+  console.log({ data: result.data })
 
   function signUp(e: React.MouseEvent<HTMLButtonElement>) {
     if (e.currentTarget.value === 'email') {
