@@ -1,13 +1,15 @@
+import { ACCOUNT_TYPE } from '@prisma/client'
+
 export function useSocialAuth() {
-  function snsLogin(snsType: 'kakao' | 'naver' | 'google') {
+  function snsLogin(snsType: ACCOUNT_TYPE) {
     switch (snsType) {
-      case 'naver':
+      case ACCOUNT_TYPE.NAVER:
         naverLogin()
         return
-      case 'kakao':
+      case ACCOUNT_TYPE.KAKAO:
         kakaoLogin()
         return
-      case 'google':
+      case ACCOUNT_TYPE.GOOGLE:
         googleLogin()
         return
       default:

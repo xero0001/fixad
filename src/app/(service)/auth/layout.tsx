@@ -1,5 +1,3 @@
-import PreSignUp from './(_components)/preSignUp/PreSignUp'
-import UserInfoUpdate from './(_components)/userInfoUpdate/UserInfoUpdate'
 import styles from './layout.module.css'
 import classNames from 'classnames/bind'
 import Image from 'next/image'

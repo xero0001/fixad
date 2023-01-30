@@ -1,5 +1,4 @@
 import PreSignUp from './(_components)/preSignUp/PreSignUp'
-import UserInfoUpdate from './(_components)/userInfoUpdate/UserInfoUpdate'
 import styles from './page.module.css'
 import classNames from 'classnames/bind'
 
@@ -9,7 +8,6 @@ export default function Page() {
   return (
     <>
       <PreSignUp />
-      {/* <UserInfoUpdate /> */}
     </>
   )
 }
