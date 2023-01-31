@@ -30,6 +30,10 @@
   border-bottom: 4px solid #000;
   font-weight: 700;
   font-size: 28px;
+
+  & + .title {
+    margin-top: 14px;
+  }
 }
 .title:first-of-type {
   margin-bottom: 8px;

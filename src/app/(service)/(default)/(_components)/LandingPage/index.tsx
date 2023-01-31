@@ -31,6 +31,11 @@ export default function LandingPage() {
               </div>
               <div className={cs('section', cx('fullpage', 's2'))}>
                 <VisionArea />
+                <div className={cx('illust-wrapper')}>
+                  <div className={cx('illust')}>
+                    <img src="/assets/illust/illust_127.svg" alt="illust_127" />
+                  </div>
+                </div>
               </div>
               <div className={cs('section', cx('fullpage', 's3'))}>
                 <ServiceArea />
