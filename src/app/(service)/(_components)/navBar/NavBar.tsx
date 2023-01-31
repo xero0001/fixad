@@ -8,13 +8,19 @@ const cx = classNames.bind(styles)
 export default function NavBar() {
   return (
     <header className={cx('nav-bar')}>
-      <nav>
+      <div className={cx('header')}>
+        <img src="/assets/logo/logo.svg" alt="logo" />
+        <div className={cx('icon-wrap')}>
+          <img src="/assets/icon/user_1.svg" alt="logo" />
+        </div>
+      </div>
+      {/* <nav>
         <ul>
           <li>
             <Link href={PATH.HOME}>가나다</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   )
 }

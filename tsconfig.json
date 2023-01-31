@@ -18,6 +18,7 @@
       "@root/*": ["./*"],
       "@server/*": ["./src/server/*"],
       "@client/*": ["./src/client/*"],
+      "@app/*": ["./src/app/*"],
       "@shared/*": ["./src/shared/*"]
     },
     "plugins": [
