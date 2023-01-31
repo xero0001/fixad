@@ -74,18 +74,18 @@ const serviceContents = {
   ],
 }
 
-export default function ServiceArea() {
+export default function ServiceArea({ isActive }) {
   return (
     <div className={cx('container')}>
-      <div className={cx('text_wrap')}>
-        <h2>
+      <div className={cx('text_wrap', { active: isActive })}>
+        <h2 className={cx('title')}>
           <Pc>전국 모든 선생님을 위한 단 하나의 통합서비스</Pc>
           <Mobile>
             전국 모든 선생님을 위한
             <br />단 하나의 통합서비스
           </Mobile>
         </h2>
-        <p>
+        <p className={cx('desc')}>
           <Pc>
             <b>티처클라우드</b>는 구름처럼 선생님 곁에 떠있겠습니다.
             <br />
@@ -102,7 +102,7 @@ export default function ServiceArea() {
       </div>
       <div className={cx('card_wrap')}>
         {serviceContents.data.map(serviceContent => {
-          return <ServiceCard key={serviceContent.id} serviceContent={serviceContent} />
+          return <ServiceCard key={serviceContent.id} serviceContent={serviceContent} active={isActive} />
         })}
       </div>
     </div>
