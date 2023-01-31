@@ -2,9 +2,9 @@ import classNames from 'classnames/bind'
 import styles from './ServiceCard.module.css'
 const cx = classNames.bind(styles)
 
-export default function ServiceCard({ serviceContent }) {
+export default function ServiceCard({ serviceContent, active }) {
   return (
-    <div className={cx('container')}>
+    <div className={cx('container', { active })}>
       <div className={cx('id')}>Service {serviceContent.id}</div>
       <div className={cx('title')}>{serviceContent.title}</div>
       <h4 className={cx('sub_title')}>{serviceContent.subTitle}</h4>

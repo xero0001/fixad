@@ -6,6 +6,18 @@
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.05);
   border-radius: 32px;
   text-align: left;
+
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  transition-delay: 0.2s;
+  opacity: 0;
+  transform: translateY(100%);
+
+  &.active {
+    transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.8s;
+    transition-delay: 0.4s;
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 .title,
 .sub_title,
@@ -45,4 +57,16 @@
 }
 .illust {
   text-align: right;
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
