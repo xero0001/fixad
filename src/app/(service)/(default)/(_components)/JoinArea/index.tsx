@@ -1,4 +1,6 @@
+import { PATH } from '@root/src/shared/const'
 import classNames from 'classnames/bind'
+import Link from 'next/link'
 import styles from './JoinArea.module.css'
 const cx = classNames.bind(styles)
 
@@ -14,7 +16,9 @@ export default function JoinArea() {
         </div>
         <img src="/assets/illust/illust_130.svg" alt="illust_130" />
       </div>
-      <button className={styles.join_button}>회원 가입하기</button>
+      <Link href={PATH.AUTH_PRESIGNUP} className={cx('join_button')}>
+        회원 가입하기
+      </Link>
     </div>
   )
 }
