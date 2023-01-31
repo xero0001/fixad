@@ -1,8 +1,11 @@
 .container {
   min-width: 360px;
-  padding-top: 50px;
+  padding-top: 112px;
   background: var(--primary4);
   text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 .content_wrap {
   width: 624px;
