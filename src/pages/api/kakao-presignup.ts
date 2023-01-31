@@ -22,6 +22,8 @@ export default async function handler(req, res) {
         code,
       }
 
+      res.status(200).json({ query, bodyData })
+
       const response = await axios.post('https://kauth.kakao.com/oauth/token', qs.stringify(bodyData), {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
