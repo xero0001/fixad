@@ -79,10 +79,6 @@ export default function EmailSignUp() {
     }
   }
 
-  function masking(password) {
-    return password.replace(/./g, '*')
-  }
-
   const isDisabled = Object.values(inputErrorMsg).some(err => !!err) || Object.values(inputValue).some(val => !val)
 
   const { mutate } = useMutation(signupPreRegisteredUserMutation, {
@@ -122,7 +118,6 @@ export default function EmailSignUp() {
               value={inputValue.EMAIL}
               onChange={handleChange}
             />
-            <span className={cx('value-indicator')}>{inputValue.EMAIL}</span>
           </div>
           <span className={cx('err-msg')}>{inputErrorMsg?.EMAIL}</span>
         </div>
@@ -139,7 +134,6 @@ export default function EmailSignUp() {
               autoComplete="new-password"
               onChange={handleChange}
             />
-            <span className={cx('value-indicator')}>{masking(inputValue['NEW_PASSWORD'])}</span>
           </div>
           <span className={cx('err-msg')}>{inputErrorMsg?.['NEW_PASSWORD']}</span>
         </div>
@@ -156,7 +150,6 @@ export default function EmailSignUp() {
               autoComplete="new-password"
               onChange={handleChange}
             />
-            <span className={cx('value-indicator')}>{masking(inputValue.PASSWORD_CONFIRM)}</span>
           </div>
           <span className={cx('err-msg')}>{inputErrorMsg?.PASSWORD_CONFIRM}</span>
         </div>

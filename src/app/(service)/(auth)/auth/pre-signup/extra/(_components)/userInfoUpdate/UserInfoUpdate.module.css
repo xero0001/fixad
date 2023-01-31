@@ -28,11 +28,19 @@
       .input-wrapper {
         margin: 4px 0 0 0;
         display: flex;
-        flex-direction: column;
         position: relative;
+        align-items: center;
+        column-gap: 8px;
+
+        .bar {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+          color: rgba(51, 60, 71, 0.3);
+        }
 
         input {
-          flex: 1;
+          width: 100%;
           border: 1px solid #c9ced4;
           border-radius: 12px;
           padding: 13px 16px;
@@ -41,22 +49,14 @@
           line-height: 22px;
           outline: none;
           background: #f8f9fa;
-          color: transparent;
-          -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none; /* Safari */
-          -khtml-user-select: none; /* Konqueror HTML */
-          -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none;
-        }
 
-        .value-indicator {
-          position: absolute;
-          padding: 13px 16px;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 22px;
-          pointer-events: none;
+          &.tel {
+            text-align: center;
+          }
+
+          &:focus {
+            border: 1px solid #208df9 !important;
+          }
         }
       }
 
@@ -72,6 +72,10 @@
         .input-wrapper {
           input {
             border: 1px solid #208df9;
+
+            &.tel {
+              border: 1px solid #c9ced4;
+            }
           }
         }
 
@@ -87,7 +91,7 @@
 
         .input-wrapper {
           input {
-            border: 1px solid rgba(250, 79, 56, 1);
+            border: 1px solid rgba(250, 79, 56, 1) !important;
             background: rgba(235, 85, 69, 0.1);
           }
         }
