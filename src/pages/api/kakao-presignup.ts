@@ -10,6 +10,9 @@ export default async function handler(req, res) {
       const query = req.query
       const { code, state, error, errorDescription } = query
 
+      res.status(200).json({ query })
+      return
+
       const REDIRECT_URI = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI
       const CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID
       const CLIENT_SECRET = process.env.KAKAO_CLIENT_SECRET
@@ -21,8 +24,6 @@ export default async function handler(req, res) {
         redirect_uri: REDIRECT_URI,
         code,
       }
-
-      res.status(200).json({ query, bodyData })
 
       const response = await axios.post('https://kauth.kakao.com/oauth/token', qs.stringify(bodyData), {
         headers: {

@@ -21,9 +21,7 @@ export function useSocialAuth() {
     const REST_API_KEY = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID
     const REDIRECT_URI = encodeURIComponent(process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI)
 
-    console.log({ REST_API_KEY, REDIRECT_URI })
-
-    // location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
+    location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
   }
 
   async function naverLogin() {

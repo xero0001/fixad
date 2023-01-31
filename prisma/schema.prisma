@@ -34,3 +34,12 @@ model PreRegisteredUser {
 
   accountType   ACCOUNT_TYPE
 }
+
+model Log {
+  id   String @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  type String
+
+  value String
+}
