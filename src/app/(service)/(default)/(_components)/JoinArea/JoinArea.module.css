@@ -24,7 +24,7 @@
 .title {
   padding-bottom: 6px;
   border-bottom: 4px solid #000;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 28px;
 }
 .title:first-of-type {
@@ -38,7 +38,7 @@
   color: var(--red2);
 }
 .coming {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   line-height: 27px;
   color: var(--red2);
