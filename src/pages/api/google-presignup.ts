@@ -5,15 +5,9 @@ import { ACCOUNT_TYPE } from '@prisma/client'
 import { PATH } from '@shared/const'
 
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
+  if (req.method === 'POST') {
     try {
-      const query = req.query
-      const { code, scope, authuser, prompt } = query
-
-      //   code: '4/0AWtgzh6TcZDHX1dli87FzkU0jue8TAecfE7aKGN8p-rA0NADqHTLlrSnF_vt40KkSk2NSQ',
-      // scope: 'email https://www.googleapis.com/auth/userinfo.email openid',
-      // authuser: '0',
-      // prompt:
+      const { code, scope, authuser, prompt } = req.body
 
       const REDIRECT_URI = process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI
       const CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
@@ -53,7 +47,7 @@ export default async function handler(req, res) {
       // 이미 가입된 유저가 있다면
       if (existingUser) {
         if (existingUser?.isFinished) {
-          res.redirect(`${PATH.AUTH_PRESIGNUP}?error=DUPLICATED_EMAIL`)
+          throw new Error('DUPLICATED_EMAIL')
         }
 
         await prisma.preRegisteredUser.update({
@@ -77,11 +71,21 @@ export default async function handler(req, res) {
         id = user.id
       }
 
-      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?id=${id}&email=${email}&accountType=${ACCOUNT_TYPE.GOOGLE}`)
+      res.status(200).json({
+        id,
+        email,
+        accountType: ACCOUNT_TYPE.GOOGLE,
+      })
       return
     } catch (e) {
       console.log(e)
-      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?error=INTERNAL_SERVER_ERROR`)
+      if (e.message !== 'DUPLICATED_EMAIL') {
+        res.status(500).send({ message: 'INTERNAL_SERVER_ERROR' })
+        return
+      }
+
+      res.status(500).send({ message: e.message })
+      return
     }
   } else {
     // Handle any other HTTP method

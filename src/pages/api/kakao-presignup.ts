@@ -2,13 +2,11 @@ import qs from 'qs'
 import axios from 'axios'
 import prisma from '@server/prisma'
 import { ACCOUNT_TYPE } from '@prisma/client'
-import { PATH } from '@shared/const'
 
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
+  if (req.method === 'POST') {
     try {
-      const query = req.query
-      const { code, state, error, errorDescription } = query
+      const { code, state } = req.body
 
       const REDIRECT_URI = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI
       const CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID
@@ -56,7 +54,7 @@ export default async function handler(req, res) {
       // 이미 가입된 유저가 있다면
       if (existingUser) {
         if (existingUser?.isFinished) {
-          res.redirect(`${PATH.AUTH_PRESIGNUP}?error=DUPLICATED_EMAIL`)
+          throw new Error('DUPLICATED_EMAIL')
         }
 
         await prisma.preRegisteredUser.update({
@@ -80,12 +78,21 @@ export default async function handler(req, res) {
         id = user.id
       }
 
-      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?id=${id}&email=${email}&accountType=${ACCOUNT_TYPE.KAKAO}`)
+      res.status(200).json({
+        id,
+        email,
+        accountType: ACCOUNT_TYPE.KAKAO,
+      })
       return
     } catch (e) {
       console.log(e)
-      res.status(200).json({ e })
-      // res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?error=INTERNAL_SERVER_ERROR`)
+      if (e.message !== 'DUPLICATED_EMAIL') {
+        res.status(500).send({ message: 'INTERNAL_SERVER_ERROR' })
+        return
+      }
+
+      res.status(500).send({ message: e.message })
+      return
     }
   } else {
     // Handle any other HTTP method
