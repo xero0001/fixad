@@ -1,9 +1,9 @@
 .container {
   min-width: 360px;
   background: var(--primary1);
-  padding: 56px 0;
+  padding: 112px 0;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
