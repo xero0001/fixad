@@ -10,9 +10,9 @@ export default function NavBar() {
     <header className={cx('nav-bar')}>
       <div className={cx('header')}>
         <img src="/assets/logo/logo.svg" alt="logo" />
-        <div className={cx('icon-wrap')}>
+        {/* <div className={cx('icon-wrap')}>
           <img src="/assets/icon/user_1.svg" alt="logo" />
-        </div>
+        </div> */}
       </div>
       {/* <nav>
         <ul>
