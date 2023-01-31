@@ -1,4 +1,4 @@
-import { METADATA } from '../../shared/const'
+import { METADATA } from '../../../shared/const'
 
 export default function Head() {
   return (

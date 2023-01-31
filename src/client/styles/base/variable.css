@@ -3,6 +3,18 @@
 
   --color-background-default: rgba(255, 255, 255, 1);
   --color-text-default: var(--colors-slate12);
+
+  --kakao: #fae100;
+  --secondary4: #fcc418;
+  --primary1: #eff7ff;
+  --primary4: #208df9;
+  --primary5: #347afe;
+  --red2: #fa4f38;
+  --gray6: #4c5561;
+  --gray7: #333c47;
+  --transparent2: rgba(51, 60, 71, 0.1);
+  --transparent5: rgba(51, 60, 71, 0.6);
+  --transparent6: rgba(51, 60, 71, 0.8);
 }
 
 /* [data-theme='dark'] {
