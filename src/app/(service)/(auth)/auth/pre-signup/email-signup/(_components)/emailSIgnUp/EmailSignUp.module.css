@@ -41,27 +41,11 @@
           line-height: 22px;
           outline: none;
           background: #f8f9fa;
-          color: transparent;
-          -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none; /* Safari */
-          -khtml-user-select: none; /* Konqueror HTML */
-          -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none;
 
           &:-webkit-autofill {
             -webkit-box-shadow: 0 0 0 1000px #f8f9fa inset;
             -webkit-text-fill-color: transparent !important;
           }
-        }
-
-        .value-indicator {
-          position: absolute;
-          padding: 13px 16px;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 22px;
-          pointer-events: none;
         }
       }
 
@@ -92,7 +76,7 @@
 
         .input-wrapper {
           input {
-            border: 1px solid rgba(250, 79, 56, 1);
+            border: 1px solid rgba(250, 79, 56, 1) !important;
             background: rgba(235, 85, 69, 0.1);
           }
         }
