@@ -13,9 +13,10 @@
   margin-bottom: 60px;
   font-size: 14px;
   line-height: 22px;
+  /* font-weight: 400; */
   color: var(--gray6);
 }
-.text_wrap > p > span {
+.text_wrap > p > b {
   margin-bottom: 60px;
   font-weight: 700;
 }
