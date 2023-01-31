@@ -17,7 +17,7 @@ export default function NavBar() {
       {/* <nav>
         <ul>
           <li>
-            <Link href={PATH.HOME}>가나다</Link>
+            <Link href={PATH.HOME}>HOME</Link>
           </li>
         </ul>
       </nav> */}
