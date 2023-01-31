@@ -20,7 +20,7 @@ const pretendard = localFont({
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="kr" suppressHydrationWarning={true} className={pretendard.className}>
+    <html lang="kr" suppressHydrationWarning={true} className={notoSansKr.className}>
       <head />
       <body>
         <div className={cx('root-layout')}>
