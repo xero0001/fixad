@@ -52,6 +52,19 @@ export default function UserInfoUpdate() {
     onSuccess: () => {
       setIsComplete(true)
     },
+    onError: error => {
+      if ((error as any).response?.errors[0].message === 'EXISTING_USER') {
+        setModalInfo({
+          isOpened: true,
+          desc: '',
+        })
+      } else {
+        setModalInfo({
+          isOpened: true,
+          desc: '알 수 없는 에러가 발생했습니다.',
+        })
+      }
+    },
   })
 
   async function handleSubmit() {
@@ -71,7 +84,7 @@ export default function UserInfoUpdate() {
       })
     }
 
-    if (!isLoading && !data?.validatePreSignupUser) {
+    if (!isLoading && !data?.validatePreSignupUser && !isError) {
       setModalInfo({
         isOpened: true,
         desc: '',
@@ -238,7 +251,7 @@ export default function UserInfoUpdate() {
           </Link>
         </>
       )}
-      {modalInfo.isOpened && <DuplicateModal />}
+      {modalInfo.isOpened && <DuplicateModal desc={modalInfo.desc} />}
     </div>
   )
 }

@@ -36,7 +36,10 @@ export default function EmailSignUp() {
     NEW_PASSWORD: '',
     PASSWORD_CONFIRM: '',
   })
-  const [isDuplicate, setIsDuplicate] = useState(false)
+  const [modalInfo, setModalInfo] = useState({
+    isOpened: false,
+    desc: '',
+  })
 
   function handleChange(e) {
     let { value, name } = e.target
@@ -89,7 +92,15 @@ export default function EmailSignUp() {
     },
     onError: error => {
       if ((error as any).response?.errors[0].message === 'EXISTING_USER') {
-        setIsDuplicate(true)
+        setModalInfo({
+          isOpened: true,
+          desc: '',
+        })
+      } else {
+        setModalInfo({
+          isOpened: true,
+          desc: '알 수 없는 에러가 발생했습니다.',
+        })
       }
     },
   })
@@ -158,7 +169,7 @@ export default function EmailSignUp() {
         <span>회원가입</span>
       </button>
       <SignUpBtnGroup {...{ buttonList }} />
-      {isDuplicate && <DuplicateModal />}
+      {modalInfo.isOpened && <DuplicateModal desc={modalInfo.desc} />}
     </div>
   )
 }
