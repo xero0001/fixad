@@ -52,6 +52,19 @@ export default function UserInfoUpdate() {
     onSuccess: () => {
       setIsComplete(true)
     },
+    onError: error => {
+      if ((error as any).response?.errors[0].message === 'EXISTING_USER') {
+        setModalInfo({
+          isOpened: true,
+          desc: '',
+        })
+      } else {
+        setModalInfo({
+          isOpened: true,
+          desc: '알 수 없는 에러가 발생했습니다.',
+        })
+      }
+    },
   })
 
   async function handleSubmit() {
@@ -59,7 +72,7 @@ export default function UserInfoUpdate() {
       email: email,
       id: Number(id),
       name: inputValue.NAME,
-      tel: inputValue.TEL,
+      tel: `${inputValue.TEL1}${inputValue.TEL2}${inputValue.TEL3}`,
     })
   }
 
@@ -71,7 +84,7 @@ export default function UserInfoUpdate() {
       })
     }
 
-    if (!isLoading && !data?.validatePreSignupUser) {
+    if (!isLoading && !data?.validatePreSignupUser && !isError) {
       setModalInfo({
         isOpened: true,
         desc: '',
@@ -94,11 +107,15 @@ export default function UserInfoUpdate() {
 
   const [inputValue, setInputValue] = useState({
     NAME: '',
-    TEL: '',
+    TEL1: '',
+    TEL2: '',
+    TEL3: '',
   })
   const [inputErrorMsg, setInputErrorMsg] = useState({
     NAME: '',
-    TEL: '',
+    TEL1: '',
+    TEL2: '',
+    TEL3: '',
   })
 
   function handleChange(e) {
@@ -115,7 +132,7 @@ export default function UserInfoUpdate() {
 
   function validateInputValue({ value, name }) {
     let nextInputErrorMsg = { ...inputErrorMsg }
-    if (REG_EXP?.[name] && !REG_EXP[name].test(value)) {
+    if (REG_EXP?.[name] && !REG_EXP?.[name].test(value)) {
       nextInputErrorMsg[name] = ERR_MSG[name]
       setInputErrorMsg(nextInputErrorMsg)
     } else {
@@ -124,15 +141,11 @@ export default function UserInfoUpdate() {
     }
   }
 
-  function TelParser(tel) {
-    if (tel.length < 4) return tel
-    if (tel.length < 7) return `${tel.slice(0, 3)}-${tel.slice(3)}`
-    if (tel.length < 11) return `${tel.slice(0, 3)}-${tel.slice(3, 6)}-${tel.slice(6)}`
-    return `${tel.slice(0, 3)}-${tel.slice(3, 7)}-${tel.slice(7)}`
-  }
-
   const isDisabled = Object.values(inputErrorMsg).some(err => !!err) || Object.values(inputValue).some(val => !val)
 
+  // inputErrMsg 의 TEL1, TEL2, TEL3 중 값이 있는 첫번째 값 가져오기
+  const firstTelErr = Object.entries(inputErrorMsg).find(([key, value]) => key.includes('TEL') && value.length > 0)?.[1]
+  console.log(firstTelErr)
   return (
     <div className={cx('container')}>
       {!isComplete ? (
@@ -170,28 +183,48 @@ export default function UserInfoUpdate() {
                   value={inputValue.NAME}
                   onChange={handleChange}
                 />
-                <span className={cx('value-indicator')}>{inputValue.NAME}</span>
               </div>
               <span className={cx('err-msg')}>{inputErrorMsg?.NAME}</span>
             </div>
-            <div className={cx('input-container', { errored: !!inputErrorMsg.TEL })}>
+            <div className={cx('input-container', { errored: !!firstTelErr })}>
               <label>
                 <span>휴대전화번호</span>
               </label>
               <div className={cx('input-wrapper')}>
                 <input
                   type="text"
-                  placeholder={`"-"없이 입력해주세요`}
-                  name="TEL"
-                  value={inputValue.TEL}
+                  placeholder={`010`}
+                  name="TEL1"
+                  value={inputValue.TEL1}
                   autoComplete="off"
                   className={cx('tel')}
-                  maxLength={11}
+                  maxLength={3}
                   onChange={handleChange}
                 />
-                <span className={cx('value-indicator')}>{TelParser(inputValue.TEL)}</span>
+                <span className={cx('bar')}>-</span>
+                <input
+                  type="text"
+                  placeholder={`1234`}
+                  name="TEL2"
+                  value={inputValue.TEL2}
+                  autoComplete="off"
+                  className={cx('tel')}
+                  maxLength={4}
+                  onChange={handleChange}
+                />
+                <span className={cx('bar')}>-</span>
+                <input
+                  type="text"
+                  placeholder={`5678`}
+                  name="TEL3"
+                  value={inputValue.TEL3}
+                  autoComplete="off"
+                  className={cx('tel')}
+                  maxLength={4}
+                  onChange={handleChange}
+                />
               </div>
-              <span className={cx('err-msg')}>{inputErrorMsg?.TEL}</span>
+              <span className={cx('err-msg')}>{firstTelErr}</span>
             </div>
           </div>
           <button className={cx('submit-btn')} disabled={isDisabled} onClick={handleSubmit}>
@@ -218,7 +251,7 @@ export default function UserInfoUpdate() {
           </Link>
         </>
       )}
-      {modalInfo.isOpened && <DuplicateModal />}
+      {modalInfo.isOpened && <DuplicateModal desc={modalInfo.desc} />}
     </div>
   )
 }

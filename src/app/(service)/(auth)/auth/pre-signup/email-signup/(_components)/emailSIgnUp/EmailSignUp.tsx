@@ -36,7 +36,10 @@ export default function EmailSignUp() {
     NEW_PASSWORD: '',
     PASSWORD_CONFIRM: '',
   })
-  const [isDuplicate, setIsDuplicate] = useState(false)
+  const [modalInfo, setModalInfo] = useState({
+    isOpened: false,
+    desc: '',
+  })
 
   function handleChange(e) {
     let { value, name } = e.target
@@ -79,10 +82,6 @@ export default function EmailSignUp() {
     }
   }
 
-  function masking(password) {
-    return password.replace(/./g, '*')
-  }
-
   const isDisabled = Object.values(inputErrorMsg).some(err => !!err) || Object.values(inputValue).some(val => !val)
 
   const { mutate } = useMutation(signupPreRegisteredUserMutation, {
@@ -93,7 +92,15 @@ export default function EmailSignUp() {
     },
     onError: error => {
       if ((error as any).response?.errors[0].message === 'EXISTING_USER') {
-        setIsDuplicate(true)
+        setModalInfo({
+          isOpened: true,
+          desc: '',
+        })
+      } else {
+        setModalInfo({
+          isOpened: true,
+          desc: '알 수 없는 에러가 발생했습니다.',
+        })
       }
     },
   })
@@ -122,7 +129,6 @@ export default function EmailSignUp() {
               value={inputValue.EMAIL}
               onChange={handleChange}
             />
-            <span className={cx('value-indicator')}>{inputValue.EMAIL}</span>
           </div>
           <span className={cx('err-msg')}>{inputErrorMsg?.EMAIL}</span>
         </div>
@@ -139,7 +145,6 @@ export default function EmailSignUp() {
               autoComplete="new-password"
               onChange={handleChange}
             />
-            <span className={cx('value-indicator')}>{masking(inputValue['NEW_PASSWORD'])}</span>
           </div>
           <span className={cx('err-msg')}>{inputErrorMsg?.['NEW_PASSWORD']}</span>
         </div>
@@ -156,7 +161,6 @@ export default function EmailSignUp() {
               autoComplete="new-password"
               onChange={handleChange}
             />
-            <span className={cx('value-indicator')}>{masking(inputValue.PASSWORD_CONFIRM)}</span>
           </div>
           <span className={cx('err-msg')}>{inputErrorMsg?.PASSWORD_CONFIRM}</span>
         </div>
@@ -165,7 +169,7 @@ export default function EmailSignUp() {
         <span>회원가입</span>
       </button>
       <SignUpBtnGroup {...{ buttonList }} />
-      {isDuplicate && <DuplicateModal />}
+      {modalInfo.isOpened && <DuplicateModal desc={modalInfo.desc} />}
     </div>
   )
 }
