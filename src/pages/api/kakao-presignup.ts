@@ -84,7 +84,8 @@ export default async function handler(req, res) {
       return
     } catch (e) {
       console.log(e)
-      res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?error=INTERNAL_SERVER_ERROR`)
+      res.status(200).json({ e })
+      // res.redirect(`${PATH.AUTH_PRESIGNUP_EXTRA}?error=INTERNAL_SERVER_ERROR`)
     }
   } else {
     // Handle any other HTTP method
