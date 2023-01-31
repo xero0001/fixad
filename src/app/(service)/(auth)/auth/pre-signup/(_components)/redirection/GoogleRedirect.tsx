@@ -25,7 +25,7 @@ export default function GoogleRedirect() {
         const message = e?.response?.data?.message
         router.push(`${PATH.AUTH_PRESIGNUP_EXTRA}?error=${message}`)
       })
-    const { id, email, accountType } = response.data
+    const { id, email, accountType } = (response as any)?.data
     router.push(`${PATH.AUTH_PRESIGNUP_EXTRA}?id=${id}&email=${email}&accountType=${accountType}`)
   }
 
