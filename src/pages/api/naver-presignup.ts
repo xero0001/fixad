@@ -46,7 +46,7 @@ export default async function handler(req, res) {
       // 이미 가입된 유저가 있다면
       if (existingUser) {
         if (existingUser?.isFinished) {
-          res.redirect(`${PATH.AUTH_PRESIGNUP}?error=DUPLICATED_EMAIL`)
+          res.redirect(`${PATH.AUTH_PRESIGNUP}?error=EXISTING_USER`)
         }
 
         await prisma.preRegisteredUser.update({
