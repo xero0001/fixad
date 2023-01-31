@@ -21,10 +21,6 @@ export default function VisionArea() {
             되고자 합니다.
           </Mobile>
         </p>
-
-        <div className={cx('illust')}>
-          <img src="/assets/illust/illust_127.svg" alt="illust_127" />
-        </div>
       </div>
     </div>
   )
