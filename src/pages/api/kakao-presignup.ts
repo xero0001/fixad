@@ -54,7 +54,7 @@ export default async function handler(req, res) {
       // 이미 가입된 유저가 있다면
       if (existingUser) {
         if (existingUser?.isFinished) {
-          throw new Error('DUPLICATED_EMAIL')
+          throw new Error('EXISTING_USER')
         }
 
         await prisma.preRegisteredUser.update({
@@ -86,7 +86,7 @@ export default async function handler(req, res) {
       return
     } catch (e) {
       console.log(e)
-      if (e.message !== 'DUPLICATED_EMAIL') {
+      if (e.message !== 'EXISTING_USER') {
         res.status(500).send({ message: 'INTERNAL_SERVER_ERROR' })
         return
       }

@@ -1,9 +1,11 @@
 .container {
   min-width: 360px;
-  margin-top: 56px;
   background: var(--primary1);
-  padding: 60px 0;
+  padding: 56px 0;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 .content_wrap {
   margin: 0 auto;
@@ -26,6 +28,7 @@
   line-height: 27px;
   letter-spacing: -0.02em;
   color: var(--transparent6);
+  font-weight: 400;
 }
 .illust_group_1,
 .illust_group_2 {
