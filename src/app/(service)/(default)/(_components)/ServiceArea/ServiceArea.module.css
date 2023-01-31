@@ -7,15 +7,17 @@
   margin-bottom: 16px;
   font-weight: 700;
   font-size: 28px;
+  line-height: 34px;
   color: var(--gray7);
 }
 .text_wrap > p {
   margin-bottom: 60px;
   font-size: 14px;
   line-height: 22px;
+  /* font-weight: 400; */
   color: var(--gray6);
 }
-.text_wrap > p > span {
+.text_wrap > p > b {
   margin-bottom: 60px;
   font-weight: 700;
 }
@@ -30,14 +32,15 @@
 /* Pc */
 @media (min-width: 1025px) {
   .container {
-    padding: 60px;
+    padding: 112px 16px;
   }
 }
 
 /* Mobile */
 @media (max-width: 1024px) {
   .container {
-    padding: 60px 32px;
+    padding: 112px 32px;
+    /* padding-top: 112px; */
   }
   .text_wrap {
     width: 296px;

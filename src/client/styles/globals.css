@@ -24,3 +24,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.fp-watermark {
+  display: none;
+}
