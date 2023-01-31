@@ -59,7 +59,7 @@ export default function UserInfoUpdate() {
       email: email,
       id: Number(id),
       name: inputValue.NAME,
-      tel: `${inputValue.TEL1}-${inputValue.TEL2}-${inputValue.TEL3}`,
+      tel: `${inputValue.TEL1}${inputValue.TEL2}${inputValue.TEL3}`,
     })
   }
 
