@@ -37,6 +37,7 @@ export default function UserInfoUpdate() {
   const id = searchParams.get('id')
   const email = searchParams.get('email')
   const accountType = searchParams.get('accountType')
+  const error = searchParams.get('error')
 
   const buttonList = allButtonList.filter(button => button.name !== accountType)
 
@@ -58,11 +59,13 @@ export default function UserInfoUpdate() {
           isOpened: true,
           desc: '',
         })
+        return
       } else {
         setModalInfo({
           isOpened: true,
           desc: '알 수 없는 에러가 발생했습니다.',
         })
+        return
       }
     },
   })
@@ -77,11 +80,20 @@ export default function UserInfoUpdate() {
   }
 
   useEffect(() => {
+    if (error && error === 'EXISTING_USER') {
+      setModalInfo({
+        isOpened: true,
+        desc: '',
+      })
+      return
+    }
+
     if (!(id && accountType && email)) {
       setModalInfo({
         isOpened: true,
         desc: '올바르지 않은 접근입니다.',
       })
+      return
     }
 
     if (!isLoading && !data?.validatePreSignupUser && !isError) {
@@ -89,6 +101,7 @@ export default function UserInfoUpdate() {
         isOpened: true,
         desc: '',
       })
+      return
     }
 
     if (isError) {
@@ -96,8 +109,9 @@ export default function UserInfoUpdate() {
         isOpened: true,
         desc: '알 수 없는 에러가 발생했습니다.',
       })
+      return
     }
-  }, [data, isLoading, isError])
+  }, [data, isLoading, isError, error])
 
   const [isComplete, setIsComplete] = useState(false)
   const [modalInfo, setModalInfo] = useState({
