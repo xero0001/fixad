@@ -17,13 +17,13 @@
 }
 .text_wrap {
   position: absolute;
-  width: 137px;
   z-index: 10;
 }
 .title,
 .date,
 .coming {
   text-align: left;
+  display: flex;
 }
 .title {
   padding-bottom: 6px;
