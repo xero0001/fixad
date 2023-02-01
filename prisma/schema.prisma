@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 enum GENDER {
@@ -20,26 +20,60 @@ enum ACCOUNT_TYPE {
   GOOGLE
 }
 
+enum ROLE {
+  USER
+  MERCHANT
+  ADMIN
+}
+
 model PreRegisteredUser {
-  id            Int      @id @default(autoincrement())
-  email         String   @unique
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  name          String   @default("")
-  password      String   @default("")
-  tel           String   @default("")
+  name     String @default("")
+  password String @default("")
+  tel      String @default("")
 
-  isFinished    Boolean  @default(false)
+  isFinished Boolean @default(false)
 
-  accountType   ACCOUNT_TYPE
+  accountType ACCOUNT_TYPE
 }
 
 model Log {
-  id   String @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
 
   type String
 
   value String
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String   @unique
+  name      String
+  password  String
+
+  isWithdrawn Boolean      @default(false)
+  accoutType  ACCOUNT_TYPE @default(EMAIL)
+  role        ROLE         @default(USER)
+
+  profile Profile?
+}
+
+model Profile {
+  id           Int    @id @default(autoincrement())
+  tel          String @default("")
+  zipCode      String @default("")
+  address      String @default("")
+  extraAddress String @default("")
+  misc         Json   @default("{}")
+  gender       GENDER @default(NONE)
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int  @unique
 }
