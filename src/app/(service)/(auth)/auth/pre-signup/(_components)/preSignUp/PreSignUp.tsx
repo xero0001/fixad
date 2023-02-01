@@ -8,9 +8,9 @@ import { ACCOUNT_TYPE } from '@prisma/client'
 const cx = classNames.bind(styles)
 
 const buttonList: { name: ACCOUNT_TYPE }[] = [
-  {
-    name: ACCOUNT_TYPE.NAVER,
-  },
+  // {
+  //   name: ACCOUNT_TYPE.NAVER,
+  // },
   {
     name: ACCOUNT_TYPE.GOOGLE,
   },

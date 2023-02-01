@@ -13,9 +13,9 @@ import DuplicateModal from '../../../(_components)/duplicateModal/DuplicateModal
 const cx = classNames.bind(styles)
 
 const buttonList: { name: ACCOUNT_TYPE }[] = [
-  {
-    name: ACCOUNT_TYPE.NAVER,
-  },
+  // {
+  //   name: ACCOUNT_TYPE.NAVER,
+  // },
   {
     name: ACCOUNT_TYPE.GOOGLE,
   },
