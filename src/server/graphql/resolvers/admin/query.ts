@@ -14,6 +14,7 @@ import {
 import { compare, hash } from 'bcryptjs'
 import { generateToken } from '@server/apollo/utils'
 import prisma from '@server/prisma'
+import { ApolloError } from 'apollo-server-micro'
 
 export const AdminQuery = extendType({
   type: 'Query',
@@ -26,26 +27,29 @@ export const AdminQuery = extendType({
         take: nonNull(intArg()),
       },
       resolve: async (_, { searchKeyword, skip, take }, ctx) => {
+        if (!searchKeyword) return null
         return prisma.preRegisteredUser.findMany({
           where: {
             isFinished: true,
-            OR: [
-              {
-                name: {
-                  contains: searchKeyword,
-                },
-              },
-              {
-                tel: {
-                  contains: searchKeyword,
-                },
-              },
-              {
-                email: {
-                  contains: searchKeyword,
-                },
-              },
-            ],
+            OR: searchKeyword
+              ? [
+                  {
+                    name: {
+                      contains: searchKeyword,
+                    },
+                  },
+                  {
+                    tel: {
+                      contains: searchKeyword,
+                    },
+                  },
+                  {
+                    email: {
+                      contains: searchKeyword,
+                    },
+                  },
+                ]
+              : undefined,
           },
           take,
           skip,
@@ -65,23 +69,25 @@ export const AdminQuery = extendType({
         return prisma.preRegisteredUser.count({
           where: {
             isFinished: true,
-            OR: [
-              {
-                name: {
-                  contains: searchKeyword,
-                },
-              },
-              {
-                tel: {
-                  contains: searchKeyword,
-                },
-              },
-              {
-                email: {
-                  contains: searchKeyword,
-                },
-              },
-            ],
+            OR: searchKeyword
+              ? [
+                  {
+                    name: {
+                      contains: searchKeyword,
+                    },
+                  },
+                  {
+                    tel: {
+                      contains: searchKeyword,
+                    },
+                  },
+                  {
+                    email: {
+                      contains: searchKeyword,
+                    },
+                  },
+                ]
+              : undefined,
           },
         })
       },
