@@ -24,6 +24,7 @@ scalar JSON
 type Mutation {
   finishSignupPreRegisteredUser(email: String!, id: Int!, name: String!, tel: String!): PreRegisteredUser
   signupPreRegisteredUser(email: String!, password: String!): PreRegisteredUser
+  testMutation(id: Int!): PreRegisteredUser
 }
 
 type PreRegisteredUser {
@@ -37,6 +38,33 @@ type PreRegisteredUser {
   updatedAt: DateTime
 }
 
+type Profile {
+  address: String
+  extraAddress: String
+  gender: String
+  id: Int
+  misc: JSON
+  tel: String
+  user: User
+  userId: Int
+  zipCode: String
+}
+
 type Query {
+  adminPreRegisteredUsers(searchKeyword: String, skip: Int!, take: Int!): [PreRegisteredUser]
+  adminPreRegisteredUsersCount(searchKeyword: String): Int
   validatePreSignupUser(accountType: ACCOUNT_TYPE!, email: String!, id: Int!): Boolean
+}
+
+type User {
+  accountType: ACCOUNT_TYPE
+  createdAt: DateTime
+  email: String
+  id: Int
+  isWithdrawn: Boolean
+  name: String
+  profile: Profile
+  profileId: Int
+  role: String
+  updatedAt: DateTime
 }
