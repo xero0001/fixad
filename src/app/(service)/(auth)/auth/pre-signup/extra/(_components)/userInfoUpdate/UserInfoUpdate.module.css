@@ -147,5 +147,16 @@
     border-radius: 12px;
     background: #208df9;
     color: #ffffff;
+
+    &.with-emoji {
+      column-gap: 8px;
+      align-items: center;
+    }
   }
+}
+
+.text-with-emoji {
+  display: flex;
+  align-items: center;
+  column-gap: 3px;
 }
