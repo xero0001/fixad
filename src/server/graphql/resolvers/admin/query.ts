@@ -27,7 +27,6 @@ export const AdminQuery = extendType({
         take: nonNull(intArg()),
       },
       resolve: async (_, { searchKeyword, skip, take }, ctx) => {
-        if (!searchKeyword) return null
         return prisma.preRegisteredUser.findMany({
           where: {
             isFinished: true,
