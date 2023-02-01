@@ -14,7 +14,7 @@ export default function Head() {
       <meta name="twitter:title" content={METADATA.TITLE} />
       <meta name="twitter:description" content={METADATA.DESC} />
       <meta name="twitter:image" content={METADATA.IMAGE_RECTANGLE} />
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport" />
       <link rel="icon" href="/favicon.ico" />
     </>
   )
