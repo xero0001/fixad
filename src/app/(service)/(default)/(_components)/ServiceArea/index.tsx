@@ -41,7 +41,7 @@ const serviceContents = {
     {
       id: 6,
       title: '특별활동',
-      subTitle: '특기 교사 스케쥴 바로 체크 서비스',
+      subTitle: '특기 교사 스케줄 바로 체크 서비스',
       description:
         '인기 특기 교사님 수업 가능시간 확인\n지역별 주제별 특기강사 검색 기능\n특별활동 교사 구인 공고 업로드',
     },
@@ -69,7 +69,7 @@ const serviceContents = {
       id: 10,
       title: '통합 서류서식',
       subTitle: '공식 기관 발행 문서 양식',
-      description: '개정누리과정 세부요소 한 눈에 보기\n공식 기관 발행 문서 양식\nPPT과 HWP로 제공되는 문서서식',
+      description: '개정누리과정 세부요소 한눈에 보기\n공식 기관 발행 문서 양식\nPPT과 HWP로 제공되는 문서서식',
     },
   ],
 }
@@ -87,12 +87,12 @@ export default function ServiceArea({ isActive }) {
         </h2>
         <p className={cx('desc')}>
           <Pc>
-            <b>티처클라우드</b>는 구름처럼 선생님 곁에 떠있겠습니다.
+            <b>티처클라우드</b>는 구름처럼 선생님 곁에 떠 있겠습니다.
             <br />
             아이들의 놀이와 선생님의 문서 작업에 필요한 정보가 있다면 바로 검색하세요.
           </Pc>
           <Mobile>
-            <b>티처클라우드</b>는 구름처럼 선생님 곁에 떠있겠습니다.
+            <b>티처클라우드</b>는 구름처럼 선생님 곁에 떠 있겠습니다.
             <br />
             아이들의 놀이와 선생님의 문서 작업에
             <br />
