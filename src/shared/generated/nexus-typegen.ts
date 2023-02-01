@@ -67,7 +67,30 @@ export interface NexusGenObjects {
     tel?: string | null; // String
     updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
   }
+  Profile: { // root type
+    address?: string | null; // String
+    extraAddress?: string | null; // String
+    gender?: string | null; // String
+    id?: number | null; // Int
+    misc?: NexusGenScalars['JSON'] | null; // JSON
+    tel?: string | null; // String
+    user?: NexusGenRootTypes['User'] | null; // User
+    userId?: number | null; // Int
+    zipCode?: string | null; // String
+  }
   Query: {};
+  User: { // root type
+    accountType?: NexusGenEnums['ACCOUNT_TYPE'] | null; // ACCOUNT_TYPE
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    email?: string | null; // String
+    id?: number | null; // Int
+    isWithdrawn?: boolean | null; // Boolean
+    name?: string | null; // String
+    profile?: NexusGenRootTypes['Profile'] | null; // Profile
+    profileId?: number | null; // Int
+    role?: string | null; // String
+    updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
+  }
 }
 
 export interface NexusGenInterfaces {
@@ -84,6 +107,7 @@ export interface NexusGenFieldTypes {
   Mutation: { // field return type
     finishSignupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
     signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
+    testMutation: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
   }
   PreRegisteredUser: { // field return type
     accountType: string | null; // String
@@ -95,8 +119,33 @@ export interface NexusGenFieldTypes {
     tel: string | null; // String
     updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
   }
+  Profile: { // field return type
+    address: string | null; // String
+    extraAddress: string | null; // String
+    gender: string | null; // String
+    id: number | null; // Int
+    misc: NexusGenScalars['JSON'] | null; // JSON
+    tel: string | null; // String
+    user: NexusGenRootTypes['User'] | null; // User
+    userId: number | null; // Int
+    zipCode: string | null; // String
+  }
   Query: { // field return type
+    adminPreRegisteredUsers: Array<NexusGenRootTypes['PreRegisteredUser'] | null> | null; // [PreRegisteredUser]
+    adminPreRegisteredUsersCount: number | null; // Int
     validatePreSignupUser: boolean | null; // Boolean
+  }
+  User: { // field return type
+    accountType: NexusGenEnums['ACCOUNT_TYPE'] | null; // ACCOUNT_TYPE
+    createdAt: NexusGenScalars['DateTime'] | null; // DateTime
+    email: string | null; // String
+    id: number | null; // Int
+    isWithdrawn: boolean | null; // Boolean
+    name: string | null; // String
+    profile: NexusGenRootTypes['Profile'] | null; // Profile
+    profileId: number | null; // Int
+    role: string | null; // String
+    updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
   }
 }
 
@@ -104,6 +153,7 @@ export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
     finishSignupPreRegisteredUser: 'PreRegisteredUser'
     signupPreRegisteredUser: 'PreRegisteredUser'
+    testMutation: 'PreRegisteredUser'
   }
   PreRegisteredUser: { // field return type name
     accountType: 'String'
@@ -115,8 +165,33 @@ export interface NexusGenFieldTypeNames {
     tel: 'String'
     updatedAt: 'DateTime'
   }
+  Profile: { // field return type name
+    address: 'String'
+    extraAddress: 'String'
+    gender: 'String'
+    id: 'Int'
+    misc: 'JSON'
+    tel: 'String'
+    user: 'User'
+    userId: 'Int'
+    zipCode: 'String'
+  }
   Query: { // field return type name
+    adminPreRegisteredUsers: 'PreRegisteredUser'
+    adminPreRegisteredUsersCount: 'Int'
     validatePreSignupUser: 'Boolean'
+  }
+  User: { // field return type name
+    accountType: 'ACCOUNT_TYPE'
+    createdAt: 'DateTime'
+    email: 'String'
+    id: 'Int'
+    isWithdrawn: 'Boolean'
+    name: 'String'
+    profile: 'Profile'
+    profileId: 'Int'
+    role: 'String'
+    updatedAt: 'DateTime'
   }
 }
 
@@ -132,8 +207,19 @@ export interface NexusGenArgTypes {
       email: string; // String!
       password: string; // String!
     }
+    testMutation: { // args
+      id: number; // Int!
+    }
   }
   Query: {
+    adminPreRegisteredUsers: { // args
+      searchKeyword?: string | null; // String
+      skip: number; // Int!
+      take: number; // Int!
+    }
+    adminPreRegisteredUsersCount: { // args
+      searchKeyword?: string | null; // String
+    }
     validatePreSignupUser: { // args
       accountType: NexusGenEnums['ACCOUNT_TYPE']; // ACCOUNT_TYPE!
       email: string; // String!
