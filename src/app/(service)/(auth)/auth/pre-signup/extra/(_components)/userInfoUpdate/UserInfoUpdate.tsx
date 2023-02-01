@@ -16,9 +16,9 @@ import DuplicateModal from '../../../(_components)/duplicateModal/DuplicateModal
 const cx = classNames.bind(styles)
 
 const allButtonList: { name: ACCOUNT_TYPE }[] = [
-  {
-    name: ACCOUNT_TYPE.NAVER,
-  },
+  // {
+  //   name: ACCOUNT_TYPE.NAVER,
+  // },
   {
     name: ACCOUNT_TYPE.GOOGLE,
   },
@@ -238,7 +238,7 @@ export default function UserInfoUpdate() {
             <Image src={`/assets/congratulation/congratulation.png`} alt={'congratulation'} width={32} height={32} />
           </div>
           <h1>
-            김티처님, 티처클라우드의 회원이
+            {`${inputValue.NAME}님, 티처클라우드의 회원이`}
             <br />
             되신것을 환영합니다.
           </h1>

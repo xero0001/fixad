@@ -18,7 +18,7 @@ export default function JoinArea({ isActive }) {
           <img className={cx('illust')} src="/assets/illust/illust_130.svg" alt="illust_130" />
         </div>
         <Link href={PATH.AUTH_PRESIGNUP} className={cx('join_button')}>
-          회원 가입하기
+          미리 가입하기
         </Link>
       </div>
     </div>
