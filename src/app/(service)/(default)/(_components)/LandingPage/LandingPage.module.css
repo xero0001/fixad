@@ -1,3 +1,17 @@
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .fullpage {
   &.s1 {
     background-color: var(--primary1);
@@ -56,5 +70,34 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+.scroll-btn {
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  line-height: 12px;
+  font-size: 10px;
+  animation: up-down 1.5s infinite ease-in-out;
+  color: rgba(66, 133, 244, 1);
+
+  &.white {
+    color: #ffffff;
+  }
+
+  &.disabled {
+    display: none;
+  }
+
+  .scroll-icon {
+    width: 24px;
+    height: 24px;
   }
 }
