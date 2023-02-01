@@ -113,7 +113,12 @@ export default function UserInfoUpdate() {
     }
   }, [data, isLoading, isError, error])
 
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
   const [isComplete, setIsComplete] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const [modalInfo, setModalInfo] = useState({
     isOpened: false,
     desc: '',
@@ -159,20 +164,20 @@ export default function UserInfoUpdate() {
 
   // inputErrMsg 의 TEL1, TEL2, TEL3 중 값이 있는 첫번째 값 가져오기
   const firstTelErr = Object.entries(inputErrorMsg).find(([key, value]) => key.includes('TEL') && value.length > 0)?.[1]
-  console.log(firstTelErr)
   return (
-    <div className={cx('container')}>
-      {!isComplete ? (
-        <>
-          <h1>회원 가입</h1>
-          <div className={cx('form-container')}>
-            <div className={cx('input-container')}>
-              <label>
-                <span>이메일</span>
-              </label>
-              <div className={cx('input-wrapper')}>
-                {email}
-                {/* <input
+    isMounted && (
+      <div className={cx('container')}>
+        {!isComplete ? (
+          <>
+            <h1>회원 가입</h1>
+            <div className={cx('form-container')}>
+              <div className={cx('input-container')}>
+                <label>
+                  <span>이메일</span>
+                </label>
+                <div className={cx('input-wrapper')}>
+                  {email}
+                  {/* <input
               type="text"
               placeholder="이름을 입력해주세요."
               name="NAME"
@@ -181,91 +186,102 @@ export default function UserInfoUpdate() {
               onChange={handleChange}
             />
             <span className={cx('value-indicator')}>{inputValue.NAME}</span> */}
+                </div>
+                <span className={cx('err-msg')}></span>
               </div>
-              <span className={cx('err-msg')}></span>
-            </div>
-            <div className={cx('input-container', { errored: !!inputErrorMsg.NAME })}>
-              <label>
-                <span>이름</span>
-              </label>
-              <div className={cx('input-wrapper')}>
-                <input
-                  type="text"
-                  placeholder="이름을 입력해주세요."
-                  name="NAME"
-                  autoComplete="off"
-                  value={inputValue.NAME}
-                  onChange={handleChange}
-                />
+              <div className={cx('input-container', { errored: !!inputErrorMsg.NAME })}>
+                <label>
+                  <span>이름</span>
+                </label>
+                <div className={cx('input-wrapper')}>
+                  <input
+                    type="text"
+                    placeholder="이름을 입력해주세요."
+                    name="NAME"
+                    autoComplete="off"
+                    value={inputValue.NAME}
+                    onChange={handleChange}
+                  />
+                </div>
+                <span className={cx('err-msg')}>{inputErrorMsg?.NAME}</span>
               </div>
-              <span className={cx('err-msg')}>{inputErrorMsg?.NAME}</span>
-            </div>
-            <div className={cx('input-container', { errored: !!firstTelErr })}>
-              <label>
-                <span>휴대전화번호</span>
-              </label>
-              <div className={cx('input-wrapper')}>
-                <input
-                  type="text"
-                  placeholder={`010`}
-                  name="TEL1"
-                  value={inputValue.TEL1}
-                  autoComplete="off"
-                  className={cx('tel')}
-                  maxLength={3}
-                  onChange={handleChange}
-                />
-                <span className={cx('bar')}>-</span>
-                <input
-                  type="text"
-                  placeholder={`1234`}
-                  name="TEL2"
-                  value={inputValue.TEL2}
-                  autoComplete="off"
-                  className={cx('tel')}
-                  maxLength={4}
-                  onChange={handleChange}
-                />
-                <span className={cx('bar')}>-</span>
-                <input
-                  type="text"
-                  placeholder={`5678`}
-                  name="TEL3"
-                  value={inputValue.TEL3}
-                  autoComplete="off"
-                  className={cx('tel')}
-                  maxLength={4}
-                  onChange={handleChange}
-                />
+              <div className={cx('input-container', { errored: !!firstTelErr })}>
+                <label>
+                  <span>휴대전화번호</span>
+                </label>
+                <div className={cx('input-wrapper')}>
+                  <input
+                    type="text"
+                    placeholder={`010`}
+                    name="TEL1"
+                    value={inputValue.TEL1}
+                    autoComplete="off"
+                    className={cx('tel')}
+                    maxLength={3}
+                    onChange={handleChange}
+                  />
+                  <span className={cx('bar')}>-</span>
+                  <input
+                    type="text"
+                    placeholder={`1234`}
+                    name="TEL2"
+                    value={inputValue.TEL2}
+                    autoComplete="off"
+                    className={cx('tel')}
+                    maxLength={4}
+                    onChange={handleChange}
+                  />
+                  <span className={cx('bar')}>-</span>
+                  <input
+                    type="text"
+                    placeholder={`5678`}
+                    name="TEL3"
+                    value={inputValue.TEL3}
+                    autoComplete="off"
+                    className={cx('tel')}
+                    maxLength={4}
+                    onChange={handleChange}
+                  />
+                </div>
+                <span className={cx('err-msg')}>{firstTelErr}</span>
               </div>
-              <span className={cx('err-msg')}>{firstTelErr}</span>
             </div>
-          </div>
-          <button className={cx('submit-btn')} disabled={isDisabled} onClick={handleSubmit}>
-            <span>회원가입</span>
-          </button>
-          <SignUpBtnGroup {...{ buttonList }} />
-        </>
-      ) : (
-        <>
-          <div className={cx('congratulation-icon')}>
-            <Image src={`/assets/congratulation/congratulation.png`} alt={'congratulation'} width={32} height={32} />
-          </div>
-          <h1>
-            {`${inputValue.NAME}님, 티처클라우드의 회원이`}
-            <br />
-            되신것을 환영합니다.
-          </h1>
-          <p className={cx('sub-title')}>
-            선생님이 찾는 모든 것<br />
-            티처 클라우드에서 바로 해결하세요.
-          </p>
-          <Link className={cx('confirm-btn')} href={PATH.HOME}>
-            <span>확인</span>
-          </Link>
-        </>
-      )}
-      {modalInfo.isOpened && <DuplicateModal desc={modalInfo.desc} />}
-    </div>
+            <button className={cx('submit-btn')} disabled={isDisabled} onClick={handleSubmit}>
+              <span>회원가입</span>
+            </button>
+            <SignUpBtnGroup {...{ buttonList }} />
+          </>
+        ) : (
+          <>
+            <div className={cx('congratulation-icon')}>
+              <Image src={`/assets/congratulation/congratulation.png`} alt={'congratulation'} width={32} height={32} />
+            </div>
+            <h1>
+              {`${inputValue.NAME}님, 티처클라우드의 회원이`}
+              <br />
+              되신것을 환영합니다.
+              <br />
+              <div className={cx('text-with-emoji')}>
+                <span>2월 신학기 때부터 도와드릴게요</span>
+                <Image src={`/assets/emoji/winking_face.png`} alt={'winkin-face-emoji'} width={28} height={27} />
+              </div>
+            </h1>
+            <p className={cx('sub-title')}>
+              선생님이 찾는 모든 것<br />
+              티처클라우드에서 바로 해결하세요.
+              <div className={cx('text-with-emoji')}>
+                <span>*혜택은 오픈 전 메일로 전달드릴게요</span>
+                <Image src={`/assets/emoji/package.png`} alt={'package-emoji'} width={24} height={24} />
+              </div>
+            </p>
+            <Link className={cx('confirm-btn', 'with-emoji')} href={PATH.HOME}>
+              <span>신학기 때 봬요</span>
+              <Image src={`/assets/emoji/raised_hand.png`} alt={'raised_hand-emoji'} width={24} height={27} />
+            </Link>
+          </>
+        )}
+        {modalInfo.isOpened && <DuplicateModal desc={modalInfo.desc} />}
+      </div>
+    )
   )
 }

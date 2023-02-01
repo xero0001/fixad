@@ -32,6 +32,7 @@ export default function LandingPage() {
         // licenseKey={''}
         onLeave={() => {}}
         scrollingSpeed={500} /* Options here */
+        touchSensitivity={80}
         render={({ state, fullpageApi }) => {
           const activeSection = fullpageApi?.getActiveSection()
           // @ts-ignore
