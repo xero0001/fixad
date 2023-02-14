@@ -22,6 +22,7 @@ scalar DateTime
 scalar JSON
 
 type Mutation {
+  adminDeletePreRegisteredUsers(idList: [Int!]!): Int
   finishSignupPreRegisteredUser(email: String!, id: Int!, name: String!, tel: String!): PreRegisteredUser
   signupPreRegisteredUser(email: String!, password: String!): PreRegisteredUser
   testMutation(id: Int!): PreRegisteredUser
@@ -51,8 +52,8 @@ type Profile {
 }
 
 type Query {
-  adminPreRegisteredUsers(searchKeyword: String, skip: Int!, take: Int!): [PreRegisteredUser]
-  adminPreRegisteredUsersCount(searchKeyword: String): Int
+  adminPreRegisteredUsers(accountType: ACCOUNT_TYPE, searchKeyword: String, skip: Int!, take: Int!): [PreRegisteredUser]
+  adminPreRegisteredUsersCount(accountType: ACCOUNT_TYPE, searchKeyword: String): Int
   validatePreSignupUser(accountType: ACCOUNT_TYPE!, email: String!, id: Int!): Boolean
 }
 

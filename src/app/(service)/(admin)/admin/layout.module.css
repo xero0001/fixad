@@ -1,0 +1,120 @@
+.admin-page-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #fcfcfc;
+
+  .left-nav-bar {
+    width: fit-content;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: #ffffff;
+
+    .left-nav-bar-content {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      box-shadow: 0px 3px 6px #00000029;
+      -moz-box-shadow: 0px 3px 6px #00000029;
+      -webkit-box-shadow: 0px 3px 6px #00000029;
+
+      .nav-item-group {
+        border-bottom: 1px solid #ebebeb;
+        padding: 16px 0 16px 0;
+
+        .nav-item-list {
+          display: flex;
+          flex-direction: column;
+          row-gap: 3px;
+
+          .nav-item {
+            min-width: 205px;
+            font-size: 15px;
+            line-height: 21px;
+            font-weight: 500;
+            padding: 11px 27px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: 16px;
+            transition: 0.2s ease-in-out;
+
+            &.active {
+              background: var(--primary5);
+              color: white;
+            }
+
+            &:hover {
+              background: var(--primary5);
+              color: white;
+            }
+
+            .icon {
+              width: 20px;
+              height: 20px;
+            }
+
+            &.home {
+              font-size: 14px;
+              line-height: 20px;
+              column-gap: 7px;
+            }
+          }
+
+          .sub-nav-item-wrapper {
+            background-color: #f5f5f5;
+
+            .sub-nav-item {
+              padding: 11px 27px;
+              padding-left: 64px;
+              font-size: 14px;
+              color: rgb(51, 51, 51);
+              display: block;
+
+              &.active {
+                /* background: #90d1ca; */
+                background-color: var(--color-gray-dimmed);
+                /* color: white; */
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    padding: 0 0 0 25px;
+    flex-direction: column;
+
+    .admin-page-title {
+      user-select: none;
+      width: 100%;
+      display: flex;
+      margin: 24px 0 0 0;
+
+      .title-item {
+        font-size: 15px;
+        line-height: 21px;
+        font-weight: 900;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 7px;
+
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .content {
+      width: 100%;
+      flex-grow: 1;
+    }
+  }
+}

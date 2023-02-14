@@ -1,0 +1,24 @@
+.pagination {
+  margin-top: 48px;
+
+  .pagination-list {
+    display: flex;
+    column-gap: 11px;
+    justify-content: center;
+
+    .pagination-item {
+      width: 28px;
+      height: 28px;
+      border-radius: 2px;
+      font-size: 11px;
+      line-height: 16px;
+      font-weight: 500;
+      color: var(--color-text-default);
+
+      &.active {
+        color: white;
+        background: var(--primary4);
+      }
+    }
+  }
+}

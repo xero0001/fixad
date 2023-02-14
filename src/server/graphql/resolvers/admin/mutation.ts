@@ -32,5 +32,22 @@ export const AdminMutation = extendType({
         })
       },
     })
+
+    t.int('adminDeletePreRegisteredUsers', {
+      args: {
+        idList: nonNull(list(nonNull(intArg()))),
+      },
+      resolve: async (_, { idList }, ctx) => {
+        const deletedUsers = await prisma.preRegisteredUser.deleteMany({
+          where: {
+            id: {
+              in: idList,
+            },
+          },
+        })
+
+        return deletedUsers.count
+      },
+    })
   },
 })

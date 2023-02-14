@@ -22,14 +22,16 @@ export const AdminQuery = extendType({
     t.list.field('adminPreRegisteredUsers', {
       type: 'PreRegisteredUser',
       args: {
+        accountType: arg({ type: 'ACCOUNT_TYPE' }),
         searchKeyword: stringArg(),
         skip: nonNull(intArg()),
         take: nonNull(intArg()),
       },
-      resolve: async (_, { searchKeyword, skip, take }, ctx) => {
-        return prisma.preRegisteredUser.findMany({
+      resolve: async (_, { accountType, searchKeyword, skip, take }, ctx) => {
+        const users = await prisma.preRegisteredUser.findMany({
           where: {
             isFinished: true,
+            accountType: accountType ? accountType : undefined,
             OR: searchKeyword
               ? [
                   {
@@ -50,24 +52,31 @@ export const AdminQuery = extendType({
                 ]
               : undefined,
           },
+
           take,
           skip,
           orderBy: {
             createdAt: 'desc',
           },
         })
+
+        // console.log({ users })
+
+        return users
       },
     })
 
     t.field('adminPreRegisteredUsersCount', {
       type: 'Int',
       args: {
+        accountType: arg({ type: 'ACCOUNT_TYPE' }),
         searchKeyword: stringArg(),
       },
-      resolve: async (_, { searchKeyword }, ctx) => {
-        return prisma.preRegisteredUser.count({
+      resolve: async (_, { accountType, searchKeyword }, ctx) => {
+        const count = await prisma.preRegisteredUser.count({
           where: {
             isFinished: true,
+            accountType: accountType ? accountType : undefined,
             OR: searchKeyword
               ? [
                   {
@@ -89,6 +98,10 @@ export const AdminQuery = extendType({
               : undefined,
           },
         })
+
+        // console.log({ count })
+
+        return count
       },
     })
   },

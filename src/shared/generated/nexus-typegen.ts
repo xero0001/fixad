@@ -105,6 +105,7 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnu
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
+    adminDeletePreRegisteredUsers: number | null; // Int
     finishSignupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
     signupPreRegisteredUser: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
     testMutation: NexusGenRootTypes['PreRegisteredUser'] | null; // PreRegisteredUser
@@ -151,6 +152,7 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
+    adminDeletePreRegisteredUsers: 'Int'
     finishSignupPreRegisteredUser: 'PreRegisteredUser'
     signupPreRegisteredUser: 'PreRegisteredUser'
     testMutation: 'PreRegisteredUser'
@@ -197,6 +199,9 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
+    adminDeletePreRegisteredUsers: { // args
+      idList: number[]; // [Int!]!
+    }
     finishSignupPreRegisteredUser: { // args
       email: string; // String!
       id: number; // Int!
@@ -213,11 +218,13 @@ export interface NexusGenArgTypes {
   }
   Query: {
     adminPreRegisteredUsers: { // args
+      accountType?: NexusGenEnums['ACCOUNT_TYPE'] | null; // ACCOUNT_TYPE
       searchKeyword?: string | null; // String
       skip: number; // Int!
       take: number; // Int!
     }
     adminPreRegisteredUsersCount: { // args
+      accountType?: NexusGenEnums['ACCOUNT_TYPE'] | null; // ACCOUNT_TYPE
       searchKeyword?: string | null; // String
     }
     validatePreSignupUser: { // args
