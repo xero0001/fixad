@@ -102,8 +102,6 @@ export default function AdminExploreComponent({
 
   const { data, totalCount, isLoading } = useExplore(queryVariables)
 
-  console.log({ data, totalCount, isLoading, queryVariables })
-
   function handleSelectTab(groupValue: string, tabValue: string) {
     let newQuery: any = {}
     searchParams.forEach((value, key) => {

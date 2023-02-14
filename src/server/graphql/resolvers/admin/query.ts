@@ -28,7 +28,7 @@ export const AdminQuery = extendType({
         take: nonNull(intArg()),
       },
       resolve: async (_, { accountType, searchKeyword, skip, take }, ctx) => {
-        const users = await prisma.preRegisteredUser.findMany({
+        return prisma.preRegisteredUser.findMany({
           where: {
             isFinished: true,
             accountType: accountType ? accountType : undefined,
@@ -59,10 +59,6 @@ export const AdminQuery = extendType({
             createdAt: 'desc',
           },
         })
-
-        // console.log({ users })
-
-        return users
       },
     })
 
@@ -73,7 +69,7 @@ export const AdminQuery = extendType({
         searchKeyword: stringArg(),
       },
       resolve: async (_, { accountType, searchKeyword }, ctx) => {
-        const count = await prisma.preRegisteredUser.count({
+        return prisma.preRegisteredUser.count({
           where: {
             isFinished: true,
             accountType: accountType ? accountType : undefined,
@@ -98,10 +94,6 @@ export const AdminQuery = extendType({
               : undefined,
           },
         })
-
-        // console.log({ count })
-
-        return count
       },
     })
   },

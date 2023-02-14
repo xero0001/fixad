@@ -7,8 +7,6 @@ export const exploreQueryTemplate =
       enabled: !!(enabled && variables),
     })
 
-    console.log({ data, isLoading, enabled, variables })
-
     return {
       data: data?.[key] ?? ([] as any),
       totalCount: data?.[`${key}Count`] ?? 0,
