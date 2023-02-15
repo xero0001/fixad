@@ -18,6 +18,8 @@ import classNames from 'classnames/bind'
 import styles from './LandingPage.module.css'
 const cx = classNames.bind(styles)
 
+const FULLPAGE_LICENSE_KEY = '0L36I-3JVBI-OHZ87-IJR3H-QNIWN'
+
 export default function LandingPage() {
   const [activeSectionNo, setActiveSectionNo] = useState(0)
 
@@ -29,7 +31,7 @@ export default function LandingPage() {
       </div>
       <ReactFullpage
         //fullpage options
-        // licenseKey={''}
+        licenseKey={FULLPAGE_LICENSE_KEY}
         onLeave={() => {}}
         scrollingSpeed={500} /* Options here */
         touchSensitivity={5}
