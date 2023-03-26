@@ -1,5 +1,11 @@
 import FourColumnsDark from './FourColumnsDark'
+import FourColumns from './FourColumns'
 
 export default function () {
-  return <FourColumnsDark />
+  // return <FourColumnsDark />
+  return (
+    <div className="border-t border-t-gray-200">
+      <FourColumns />
+    </div>
+  )
 }
