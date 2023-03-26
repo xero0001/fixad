@@ -1,3 +1,5 @@
+import FourColumns from '../../(_components)/Footer/FourColumns'
+
 export default function Footer() {
-  return <div className="border-t border-t-gray-200">ABC</div>
+  return <FourColumns />
 }
