@@ -1,4 +1,4 @@
-import FourColumns from '../../(_components)/Footer/FourColumns'
+import FourColumns from './FourColumns'
 
 export default function Footer() {
   return <FourColumns />
