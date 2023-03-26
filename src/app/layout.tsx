@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="kr" suppressHydrationWarning={true}>
       <head />
       <body>
-        <div className="root-layout">
+        <div className="root">
           <RootProvider>{children}</RootProvider>
         </div>
         <div id="modal-portal" className="modal-portal" />

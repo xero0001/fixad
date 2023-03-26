@@ -3,7 +3,7 @@ import classNames from 'classnames/bind'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PATH } from '@root/src/shared/const'
-import Footer from '../../(_components)/footer/Footer'
+import Footer from '../../(_components)/Footer/FooterLegacy'
 
 const cx = classNames.bind(styles)
 
