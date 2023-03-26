@@ -1,7 +1,6 @@
-import FourColumnsDark from './FourColumnsDark'
-import FourColumns from './FourColumns'
+// import FourColumnsDark from './FourColumnsDark'
+// import FourColumns from './FourColumns'
 
 export default function Footer() {
-  // return <FourColumnsDark />
-  return <div className="border-t border-t-gray-200">{/* <FourColumns /> */}</div>
+  return <div className="border-t border-t-gray-200">ABC</div>
 }
