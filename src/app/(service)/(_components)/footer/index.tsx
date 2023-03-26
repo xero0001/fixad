@@ -1,7 +1,7 @@
 import FourColumnsDark from './FourColumnsDark'
 import FourColumns from './FourColumns'
 
-export default function () {
+export default function Footer() {
   // return <FourColumnsDark />
   return (
     <div className="border-t border-t-gray-200">
