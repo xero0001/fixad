@@ -5,10 +5,8 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Creators', href: '#creators' },
+  { name: 'CEO', href: '#ceo' },
 ]
 
 export default function Example() {
@@ -17,7 +15,7 @@ export default function Example() {
   return (
     <header className="bg-white fixed z-10 w-full border-b border-b-gray-100">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <a href="#" className="-m-1.5 p-1.5">
+        <a href="#hero" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
           <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
         </a>
@@ -36,9 +34,9 @@ export default function Example() {
               {item.name}
             </a>
           ))}
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </a> */}
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

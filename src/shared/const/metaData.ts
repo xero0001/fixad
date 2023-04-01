@@ -6,8 +6,8 @@
 - 시스템 URL
 */
 export const METADATA = {
-  TITLE: '템플릿 프로젝트',
-  DESC: '템플릿으로 ROI 올리기 프로젝트',
+  TITLE: 'BIG-G ENTERTAINMENT',
+  DESC: '빅지 엔터테인먼트는 콘텐츠, 플랫폼을 통해 남성의 문화를 선도하는 기업입니다.',
   IMAGE: '',
   IMAGE_RECTANGLE: '',
   URL: '',
