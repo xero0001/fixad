@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+import axios from 'axios'
 /*
   This example requires some changes to your config:
   
@@ -12,14 +16,49 @@
   }
   ```
 */
+
+const initState = { name: '', email: '', tel: '', company: '', message: '' }
+
 export default function Contact() {
-  function onSubmit(e) {
+  const [formState, setFormState] = useState({
+    ...initState,
+  })
+
+  async function onSubmit(e) {
     e.preventDefault()
-    // console.log('A')
+
+    axios
+      .post('/api/contact', {
+        ...formState,
+      })
+      .then(res => {
+        if (res.data.success === 'true') {
+          alert('문의를 성공적으로 전달하였습니다.')
+          setFormState({
+            ...initState,
+          })
+        } else {
+          alert('문의에 실패하였습니다.')
+        }
+      })
+      .catch(() => {
+        alert('문의에 실패하였습니다.')
+      })
+  }
+
+  function handleInputChange(e) {
+    e.preventDefault()
+
+    const { name, value } = e.target
+
+    setFormState(prev => ({
+      ...prev,
+      [name]: value,
+    }))
   }
 
   return (
-    <div id="contact" className="py-32 mx-auto max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
+    <div id="contact" className="py-32 mx-5 max-w-7xl border-t-2 border-t-black xl:mx-auto">
       {/* <div id="contact" className="relative isolate bg-white py-24 px-6 sm:py-32 lg:px-8 "> */}
       {/* <svg
         className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -49,7 +88,7 @@ export default function Contact() {
           We help companies and individuals build out their brand guidelines.
         </p> */}
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
-          <form action="#" method="POST" className="lg:flex-auto">
+          <form action="#" method="POST" className="lg:flex-auto" onSubmit={onSubmit}>
             <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold leading-6 text-black">
@@ -61,6 +100,9 @@ export default function Contact() {
                     name="name"
                     id="name"
                     className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-slate-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
+                    required
+                    onChange={handleInputChange}
+                    value={formState.name}
                   />
                 </div>
               </div>
@@ -74,6 +116,9 @@ export default function Contact() {
                     name="email"
                     id="email"
                     className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
+                    required
+                    onChange={handleInputChange}
+                    value={formState.email}
                   />
                 </div>
               </div>
@@ -87,6 +132,8 @@ export default function Contact() {
                     name="tel"
                     type="tel"
                     className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
+                    onChange={handleInputChange}
+                    value={formState.tel}
                   />
                 </div>
               </div>
@@ -100,6 +147,8 @@ export default function Contact() {
                     name="company"
                     id="company"
                     className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
+                    onChange={handleInputChange}
+                    value={formState.company}
                   />
                 </div>
               </div>
@@ -114,6 +163,9 @@ export default function Contact() {
                     rows={4}
                     className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
                     defaultValue={''}
+                    required
+                    onChange={handleInputChange}
+                    value={formState.message}
                   />
                 </div>
               </div>
@@ -121,8 +173,9 @@ export default function Contact() {
             <div className="mt-10">
               <button
                 type="submit"
-                onClick={onSubmit}
-                className="block w-full bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400">
+                className="block w-full bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
+                onChange={handleInputChange}
+                value={formState.message}>
                 문의하기
               </button>
             </div>
@@ -134,23 +187,6 @@ export default function Contact() {
               .
             </p> */}
           </form>
-          {/* <div className="lg:mt-6 lg:w-80 lg:flex-none">
-            <div>
-              <b>Mail</b>
-              <br />
-              biggentertainment@naver.com
-            </div>
-            <div className="mt-8">
-              <b>Tel</b>
-              <br />
-              02. 540. 4539
-            </div>
-            <div className="mt-8">
-              <b>Address</b>
-              <br />
-              서울특별시 강남구 언주로 157길 3-6 빅지엔터테인먼트 [06024]
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
