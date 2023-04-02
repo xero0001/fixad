@@ -10,26 +10,28 @@ const navigation = [
 ]
 
 export default function CEO() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   return (
-    <div id="ceo" className="py-32 mx-auto max-w-7xl border-t-2 border-t-black">
+    <div id="ceo" className="py-32 mx-auto max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center">CEO</div>
-      <div className="mt-16 grid grid-template grid-cols-[2fr_2fr]">
+      <div className="mt-16 grid grid-template lg:grid-cols-[4fr_3fr]">
         {/* CEO 사진 및 이름 */}
-        <div className=" border-r-2 border-l-black border-r-black w-full">
+        <div className="lg:border-r-2 border-l-black border-r-black w-full">
           <div className="relative">
             {/* <div className="absolute px-12 text-white">
               <h2 className="text-5xl mt-4">가지왕</h2>
               <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             </div> */}
-            <div className="w-full bg-gray-100 w-96 h-96 aspect-video overflow-hidden">
+            <div className="mb-4 block lg:hidden">
+              <h3 className="text-3xl lg:text-4xl">이선우</h3>
+              <h5 className="text-xl lg:text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
+            </div>
+            <div className="w-full bg-gray-100 aspect-video overflow-hidden">
               <img src="/alpha_ceo.webp" alt="ceo" loading="lazy" className="w-full object-cover" />
             </div>
           </div>
-          <div className="h-[2px] bg-black mb-4" />
-          <div className="py-4 px-12">
-            <h3 className="text-4xl">이력</h3>
+          <div className="h-[2px] bg-black mb-4 hidden lg:block" />
+          <div className="py-12 lg:py-4 lg:px-12">
+            <h3 className="text-3xl lg:text-4xl">이력</h3>
             <p className="text-lg mt-2">
               2020 Billboard Power List 선정
               <br />
@@ -42,27 +44,15 @@ export default function CEO() {
           </div>
         </div>
         {/* 이력 및 회사이념 */}
-        <div className="pl-12">
-          {/* <div className="py-4">
-            <h3 className="text-4xl">이력</h3>
-            <p className="text-lg mt-2">
-              2020 Billboard Power List 선정
-              <br />
-              2021 Variety 500 선정
-              <br />
-              2022 빅히트 엔터테인먼트 설립
-              <br />
-              2023 빅지 엔터테인먼트 설립
-            </p>
-          </div> */}
-          <div className="py-4">
-            <h3 className="text-4xl">가지왕</h3>
+        <div className="lg:pl-12">
+          <div className="py-4 hidden lg:block">
+            <h3 className="text-4xl">이선우</h3>
             <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
           </div>
-          <div className="h-[2px] bg-black my-4" />
-          <div className="py-4">
-            <h3 className="text-4xl">회사이념</h3>
-            <p className="text-lg mt-2">
+          <div className="h-[2px] bg-black lg:my-4 lg:w-full w-32 mx-auto" />
+          <div className="py-12 lg:py-4">
+            <h3 className="text-3xl lg:text-4xl">회사이념</h3>
+            <p className="text-base lg:text-lg mt-4">
               여태까지 사회는 남성성을 죄악시 여기며 남성들이 생물학적으로 강한 희열을 느끼는 여러 사업들을 양지로
               들어내지 못하는 풍토를 만들어왔습니다. 이는 여성들이 몸매의 아름다움을 뽐내는 것부터, 혈투를 벌이며
               관객들의 아드레날린을 폭발시키는 격투기 시장에 이르기까지 다양하게 뿌리내려 있습니다.

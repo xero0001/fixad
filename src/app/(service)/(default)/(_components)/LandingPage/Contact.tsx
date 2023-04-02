@@ -19,7 +19,7 @@ export default function Contact() {
   }
 
   return (
-    <div id="contact" className="py-32 mx-auto max-w-7xl border-t-2 border-t-black">
+    <div id="contact" className="py-32 mx-auto max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
       {/* <div id="contact" className="relative isolate bg-white py-24 px-6 sm:py-32 lg:px-8 "> */}
       {/* <svg
         className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"

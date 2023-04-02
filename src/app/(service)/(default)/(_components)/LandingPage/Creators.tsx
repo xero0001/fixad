@@ -13,7 +13,7 @@ export default function Creators() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div id="creators" className="py-32 mx-auto max-w-7xl ">
+    <div id="creators" className="py-32 mx-auto max-w-7xl px-5 xl:px-0">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center">CREATORS</div>
 
       {/* <div className="mx-auto max-w-7xl text-center">
@@ -36,7 +36,7 @@ export default function Creators() {
         </div>
       </div> */}
       <div className="mx-auto max-w-7xl mt-16">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-6 mx-auto">
           <div className="bg-gray-100 h-96 w-full">
             <div className="flex flex-col justify-end h-full bottom-0 p-2">
               <div className="text-5xl">카라마조프</div>
