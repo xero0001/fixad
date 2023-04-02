@@ -21,18 +21,16 @@ export default function CEO() {
               <h2 className="text-5xl mt-4">가지왕</h2>
               <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             </div> */}
-            <div className="mb-5 block lg:hidden">
-              <h3 className="text-4xl tracking-wider">이선우</h3>
-              <h5 className="text-2xl my-2">빅지 엔터테인먼트 대표</h5>
-            </div>
             <div className="w-full bg-gray-100 aspect-video overflow-hidden">
               <img src="/alpha_ceo.webp" alt="ceo" loading="lazy" className="w-full object-cover" />
             </div>
           </div>
           <div className="h-[2px] bg-black mb-4 hidden lg:block" />
           <div className="py-12 lg:py-4 lg:px-12">
-            <h3 className="text-3xl lg:text-4xl">이력</h3>
-            <p className="text-lg mt-2">
+            {/* <h3 className="text-3xl lg:text-4xl">이력</h3> */}
+            <h3 className="text-4xl lg:text-5xl tracking-widest">이선우</h3>
+            <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
+            <p className="text-lg mt-8">
               2020 Billboard Power List 선정
               <br />
               2021 Variety 500 선정
@@ -45,12 +43,12 @@ export default function CEO() {
         </div>
         {/* 이력 및 회사이념 */}
         <div className="lg:pl-12">
-          <div className="py-4 hidden lg:block">
+          {/* <div className="py-4 hidden lg:block">
             <h3 className="text-5xl tracking-widest">이선우</h3>
             <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
           </div>
-          <div className="h-[2px] bg-black lg:my-4 lg:w-full w-32 mx-auto" />
-          <div className="py-12 lg:py-4">
+          <div className="h-[2px] bg-black lg:my-4 lg:w-full w-32 mx-auto" /> */}
+          <div className="py-8 lg:py-4">
             <h3 className="text-3xl lg:text-4xl">회사이념</h3>
             <p className="text-base lg:text-lg mt-4">
               여태까지 사회는 남성성을 죄악시 여기며 남성들이 생물학적으로 강한 희열을 느끼는 여러 사업들을 양지로
