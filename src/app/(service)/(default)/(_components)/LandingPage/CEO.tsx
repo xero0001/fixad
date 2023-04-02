@@ -28,7 +28,7 @@ export default function CEO() {
           <div className="h-[2px] bg-black mb-4 hidden lg:block" />
           <div className="py-12 lg:py-4 lg:px-12">
             {/* <h3 className="text-3xl lg:text-4xl">이력</h3> */}
-            <h3 className="text-4xl lg:text-5xl tracking-widest">이선우</h3>
+            <h3 className="text-4xl lg:text-5xl tracking-widest">김선우</h3>
             <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             <p className="text-lg mt-8">
               2020 Billboard Power List 선정
