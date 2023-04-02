@@ -21,9 +21,9 @@ export default function CEO() {
               <h2 className="text-5xl mt-4">가지왕</h2>
               <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             </div> */}
-            <div className="mb-4 block lg:hidden">
-              <h3 className="text-3xl lg:text-4xl font-bold">이선우</h3>
-              <h5 className="text-xl lg:text-2xl mt-3 font-bold">빅지 엔터테인먼트 대표</h5>
+            <div className="mb-5 block lg:hidden">
+              <h3 className="text-4xl tracking-widest font-semibold">이선우</h3>
+              <h5 className="text-2xl my-2">빅지 엔터테인먼트 대표</h5>
             </div>
             <div className="w-full bg-gray-100 aspect-video overflow-hidden">
               <img src="/alpha_ceo.webp" alt="ceo" loading="lazy" className="w-full object-cover" />
@@ -46,8 +46,8 @@ export default function CEO() {
         {/* 이력 및 회사이념 */}
         <div className="lg:pl-12">
           <div className="py-4 hidden lg:block">
-            <h3 className="text-4xl font-bold">이선우</h3>
-            <h5 className="text-2xl mt-3 font-bold">빅지 엔터테인먼트 대표</h5>
+            <h3 className="text-5xl font-semibold tracking-widest">이선우</h3>
+            <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
           </div>
           <div className="h-[2px] bg-black lg:my-4 lg:w-full w-32 mx-auto" />
           <div className="py-12 lg:py-4">
