@@ -96,14 +96,10 @@ export default function FourColumns() {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div className="mx-auto max-w-7xl px-6 pb-12 pt-16 lg:px-8">
+        {/* <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <img
-              className="h-7"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt="Company name"
-            />
+            <img className="h-14" src="/bigg_logo_long_opt.webp" alt="BIG-G ENTERTAINMENT" />
             <p className="text-sm leading-6 text-gray-600">
               Making the world a better place through constructing elegant hierarchies.
             </p>
@@ -115,6 +111,9 @@ export default function FourColumns() {
                 </a>
               ))}
             </div>
+          </div>
+          <div>
+            <div className="text-xl font-bold">빅지엔터테인먼트</div>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -170,9 +169,14 @@ export default function FourColumns() {
               </div>
             </div>
           </div>
+        </div> */}
+        <div className="w-full">
+          <img className="mx-auto h-14" src="/bigg_logo_long_opt.webp" alt="BIG-G ENTERTAINMENT" />
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+        <div className="mt-4  border-gray-900/10 pt-4">
+          <p className="text-xs text-center leading-5 text-gray-500">
+            &copy; 2023 BIG-G ENTERTAINMENT, Co. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
