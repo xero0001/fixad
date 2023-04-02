@@ -11,7 +11,7 @@ const navigation = [
 
 export default function CEO() {
   return (
-    <div id="ceo" className="py-32 mx-auto max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
+    <div id="ceo" className="py-32 max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center">CEO</div>
       <div className="mt-16 grid grid-template lg:grid-cols-[4fr_3fr]">
         {/* CEO 사진 및 이름 */}
@@ -22,8 +22,8 @@ export default function CEO() {
               <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             </div> */}
             <div className="mb-4 block lg:hidden">
-              <h3 className="text-3xl lg:text-4xl">이선우</h3>
-              <h5 className="text-xl lg:text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
+              <h3 className="text-3xl lg:text-4xl font-bold">이선우</h3>
+              <h5 className="text-xl lg:text-2xl mt-3 font-bold">빅지 엔터테인먼트 대표</h5>
             </div>
             <div className="w-full bg-gray-100 aspect-video overflow-hidden">
               <img src="/alpha_ceo.webp" alt="ceo" loading="lazy" className="w-full object-cover" />
@@ -46,8 +46,8 @@ export default function CEO() {
         {/* 이력 및 회사이념 */}
         <div className="lg:pl-12">
           <div className="py-4 hidden lg:block">
-            <h3 className="text-4xl">이선우</h3>
-            <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
+            <h3 className="text-4xl font-bold">이선우</h3>
+            <h5 className="text-2xl mt-3 font-bold">빅지 엔터테인먼트 대표</h5>
           </div>
           <div className="h-[2px] bg-black lg:my-4 lg:w-full w-32 mx-auto" />
           <div className="py-12 lg:py-4">
