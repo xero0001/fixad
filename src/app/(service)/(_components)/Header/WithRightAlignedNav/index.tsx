@@ -5,8 +5,9 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Creators', href: '#creators' },
+  { name: 'CREATORS', href: '#creators' },
   { name: 'CEO', href: '#ceo' },
+  { name: 'CONTACT', href: '#contact' },
 ]
 
 export default function Example() {
@@ -14,10 +15,10 @@ export default function Example() {
 
   return (
     <header className="bg-white fixed z-10 w-full border-b border-b-gray-100">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-0" aria-label="Global">
         <a href="#hero" className="-m-1.5 p-1.5">
-          <span className="sr-only">Your Company</span>
-          <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+          <span className="sr-only">BIG-G ENTERTAINMENT</span>
+          <img className="h-10 w-auto" src="/blgg_logo_bottom_opt.webp" alt="logo" />
         </a>
         <div className="flex lg:hidden">
           <button
@@ -30,7 +31,7 @@ export default function Example() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map(item => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+            <a key={item.name} href={item.href} className="text-xl font-semibold leading-6 text-gray-900">
               {item.name}
             </a>
           ))}

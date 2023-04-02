@@ -13,26 +13,28 @@ export default function Creators() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div id="creators" className="my-32">
-      <div className="mx-auto max-w-7xl text-center">
+    <div id="creators" className="py-32 mx-auto max-w-7xl ">
+      <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center">CREATORS</div>
+
+      {/* <div className="mx-auto max-w-7xl text-center">
         <div className="w-full">
           <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             <span
-              className="bg-gray-900 inline-block h-1 relative align-middle w-1/3 right-4"
+              className="bg-gray-900 inline-block h-[2px] relative align-middle w-1/3 right-4"
               style={{
                 marginLeft: '-50%',
               }}
             />
             Creators
             <span
-              className="bg-gray-900 inline-block h-1 relative align-middle w-1/3 left-4"
+              className="bg-gray-900 inline-block h-[2px] relative align-middle w-1/3 left-4"
               style={{
                 marginRight: '-50%',
               }}
             />
           </h2>
         </div>
-      </div>
+      </div> */}
       <div className="mx-auto max-w-7xl mt-16">
         <div className="grid grid-cols-4 gap-4">
           <div className="bg-gray-100 h-96 w-full">

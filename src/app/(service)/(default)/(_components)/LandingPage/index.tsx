@@ -28,7 +28,7 @@ export default function LandingPage() {
       {/* <Testimonial /> */}
       {/* <FAQSection /> */}
       {/* <Process /> */}
-      {/* <Contact /> */}
+      <Contact />
     </>
   )
 }
