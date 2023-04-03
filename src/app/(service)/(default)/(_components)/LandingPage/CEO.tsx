@@ -35,7 +35,7 @@ export default function CEO() {
               <br />
               2021 Variety 500 선정
               <br />
-              2022 빅히트 엔터테인먼트 설립
+              2022 Billboard Power List 선정
               <br />
               2023 빅지 엔터테인먼트 설립
             </p>
