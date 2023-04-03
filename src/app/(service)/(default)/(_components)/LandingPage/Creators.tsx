@@ -39,35 +39,23 @@ export default function Creators() {
         <div className="grid grid-cols-2 gap-6 mx-auto">
           <div className="bg-gray-100 h-96 w-full">
             <div className="flex flex-col justify-end h-full bottom-0 p-2">
-              <div className="text-5xl">카라마조프</div>
-              <div className="mt-2 text-base">
-                본명 백호. 카일에게 받은 듀퐁 라이터를 보유중이다. 호랑이는 죽어서 가죽을 남기고 사람은 죽어서 이름을
-                남긴다는데, 백호는 둘 다 남길수 있다고 한다.
+              <div className="text-5xl">진다율</div>
+              <div className="mt-2 text-base">진다율님 설명.</div>
+              <div className="">링크트리</div>
+              <div className="grid grid-cols-4">
+                <div className="">인스타</div>
+                <div className="">온리팬스</div>
               </div>
             </div>
           </div>
           <div className="bg-gray-100 h-96 w-full">
             <div className="flex flex-col justify-end h-full bottom-0 p-2">
-              <div className="text-5xl">정종은</div>
-              <div className="mt-2 text-base">
-                24세. 바보가 아니며, 젊어지고싶어하는 아티스트. 늘 새로운 것을 시도하는 멋진 모습을 보여준다.
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-100 h-96 w-full">
-            <div className="flex flex-col justify-end h-full bottom-0 p-2">
-              <div className="text-5xl">김영재</div>
-              <div className="mt-2 text-base">
-                30세. 자신도 같이있었다고 한다. 무엇이든 할 수 있는 능력을 가지고 있다. 햄버거는 양상추에 패티 두장.
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-100 h-96 w-full">
-            <div className="flex flex-col justify-end h-full bottom-0 p-2">
-              <div className="text-5xl">빅빅트</div>
-              <div className="mt-2 text-base">
-                하면된다. 하면된다. 하면된다. 하면된다. 하면된다. 하면된다. 하면된다. 하면된다. 하면된다. 하면된다.
-                하면된다. 하면된다.
+              <div className="text-5xl">이진세</div>
+              <div className="mt-2 text-base">이진세님 설명.</div>
+              <div className="">링크 트리</div>
+              <div className="grid grid-cols-4">
+                <div className="">인스타</div>
+                <div className="">유튜브</div>
               </div>
             </div>
           </div>
