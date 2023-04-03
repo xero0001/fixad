@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { SiOnlyfans } from 'react-icons/si'
+import { SlSocialInstagram, SlSocialYoutube } from 'react-icons/sl'
+import { RxInstagramLogo } from 'react-icons/rx'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -41,10 +44,25 @@ export default function Creators() {
             <div className="flex flex-col justify-end h-full bottom-0 p-2">
               <div className="text-5xl">진다율</div>
               <div className="mt-2 text-base">진다율님 설명.</div>
-              <div className="">링크트리</div>
-              <div className="grid grid-cols-4">
-                <div className="">인스타</div>
-                <div className="">온리팬스</div>
+              <div className="flex gap-4 text-lg items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+                링크트리
+              </div>
+              <div className="flex gap-4">
+                <div className="">
+                  <SlSocialInstagram size={32} />
+                </div>
+                <div className="">
+                  <SiOnlyfans size={32} />
+                </div>
               </div>
             </div>
           </div>
@@ -52,10 +70,25 @@ export default function Creators() {
             <div className="flex flex-col justify-end h-full bottom-0 p-2">
               <div className="text-5xl">이진세</div>
               <div className="mt-2 text-base">이진세님 설명.</div>
-              <div className="">링크 트리</div>
-              <div className="grid grid-cols-4">
-                <div className="">인스타</div>
-                <div className="">유튜브</div>
+              <div className="flex gap-4 text-lg items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+                링크트리
+              </div>{' '}
+              <div className="flex gap-4">
+                <div className="">
+                  <SlSocialInstagram size={32} />
+                </div>
+                <div className="">
+                  <SlSocialYoutube size={32} />
+                </div>
               </div>
             </div>
           </div>
