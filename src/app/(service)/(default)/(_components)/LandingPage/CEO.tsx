@@ -33,6 +33,8 @@ export default function CEO() {
             <p className="text-lg mt-8">
               2021 핫플짐 CEO
               <br />
+              2022 더프레쉬 부대표
+              <br />
               2023 투초이스 법인 총괄
               <br />
               2023 빅지 엔터테인먼트 설립
