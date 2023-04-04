@@ -31,11 +31,9 @@ export default function CEO() {
             <h3 className="text-4xl lg:text-5xl tracking-widest">김선우</h3>
             <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             <p className="text-lg mt-8">
-              2020 Billboard Power List 선정
+              2021 핫플짐 CEO
               <br />
-              2021 Variety 500 선정
-              <br />
-              2022 Billboard Power List 선정
+              2023 투초이스 법인 총괄
               <br />
               2023 빅지 엔터테인먼트 설립
             </p>
