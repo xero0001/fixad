@@ -162,7 +162,6 @@ export default function Contact() {
                     name="message"
                     rows={4}
                     className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
-                    defaultValue={''}
                     required
                     onChange={handleInputChange}
                     value={formState.message}
