@@ -3,6 +3,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { SiOnlyfans } from 'react-icons/si'
 import { SlSocialInstagram, SlSocialYoutube } from 'react-icons/sl'
+import { SiLinktree } from 'react-icons/si'
 import { RxInstagramLogo } from 'react-icons/rx'
 
 const navigation = [
@@ -38,58 +39,124 @@ export default function Creators() {
           </h2>
         </div>
       </div> */}
-      <div className="mx-auto max-w-7xl mt-16">
+      {/* <div className="mx-auto max-w-7xl mt-16">
         <div className="grid grid-cols-2 gap-6 mx-auto">
-          <div className="bg-gray-100 h-96 w-full">
-            <div className="flex flex-col justify-end h-full bottom-0 p-2">
-              <div className="text-5xl">진다율</div>
-              <div className="mt-2 text-base">진다율님 설명.</div>
-              <div className="flex gap-4 text-lg items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-                링크트리
-              </div>
-              <div className="flex gap-4">
-                <div className="">
-                  <SlSocialInstagram size={32} />
-                </div>
-                <div className="">
-                  <SiOnlyfans size={32} />
-                </div>
+          <div className="relative">
+            <div className="bg-gray-100 aspect-[3/4] w-full relative">
+              <div className="absolute w-full h-full">
+                <img src="/assets/profiles/이진세/ljs_1.png" alt="ljs" className="w-full h-full object-cover" />
               </div>
             </div>
-          </div>
-          <div className="bg-gray-100 h-96 w-full">
-            <div className="flex flex-col justify-end h-full bottom-0 p-2">
-              <div className="text-5xl">이진세</div>
-              <div className="mt-2 text-base">이진세님 설명.</div>
-              <div className="flex gap-4 text-lg items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-                링크트리
-              </div>{' '}
-              <div className="flex gap-4">
-                <div className="">
-                  <SlSocialInstagram size={32} />
+            <div className="flex flex-col px-4 py-6 w-full space-y-3">
+              <div className="flex items-end text-5xl space-x-6">
+                <div className="flex flex-col">
+                  <span>이진세</span>
                 </div>
-                <div className="">
-                  <SlSocialYoutube size={32} />
-                </div>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-[56px] h-[56px]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
               </div>
+              <div className="text-2xl">MMA 파이터</div>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="bg-gray-100 aspect-[3/4] w-full relative">
+              <div className="absolute w-full h-full">
+                <img src="/assets/profiles/진다율/1.jpg" alt="ljs" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="flex flex-col px-4 py-6 w-full space-y-3">
+              <div className="flex items-end text-5xl space-x-6">
+                <div className="flex flex-col">
+                  <span>진다율</span>
+                </div>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-[56px] h-[56px]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </div>
+              <div className="text-2xl">모델</div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="mx-auto max-w-7xl mt-16">
+        <div className="grid grid-cols-2 gap-6 mx-auto">
+          <div className="relative">
+            <div className="bg-gray-100 aspect-[3/4] w-full relative">
+              <div className="absolute w-full h-full">
+                <img src="/assets/profiles/이진세/ljs_1.png" alt="ljs" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div
+              className="flex flex-col px-6 py-6 w-full space-y-3 absolute text-white"
+              style={{
+                transform: 'translateY(-100%)',
+                backgroundColor: 'rgba(0,0,0,0.5)',
+              }}>
+              <div className="flex items-end text-5xl space-x-6">
+                <div className="flex flex-col">
+                  <span>이진세</span>
+                </div>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-[56px] h-[56px]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </div>
+              <div className="text-2xl">MMA 파이터</div>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="bg-gray-100 aspect-[3/4] w-full relative">
+              <div className="absolute w-full h-full">
+                <img src="/assets/profiles/진다율/1.jpg" alt="ljs" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div
+              className="flex flex-col px-6 py-6 w-full space-y-3 absolute text-white"
+              style={{
+                transform: 'translateY(-100%)',
+                backgroundColor: 'rgba(0,0,0,0.5)',
+              }}>
+              <div className="flex items-end text-5xl space-x-6">
+                <div className="flex flex-col">
+                  <span>진다율</span>
+                </div>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-[56px] h-[56px]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </div>
+              <div className="text-2xl">모델</div>
             </div>
           </div>
         </div>
