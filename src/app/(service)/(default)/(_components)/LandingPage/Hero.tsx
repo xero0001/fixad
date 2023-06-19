@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import EmblaCarousel from 'embla-carousel-react'
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+const slides = [
+  {
+    src: '/',
+  },
+  {
+    src: '/',
+  },
 ]
 
 export default function Hero() {
@@ -36,6 +39,7 @@ export default function Hero() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
       </div>
+      {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
     </div>
   )
 }

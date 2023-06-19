@@ -27,6 +27,7 @@
     "classnames": "^2.3.2",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.7",
+    "embla-carousel-react": "^8.0.0-rc07",
     "encoding": "^0.1.13",
     "eslint": "8.29.0",
     "eslint-config-next": "^13.1.5",

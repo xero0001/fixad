@@ -21,7 +21,7 @@ export default function Creators() {
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center ">CREATORS</div>
       <div className="mx-auto max-w-7xl mt-16">
         <div className="grid grid-cols-2 gap-6 mx-auto">
-          <div className="relative">
+          <a className="relative" href="https://www.instagram.com/jinselee_/?igshid=YmMyMTA2M2Y%3D" target="_blank">
             <div className="bg-gray-100 aspect-[3/4] w-full relative">
               <div className="absolute w-full h-full">
                 <img src="/assets/profiles/이진세/ljs_1.png" alt="ljs" className="w-full h-full object-cover" />
@@ -51,8 +51,8 @@ export default function Creators() {
               </div>
               <div className="text-lg lg:text-2xl">MMA 파이터</div>
             </div>
-          </div>
-          <div className="relative">
+          </a>
+          <a className="relative" href="https://linktr.ee/jindayul" target="_blank">
             <div className="bg-gray-100 aspect-[3/4] w-full relative">
               <div className="absolute w-full h-full">
                 <img src="/assets/profiles/진다율/1.jpg" alt="ljs" className="w-full h-full object-cover" />
@@ -82,7 +82,7 @@ export default function Creators() {
               </div>
               <div className="text-lg lg:text-2xl">모델</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
