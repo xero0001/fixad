@@ -8,11 +8,11 @@ const OPTIONS = { loop: true }
 const SLIDES = [
   {
     label: 'slide_1',
-    src: '/assets/profiles/진다율/3.jpg',
+    src: '/assets/profiles/이진세/ljs_2.png',
   },
   {
     label: 'slide_2',
-    src: '/assets/profiles/이진세/ljs_2.png',
+    src: '/assets/profiles/진다율/3.jpg',
   },
   {
     label: 'slide_3',
