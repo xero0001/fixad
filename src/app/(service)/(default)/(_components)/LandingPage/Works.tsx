@@ -66,7 +66,7 @@ export default function Works() {
       <div className="grid grid-cols-3 gap-4 mt-16">
         {workItems.map((item, index) => {
           return (
-            <div className="bg-gray-100 aspect-[1/1]">
+            <div className="bg-gray-100 aspect-[1/1]" key={index}>
               <img src={item.src} alt={item.label} className="object-cover w-full h-full" />
             </div>
           )

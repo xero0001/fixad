@@ -1,14 +1,20 @@
 import React from 'react'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 
 type PropType = {
   slides: any[]
   options?: EmblaOptionsType
 }
 
+const autoplayOptions = {
+  delay: 3000,
+  rootNode: emblaRoot => emblaRoot.parentElement,
+}
+
 const EmblaCarousel: React.FC<PropType> = props => {
   const { slides, options } = props
-  const [emblaRef] = useEmblaCarousel(options)
+  const [emblaRef] = useEmblaCarousel(options, [Autoplay(autoplayOptions)])
 
   return (
     <div className="embla w-full h-full relative overflow-hidden">
