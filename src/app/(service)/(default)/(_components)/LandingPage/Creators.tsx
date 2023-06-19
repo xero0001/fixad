@@ -1,10 +1,4 @@
 import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { SiOnlyfans } from 'react-icons/si'
-import { SlSocialInstagram, SlSocialYoutube } from 'react-icons/sl'
-import { SiLinktree } from 'react-icons/si'
-import { RxInstagramLogo } from 'react-icons/rx'
 
 const creatorItems = [
   {
