@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Hero from './Hero'
 import Creators from './Creators'
 import CEO from './CEO'
+import Works from './Works'
 import Feature from './Feature'
 import SecondaryFeature from './SecondaryFeature'
 import Contact from './Contact'
@@ -21,6 +22,7 @@ export default function LandingPage() {
     <>
       <Hero />
       <Creators />
+      <Works />
       <CEO />
       {/* <Artists /> */}
       {/* <Feature /> */}

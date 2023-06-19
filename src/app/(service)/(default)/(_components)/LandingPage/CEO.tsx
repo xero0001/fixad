@@ -12,7 +12,7 @@ const navigation = [
 export default function CEO() {
   return (
     <div id="ceo" className="py-32 max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
-      <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center">CEO</div>
+      <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center ">CEO</div>
       <div className="mt-16 grid grid-template lg:grid-cols-[4fr_3fr]">
         {/* CEO 사진 및 이름 */}
         <div className="lg:border-r-2 border-l-black border-r-black w-full">
