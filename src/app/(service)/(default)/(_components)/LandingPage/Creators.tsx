@@ -27,7 +27,7 @@ export default function Creators() {
                   </div>
                 </div>
                 <div
-                  className="flex flex-col p-[12px] lg:p-6 w-full space-y-2 lg:space-y-3 absolute text-white"
+                  className="flex flex-col p-[12px] lg:p-6 w-full space-y-1 lg:space-y-3 absolute text-white"
                   style={{
                     transform: 'translateY(-100%)',
                     backgroundColor: 'rgba(0,0,0,0.5)',
@@ -48,7 +48,7 @@ export default function Creators() {
                       </svg>
                     </span>
                   </div>
-                  <div className="text-lg lg:text-2xl">{item.title}</div>
+                  <div className="text-base lg:text-2xl">{item.title}</div>
                 </div>
               </a>
             )
