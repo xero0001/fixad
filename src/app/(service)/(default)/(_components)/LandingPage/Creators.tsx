@@ -27,7 +27,7 @@ export default function Creators() {
                   </div>
                 </div>
                 <div
-                  className="flex flex-col px-6 py-6 w-full space-y-2 lg:space-y-3 absolute text-white"
+                  className="flex flex-col p-[12px] lg:p-6 w-full space-y-2 lg:space-y-3 absolute text-white"
                   style={{
                     transform: 'translateY(-100%)',
                     backgroundColor: 'rgba(0,0,0,0.5)',
