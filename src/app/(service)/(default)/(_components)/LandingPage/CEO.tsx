@@ -13,7 +13,7 @@ export default function CEO() {
   return (
     <div id="ceo" className="py-32 max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center ">CEO</div>
-      <div className="mt-16 grid grid-template lg:grid-cols-[4fr_3fr]">
+      <div className="mt-16 grid grid-template lg:grid-cols-[3fr_3fr]">
         {/* CEO 사진 및 이름 */}
         <div className="lg:border-r-2 border-l-black border-r-black w-full">
           <div className="relative">
@@ -21,8 +21,8 @@ export default function CEO() {
               <h2 className="text-5xl mt-4">가지왕</h2>
               <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             </div> */}
-            <div className="w-full bg-gray-100 aspect-video overflow-hidden">
-              <img src="/alpha_ceo.webp" alt="ceo" loading="lazy" className="w-full object-cover" />
+            <div className="w-full bg-gray-100 aspect-[1/1] overflow-hidden">
+              <img src="/alpha_ceo.webp" alt="ceo" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="h-[2px] bg-black mb-4 hidden lg:block" />
@@ -31,6 +31,10 @@ export default function CEO() {
             <h3 className="text-4xl lg:text-5xl tracking-widest">김선우</h3>
             <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             <p className="text-lg mt-8">
+              2022 Hot place gym CEO
+              <br />
+              2023 뉴오더 서울지부장
+              <br />
               2023 투초이스 법인 총괄
               <br />
               2023 빅지 엔터테인먼트 설립
