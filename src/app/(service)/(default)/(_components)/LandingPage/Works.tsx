@@ -63,7 +63,7 @@ export default function Works() {
   return (
     <div id="works" className="py-32 border-t-2 border-t-black  mx-auto max-w-7xl px-5 xl:px-0">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center">WORKS</div>
-      <div className="grid grid-cols-3 gap-4 mt-16">
+      <div className="grid grid-cols-3 gap-2 lg:gap-4 mt-16">
         {workItems.map((item, index) => {
           return (
             <div className="bg-gray-100 aspect-[1/1]" key={index}>

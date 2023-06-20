@@ -17,7 +17,7 @@ export default function Creators() {
     <div id="creators" className="py-32 mx-auto max-w-7xl px-5 xl:px-0">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center ">CREATORS</div>
       <div className="mx-auto max-w-7xl mt-16">
-        <div className="grid grid-cols-2 gap-6 mx-auto">
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 mx-auto">
           {creatorItems.map((item, index) => {
             return (
               <a key={index} className="relative" href={item.href} target="_blank">
@@ -32,7 +32,7 @@ export default function Creators() {
                     transform: 'translateY(-100%)',
                     backgroundColor: 'rgba(0,0,0,0.5)',
                   }}>
-                  <div className="flex items-end text-3xl lg:text-5xl space-x-4 lg:space-x-6">
+                  <div className="flex items-end text-2xl lg:text-5xl space-x-4 lg:space-x-6">
                     <div className="flex flex-col">
                       <span>{item.name}</span>
                     </div>
@@ -43,7 +43,7 @@ export default function Creators() {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-10 h-10 lg:w-[56px] lg:h-[56px]">
+                        className="w-8 h-8 lg:w-[56px] lg:h-[56px]">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
                     </span>
