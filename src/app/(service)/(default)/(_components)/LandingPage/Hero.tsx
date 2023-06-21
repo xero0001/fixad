@@ -8,19 +8,19 @@ const OPTIONS = { loop: true }
 const SLIDES = [
   {
     label: 'slide_1',
-    src: '/assets/profiles/이진세/ljs_2.png',
+    src: '/assets/profiles/이진세/ljs_2.webp',
   },
   {
     label: 'slide_2',
-    src: '/assets/profiles/진다율/3.jpg',
+    src: '/assets/profiles/진다율/3.webp',
   },
   {
     label: 'slide_3',
-    src: '/assets/profiles/진다율/2.jpg',
+    src: '/assets/profiles/진다율/2.webp',
   },
   {
     label: 'slide_4',
-    src: '/assets/works/eternal_2-2.jpg',
+    src: '/assets/works/eternal_2-2.webp',
   },
 ]
 
