@@ -17,7 +17,7 @@ export default function Creators() {
     <div id="creators" className="py-32 mx-auto max-w-7xl px-5 xl:px-0">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center ">CREATORS</div>
       <div className="mx-auto max-w-7xl mt-16">
-        <div className="grid grid-cols-2 gap-4 lg:gap-6 mx-auto">
+        <div className="grid grid-cols-2 gap-3 lg:gap-6 mx-auto">
           {creatorItems.map((item, index) => {
             return (
               <a key={index} className="relative" href={item.href} target="_blank">
