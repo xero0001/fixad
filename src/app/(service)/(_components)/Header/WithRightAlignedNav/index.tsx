@@ -3,12 +3,13 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { getIntoViewElement } from '@root/src/shared/utils/scroll'
 
 const navigation = [
-  { name: 'CREATORS', href: '#creators' },
-  { name: 'WORKS', href: '#works' },
-  { name: 'CEO', href: '#ceo' },
-  { name: 'CONTACT', href: '#contact' },
+  { name: 'CREATORS', href: 'creators' },
+  { name: 'WORKS', href: 'works' },
+  { name: 'CEO', href: 'ceo' },
+  { name: 'CONTACT', href: 'contact' },
 ]
 
 export default function Example() {
@@ -32,9 +33,15 @@ export default function Example() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map(item => (
-            <a key={item.name} href={item.href} className="text-xl font-semibold leading-6 text-black">
+            <button
+              key={item.name}
+              onClick={e => {
+                e.preventDefault()
+                getIntoViewElement(item.href)
+              }}
+              className="text-xl font-semibold leading-6 text-black">
               {item.name}
-            </a>
+            </button>
           ))}
           {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
@@ -60,13 +67,16 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map(item => (
-                  <a
+                  <button
                     key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={e => {
+                      e.preventDefault()
+                      getIntoViewElement(item.href)
+                      setMobileMenuOpen(false)
+                    }}
                     className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                     {item.name}
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>
