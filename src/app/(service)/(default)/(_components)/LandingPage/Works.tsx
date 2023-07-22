@@ -79,14 +79,27 @@ export default function Works() {
           )
         })}
       </div>
-      <Dialog open={!!selectedWork} onClose={() => setSelectedWork(null)} className="relative z-50">
+
+      {!!selectedWork && (
+        <div className="fixed w-full h-full top-0 left-0 z-50">
+          <div className="fixed inset-0 bg-black/30" aria-hidden="true" onClick={() => setSelectedWork(null)} />
+          <div
+            className="mx-auto max-w-sm rounded px-2 z-[100] relative top-1/2"
+            style={{
+              transform: 'translateY(-50%)',
+            }}>
+            <img src={selectedWork} alt="" className="w-full" />
+          </div>
+        </div>
+      )}
+      {/* <Dialog open={!!selectedWork} onClose={() => setSelectedWork(null)} className="relative z-50">
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" onClick={() => setSelectedWork(null)} />
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel className="mx-auto max-w-sm rounded bg-white">
             <img src={selectedWork} alt="" className="w-full" />
           </Dialog.Panel>
         </div>
-      </Dialog>
+      </Dialog> */}
     </div>
   )
 }
