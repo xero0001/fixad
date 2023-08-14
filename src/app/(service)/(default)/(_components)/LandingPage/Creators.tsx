@@ -8,6 +8,11 @@ const creatorItems = [
     src: '/assets/profiles/이진세/ljs_1.png',
   },
   { name: '진다율', href: 'https://linktr.ee/jindayul', title: '모델', src: '/assets/profiles/진다율/1.jpg' },
+  { name: '강승우', href: 'https://linktr.ee/seungwoo_', title: '모델', src: '/assets/profiles/강승우/1.jpg' },
+  { name: '김수아', href: 'https://linktr.ee/jinsea', title: '모델', src: '/assets/profiles/김수아/1.jpg' },
+  { name: '서주안', href: 'https://linktr.ee/s_juu_aan', title: '모델', src: '/assets/profiles/서주안/1.jpg' },
+  { name: '지희영', href: 'https://linktr.ee/hyoung2936', title: '모델', src: '/assets/profiles/지희영/1.jpg' },
+  { name: '최수안', href: 'https://linktr.ee/suuann', title: '모델', src: '/assets/profiles/최수안/1.jpg' },
 ]
 
 export default function Creators() {

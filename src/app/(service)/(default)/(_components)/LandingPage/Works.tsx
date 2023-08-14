@@ -9,40 +9,41 @@ import { Dialog } from '@headlessui/react'
 const workItems = [
   {
     label: '',
-    src: '/assets/works/eternal_1-1.jpg',
+    src: '/assets/works/works_03.jpg',
   },
   {
     label: '',
-    src: '/assets/works/eternal_1-2.jpg',
+    src: '/assets/works/works_06.jpg',
   },
   {
     label: '',
-    src: '/assets/works/eternal_3-1.jpg',
+    src: '/assets/works/works_08.jpg',
   },
   {
     label: '',
-    src: '/assets/works/eternal_3-3.jpg',
+    src: '/assets/works/works_02.jpg',
   },
   {
     label: '',
-    src: '/assets/works/bruno_1-1.jpg',
+    src: '/assets/works/works_12.jpg',
   },
   {
     label: '',
-    src: '/assets/works/bruno_2-1.jpg',
+    src: '/assets/works/works_14.jpg',
   },
   {
     label: '',
-    src: '/assets/works/bruno_3-1.jpg',
+    src: '/assets/works/works_16.jpg',
   },
   {
     label: '',
-    src: '/assets/works/roma_1-1.jpg',
+    src: '/assets/works/works_13.jpg',
   },
   {
     label: '',
-    src: '/assets/works/roma_2-1.jpg',
+    src: '/assets/works/works_05.jpg',
   },
+
   // {
   //   label: '',
   //   src: '/assets/works/eternal_1-1.jpg',
