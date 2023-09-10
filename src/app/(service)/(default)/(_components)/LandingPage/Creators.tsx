@@ -9,9 +9,9 @@ const creatorItems = [
   },
   { name: '진다율', href: 'https://linktr.ee/jindayul', title: '모델', src: '/assets/profiles/진다율/1.jpg' },
   { name: '강승우', href: 'https://linktr.ee/seungwoo_', title: '모델', src: '/assets/profiles/강승우/1.jpg' },
-  { name: '세아', href: 'https://linktr.ee/jinsea', title: '모델', src: '/assets/profiles/김수아/1.jpg' },
-  { name: '지유', href: 'https://linktr.ee/s_juu_aan', title: '모델', src: '/assets/profiles/서주안/1.jpg' },
-  { name: '지애', href: 'https://linktr.ee/hyoung2936', title: '모델', src: '/assets/profiles/지희영/1.jpg' },
+  { name: '세아', href: 'https://linktr.ee/jinsea', title: '모델', src: '/assets/profiles/세아/1.jpg' },
+  { name: '지유', href: 'https://linktr.ee/s_juu_aan', title: '모델', src: '/assets/profiles/지유/1.jpg' },
+  { name: '지애', href: 'https://linktr.ee/hyoung2936', title: '모델', src: '/assets/profiles/지애/1.jpg' },
   { name: '주아', href: 'https://linktr.ee/suuann', title: '모델', src: '/assets/profiles/주아/1.jpg' },
 ]
 
