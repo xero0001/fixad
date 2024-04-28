@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
 const creatorItems = [
-  {
-    name: '이진세',
-    href: 'https://www.instagram.com/jinselee_/?igshid=YmMyMTA2M2Y%3D',
-    title: 'MMA 파이터',
-    src: '/assets/profiles/이진세/ljs_1.png',
-  },
+  // {
+  //   name: '이진세',
+  //   href: 'https://www.instagram.com/jinselee_/?igshid=YmMyMTA2M2Y%3D',
+  //   title: 'MMA 파이터',
+  //   src: '/assets/profiles/이진세/ljs_1.png',
+  // },
   { name: '진다율', href: 'https://linktr.ee/jindayul', title: '모델', src: '/assets/profiles/진다율/1.jpg' },
-  { name: '승우', href: 'https://linktr.ee/kngsngwoo', title: '모델', src: '/assets/profiles/강승우/1.jpg' },
-  { name: '세아', href: 'https://linktr.ee/jinsea', title: '모델', src: '/assets/profiles/세아/1.jpg' },
-  { name: '지유', href: 'https://linktr.ee/Jiyoo_', title: '모델', src: '/assets/profiles/지유/1.jpg' },
-  { name: '지애', href: 'https://linktr.ee/jiaeji', title: '모델', src: '/assets/profiles/지애/1.jpg' },
-  { name: '주아', href: 'https://linktr.ee/seojua', title: '모델', src: '/assets/profiles/주아/1.jpg' },
+  // { name: '승우', href: 'https://linktr.ee/kngsngwoo', title: '모델', src: '/assets/profiles/강승우/1.jpg' },
+  // { name: '세아', href: 'https://linktr.ee/jinsea', title: '모델', src: '/assets/profiles/세아/1.jpg' },
+  // { name: '지유', href: 'https://linktr.ee/Jiyoo_', title: '모델', src: '/assets/profiles/지유/1.jpg' },
+  // { name: '지애', href: 'https://linktr.ee/jiaeji', title: '모델', src: '/assets/profiles/지애/1.jpg' },
+  // { name: '주아', href: 'https://linktr.ee/seojua', title: '모델', src: '/assets/profiles/주아/1.jpg' },
 ]
 
 export default function Creators() {
