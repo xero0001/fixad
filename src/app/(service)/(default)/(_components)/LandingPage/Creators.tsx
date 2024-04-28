@@ -25,7 +25,7 @@ export default function Creators() {
         <div className="grid grid-cols-2 gap-3 lg:gap-6 mx-auto">
           {creatorItems.map((item, index) => {
             return (
-              <a key={index} className="relative" href={item.href} target="_blank">
+              <div key={index} className="relative" target="_blank">
                 <div className="bg-gray-100 aspect-[3/4] w-full relative">
                   <div className="absolute w-full h-full">
                     <img src={item.src} alt="ljs" className="w-full h-full object-cover" />
@@ -55,7 +55,7 @@ export default function Creators() {
                   </div>
                   <div className="text-base lg:text-2xl">{item.title}</div>
                 </div>
-              </a>
+              </div>
             )
           })}
         </div>
