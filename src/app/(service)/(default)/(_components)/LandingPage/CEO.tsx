@@ -22,7 +22,7 @@ export default function CEO() {
               <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             </div> */}
             <div className="w-full bg-gray-100 aspect-[1/1] overflow-hidden">
-              <img src="/alpha_ceo.webp" alt="ceo" loading="lazy" className="w-full h-full object-cover" />
+              <img src="/ceo.webp" alt="ceo" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="h-[2px] bg-black mb-4 hidden lg:block" />
