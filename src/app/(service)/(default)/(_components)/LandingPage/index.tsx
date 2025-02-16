@@ -22,7 +22,7 @@ export default function LandingPage() {
     <>
       <Hero />
       <Creators />
-      <Works />
+      {/* <Works /> */}
       <CEO />
       {/* <Artists /> */}
       {/* <Feature /> */}
