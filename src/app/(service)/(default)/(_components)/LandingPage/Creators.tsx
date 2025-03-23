@@ -53,6 +53,44 @@ const creatorItems = [
     title: '크리에이터',
     src: '/assets/profiles/Azar/IMG_2440.JPG',
   },
+  {
+    name: '란이',
+    title: '크리에이터',
+    src: '/assets/profiles/란이.jpg',
+  },
+  {
+    name: '메이비',
+    title: '크리에이터',
+    src: '/assets/profiles/메이비.jpg',
+  },
+  {
+    name: '제나',
+    title: '크리에이터',
+    src: '/assets/profiles/제나.jpg',
+    instagram: 'https://www.instagram.com/likesomejenna?igsh=eWdvMGtlYjlmZHhy',
+    tiktok: 'https://www.tiktok.com/@likesomejenna',
+  },
+  {
+    name: '주아',
+    title: '크리에이터',
+    src: '/assets/profiles/주아.jpg',
+    tiktok: 'https://www.tiktok.com/@jooa08825?_t=ZS-8ug092K9qDP&_r=1',
+  },
+  {
+    name: '크룽이',
+    title: '크리에이터',
+    src: '/assets/profiles/크룽이.jpg',
+  },
+  {
+    name: '태형',
+    title: '크리에이터',
+    src: '/assets/profiles/태형.jpg',
+  },
+  {
+    name: '하즈',
+    title: '크리에이터',
+    src: '/assets/profiles/하즈.jpg',
+  },
 ]
 
 export default function Creators() {
