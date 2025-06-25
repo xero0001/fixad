@@ -22,7 +22,7 @@ export default function CEO() {
               <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             </div> */}
             <div className="w-full bg-gray-100 aspect-[1/1] overflow-hidden">
-              <img src="/ceo.webp" alt="ceo" loading="lazy" className="w-full h-full object-cover" />
+              <img src="/ceo.jpg" alt="ceo" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="h-[2px] bg-black mb-4 hidden lg:block" />
@@ -32,8 +32,6 @@ export default function CEO() {
             <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             <p className="text-lg mt-8">
               2022 Hot place gym CEO
-              <br />
-              2023 뉴오더 서울지부장
               <br />
               2023 투초이스 법인 총괄
               <br />
