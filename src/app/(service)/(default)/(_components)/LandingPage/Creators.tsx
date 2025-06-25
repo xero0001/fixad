@@ -4,6 +4,81 @@ import { FaInstagram, FaTiktok } from 'react-icons/fa6'
 
 const creatorItems = [
   {
+    name: '하즈',
+    title: '크리에이터',
+    src: '/assets/profiles/하즈.jpg',
+  },
+  {
+    name: '모카',
+    title: '크리에이터',
+    src: '/assets/profiles/모카.jpg',
+  },
+  {
+    name: '키라(Kira)',
+    title: '크리에이터',
+    src: '/assets/profiles/키라.jpg',
+  },
+  {
+    name: '민또',
+    title: '크리에이터',
+    src: '/assets/profiles/민또.jpg',
+  },
+  {
+    name: '묭',
+    title: '크리에이터',
+    src: '/assets/profiles/묭.jpg',
+  },
+  {
+    name: '유미',
+    title: '크리에이터',
+    src: '/assets/profiles/유미.jpg',
+  },
+  {
+    name: '윤똥',
+    title: '크리에이터',
+    src: '/assets/profiles/윤똥.jpg',
+  },
+  {
+    name: '정이',
+    title: '크리에이터',
+    src: '/assets/profiles/정이.jpg',
+  },
+  {
+    name: '주디',
+    title: '크리에이터',
+    src: '/assets/profiles/주디.jpg',
+  },
+  {
+    name: '지토리',
+    title: '크리에이터',
+    src: '/assets/profiles/지토리.jpg',
+  },
+  {
+    name: '희지',
+    title: '크리에이터',
+    src: '/assets/profiles/희지.jpg',
+  },
+  {
+    name: '히닝',
+    title: '크리에이터',
+    src: '/assets/profiles/히닝.jpg',
+  },
+  {
+    name: '코미디마술사 영수',
+    title: '크리에이터',
+    src: '/assets/profiles/영수.png',
+  },
+  {
+    name: '수진',
+    title: '크리에이터',
+    src: '/assets/profiles/수진.jpg',
+  },
+  {
+    name: '염짱이',
+    title: '크리에이터',
+    src: '/assets/profiles/염짱이.jpg',
+  },
+  {
     name: '뚜앙',
     instagram: 'https://www.instagram.com/hyang2._.2?igsh=eTZ2cHFpNnNnc2J2&utm_source=qr',
     tiktok: 'https://www.tiktok.com/@chloe_9128_?_t=ZS-8tpB5iAIfTO&_r=1',
@@ -73,11 +148,6 @@ const creatorItems = [
     name: '태형',
     title: '크리에이터',
     src: '/assets/profiles/태형.jpg',
-  },
-  {
-    name: '하즈',
-    title: '크리에이터',
-    src: '/assets/profiles/하즈.jpg',
   },
 ]
 
