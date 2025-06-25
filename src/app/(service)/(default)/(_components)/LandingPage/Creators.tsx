@@ -48,12 +48,6 @@ const creatorItems = [
     src: '/assets/profiles/차니/KakaoTalk_20250213_100319657.png',
   },
   {
-    name: 'Azar',
-    tiktok: 'https://www.tiktok.com/@azar.korea?_t=ZS-8tpB3ThRtiC&_r=1',
-    title: '크리에이터',
-    src: '/assets/profiles/Azar/IMG_2440.JPG',
-  },
-  {
     name: '란이',
     title: '크리에이터',
     src: '/assets/profiles/란이.jpg',
@@ -69,12 +63,6 @@ const creatorItems = [
     src: '/assets/profiles/제나.jpg',
     instagram: 'https://www.instagram.com/likesomejenna?igsh=eWdvMGtlYjlmZHhy',
     tiktok: 'https://www.tiktok.com/@likesomejenna',
-  },
-  {
-    name: '주아',
-    title: '크리에이터',
-    src: '/assets/profiles/주아.jpg',
-    tiktok: 'https://www.tiktok.com/@jooa08825?_t=ZS-8ug092K9qDP&_r=1',
   },
   {
     name: '크룽이',
