@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { t } from '@root/src/shared/utils/getTranslation'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -9,7 +10,15 @@ const navigation = [
   { name: 'Company', href: '#' },
 ]
 
-export default function CEO() {
+const LS = {
+  ceo: {
+    ko: '김선우',
+    ja: '金宣雨',
+    en: 'Kim Sunwoo',
+  },
+}
+
+export default function CEO({ lang }: { lang: string }) {
   return (
     <div id="ceo" className="py-32 max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
       <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center ">CEO</div>
@@ -28,7 +37,7 @@ export default function CEO() {
           <div className="h-[2px] bg-black mb-4 hidden lg:block" />
           <div className="py-12 pt-10 lg:py-4 lg:px-12">
             {/* <h3 className="text-3xl lg:text-4xl">이력</h3> */}
-            <h3 className="text-4xl lg:text-5xl tracking-widest">김선우</h3>
+            <h3 className="text-4xl lg:text-5xl tracking-widest">{t(LS.ceo, lang)}</h3>
             <h5 className="text-2xl mt-3">빅지 엔터테인먼트 대표</h5>
             <p className="text-lg mt-8">
               2022 Hot place gym CEO

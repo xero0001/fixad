@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { getIntoViewElement } from '@root/src/shared/utils/scroll'
+import { useRouter } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const navigation = [
   { name: 'CREATORS', href: 'creators' },
@@ -12,7 +15,21 @@ const navigation = [
   { name: 'CONTACT', href: 'contact' },
 ]
 
+type Language = {
+  code: string
+  flag: string
+  name: string
+}
+
+const languages: Language[] = [
+  { code: 'ko', flag: 'kor.svg', name: 'KOR' },
+  { code: 'en', flag: 'usa.svg', name: 'ENG' },
+  // { code: 'zh-TW', flag: 'tpe.svg', name: 'TWN' },
+  { code: 'ja', flag: 'jpn.svg', name: 'JPN' },
+]
+
 export default function Example() {
+  const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -43,6 +60,23 @@ export default function Example() {
               {item.name}
             </button>
           ))}
+          <div className="flex gap-2">
+            {languages.map(lang => {
+              if (lang.code === 'ko') {
+                return (
+                  <Link key={lang.code} className="text-sm font-semibold leading-6 text-black" href="/">
+                    {lang.name}
+                  </Link>
+                )
+              }
+
+              return (
+                <Link key={lang.code} className="text-sm font-semibold leading-6 text-black" href={`/${lang.code}`}>
+                  {lang.name}
+                </Link>
+              )
+            })}
+          </div>
           {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a> */}
@@ -79,6 +113,26 @@ export default function Example() {
                   </button>
                 ))}
               </div>
+            </div>
+          </div>
+          <div className="mt-6 flex gap-2">
+            <div className="flex gap-3">
+              {languages.map(lang => (
+                <div
+                  key={lang.code}
+                  className="flex flex-col gap-1 items-center px-1 py-1.5 min-w-0 w-fit transition-all duration-150 ease-in-out"
+                  onClick={() => {
+                    if (lang.code === 'ko') {
+                      router.push('/')
+                    } else {
+                      router.push(`/${lang.code}`)
+                    }
+                    setMobileMenuOpen(false)
+                  }}>
+                  <Image src={`/images/icons/${lang.flag}`} alt={lang.name} width={30} height={30} />
+                  <span className="whitespace-nowrap font-semibold text-[11px] leading-[16px]">{lang.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

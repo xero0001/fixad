@@ -19,7 +19,7 @@ import axios from 'axios'
 
 const initState = { name: '', email: '', tel: '', company: '', message: '' }
 
-export default function Contact() {
+export default function Contact({ lang }: { lang: string }) {
   const [formState, setFormState] = useState({
     ...initState,
   })

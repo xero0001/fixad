@@ -24,7 +24,7 @@ const SLIDES = [
   },
 ]
 
-export default function Hero() {
+export default function Hero({ lang }: { lang: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (

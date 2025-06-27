@@ -11,6 +11,7 @@ const creatorItems = [
   {
     name: '모카',
     title: '크리에이터',
+    tiktok: 'https://www.tiktok.com/@mokadari',
     src: '/assets/profiles/모카.jpg',
   },
   {
@@ -151,7 +152,7 @@ const creatorItems = [
   },
 ]
 
-export default function Creators() {
+export default function Creators({ lang }: { lang: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
