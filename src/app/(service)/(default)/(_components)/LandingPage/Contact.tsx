@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import axios from 'axios'
+import { t } from '@root/src/shared/utils/getTranslation'
 /*
   This example requires some changes to your config:
   
@@ -16,6 +17,39 @@ import axios from 'axios'
   }
   ```
 */
+
+const LS = {
+  name: {
+    ko: '이름',
+    ja: '名前',
+    en: 'Name',
+  },
+  email: {
+    ko: '이메일 주소',
+    ja: 'メールアドレス',
+    en: 'Email Address',
+  },
+  tel: {
+    ko: '휴대폰 번호',
+    ja: '電話番号',
+    en: 'Phone Number',
+  },
+  company: {
+    ko: '회사',
+    ja: '会社',
+    en: 'Company',
+  },
+  message: {
+    ko: '문의 내용',
+    ja: 'お問い合わせ内容',
+    en: 'Message',
+  },
+  submit: {
+    ko: '문의하기',
+    ja: 'お問い合わせ',
+    en: 'Contact',
+  },
+}
 
 const initState = { name: '', email: '', tel: '', company: '', message: '' }
 
@@ -92,7 +126,8 @@ export default function Contact({ lang }: { lang: string }) {
             <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold leading-6 text-black">
-                  이름<sup>*</sup>
+                  {t(LS.name, lang)}
+                  <sup>*</sup>
                 </label>
                 <div className="mt-2.5">
                   <input
@@ -108,7 +143,8 @@ export default function Contact({ lang }: { lang: string }) {
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold leading-6 text-black">
-                  이메일 주소<sup>*</sup>
+                  {t(LS.email, lang)}
+                  <sup>*</sup>
                 </label>
                 <div className="mt-2.5">
                   <input
@@ -124,7 +160,7 @@ export default function Contact({ lang }: { lang: string }) {
               </div>
               <div>
                 <label htmlFor="tel" className="block text-sm font-semibold leading-6 text-black">
-                  휴대폰 번호
+                  {t(LS.tel, lang)}
                 </label>
                 <div className="mt-2.5">
                   <input
@@ -139,7 +175,7 @@ export default function Contact({ lang }: { lang: string }) {
               </div>
               <div>
                 <label htmlFor="company" className="block text-sm font-semibold leading-6 text-black">
-                  회사
+                  {t(LS.company, lang)}
                 </label>
                 <div className="mt-2.5">
                   <input
@@ -154,7 +190,8 @@ export default function Contact({ lang }: { lang: string }) {
               </div>
               <div className="sm:col-span-2">
                 <label htmlFor="message" className="block text-sm font-semibold leading-6 text-black">
-                  문의 내용<sup>*</sup>
+                  {t(LS.message, lang)}
+                  <sup>*</sup>
                 </label>
                 <div className="mt-2.5">
                   <textarea
@@ -175,7 +212,7 @@ export default function Contact({ lang }: { lang: string }) {
                 className="block w-full bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
                 onChange={handleInputChange}
                 value={formState.message}>
-                문의하기
+                {t(LS.submit, lang)}
               </button>
             </div>
           </form>

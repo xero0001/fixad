@@ -1,159 +1,168 @@
+import { t } from '@root/src/shared/utils/getTranslation'
 import Link from 'next/link'
 import { useState } from 'react'
 import { FaInstagram, FaTiktok } from 'react-icons/fa6'
 
-const creatorItems = [
-  {
-    name: '하즈',
-    title: '크리에이터',
-    src: '/assets/profiles/하즈.jpg',
+const LS = {
+  creator: {
+    ko: '크리에이터',
+    ja: 'クリエイター',
+    en: 'Creator',
   },
-  {
-    name: '모카',
-    title: '크리에이터',
-    tiktok: 'https://www.tiktok.com/@mokadari',
-    src: '/assets/profiles/모카.jpg',
-  },
-  {
-    name: '키라(Kira)',
-    title: '크리에이터',
-    src: '/assets/profiles/키라.jpg',
-  },
-  {
-    name: '민또',
-    title: '크리에이터',
-    src: '/assets/profiles/민또.jpg',
-  },
-  {
-    name: '묭',
-    title: '크리에이터',
-    src: '/assets/profiles/묭.jpg',
-  },
-  {
-    name: '유미',
-    title: '크리에이터',
-    src: '/assets/profiles/유미.jpg',
-  },
-  {
-    name: '윤똥',
-    title: '크리에이터',
-    src: '/assets/profiles/윤똥.jpg',
-  },
-  {
-    name: '정이',
-    title: '크리에이터',
-    src: '/assets/profiles/정이.jpg',
-  },
-  {
-    name: '주디',
-    title: '크리에이터',
-    src: '/assets/profiles/주디.jpg',
-  },
-  {
-    name: '지토리',
-    title: '크리에이터',
-    src: '/assets/profiles/지토리.jpg',
-  },
-  {
-    name: '희지',
-    title: '크리에이터',
-    src: '/assets/profiles/희지.jpg',
-  },
-  {
-    name: '히닝',
-    title: '크리에이터',
-    src: '/assets/profiles/히닝.jpg',
-  },
-  {
-    name: '코미디마술사 영수',
-    title: '크리에이터',
-    src: '/assets/profiles/영수.png',
-  },
-  {
-    name: '수진',
-    title: '크리에이터',
-    src: '/assets/profiles/수진.jpg',
-  },
-  {
-    name: '염짱이',
-    title: '크리에이터',
-    src: '/assets/profiles/염짱이.jpg',
-  },
-  {
-    name: '뚜앙',
-    instagram: 'https://www.instagram.com/hyang2._.2?igsh=eTZ2cHFpNnNnc2J2&utm_source=qr',
-    tiktok: 'https://www.tiktok.com/@chloe_9128_?_t=ZS-8tpB5iAIfTO&_r=1',
-    title: '크리에이터',
-    src: '/assets/profiles/뚜앙/KakaoTalk_20250211_194256870_06.jpg',
-  },
-  {
-    name: '루이비둉',
-    instagram: 'https://www.instagram.com/lv_d_98?igsh=MXg5czBxZ29xMGtwMA==',
-    tiktok: 'https://www.tiktok.com/@lv_d98?_t=ZS-8tpAuCzwkab&_r=1',
-    title: '크리에이터',
-    src: '/assets/profiles/루이비둉/KakaoTalk_20250211_194154608_01.jpg',
-  },
-  {
-    name: '베라',
-    instagram: 'https://www.instagram.com/bera_piano?igsh=bTJ4ZHk0NjZtczVn&utm_source=qr',
-    tiktok: 'https://www.tiktok.com/@siho_1022?_t=ZS-8tpAtWhS0ZA&_r=1',
-    title: '크리에이터',
-    src: '/assets/profiles/베라/KakaoTalk_20250211_193315529.jpg',
-  },
-  {
-    name: '브링',
-    tiktok: 'https://www.tiktok.com/@lmpnw0?_t=ZS-8tpAvbg8g5q&_r=1',
-    title: '크리에이터',
-    src: '/assets/profiles/브링/KakaoTalk_20250212_100426030.jpg',
-  },
-  {
-    name: '어푸어풔',
-    tiktok: 'https://www.tiktok.com/@shs5473?_t=ZS-8tpB1L6mPZs&_r=1',
-    title: '크리에이터',
-    src: '/assets/profiles/어푸어풔/KakaoTalk_20250212_152743171.jpg',
-  },
-  {
-    name: '윤꼬',
-    title: '크리에이터',
-    src: '/assets/profiles/윤꼬/KakaoTalk_20250211_212916185_06.jpg',
-  },
-  {
-    name: '차니',
-    tiktok: 'https://www.tiktok.com/@_chan808?_t=ZS-8tpAsRDkEQ3&_r=1',
-    title: '크리에이터',
-    src: '/assets/profiles/차니/KakaoTalk_20250213_100319657.png',
-  },
-  {
-    name: '란이',
-    title: '크리에이터',
-    src: '/assets/profiles/란이.jpg',
-  },
-  {
-    name: '메이비',
-    title: '크리에이터',
-    src: '/assets/profiles/메이비.jpg',
-  },
-  {
-    name: '제나',
-    title: '크리에이터',
-    src: '/assets/profiles/제나.jpg',
-    instagram: 'https://www.instagram.com/likesomejenna?igsh=eWdvMGtlYjlmZHhy',
-    tiktok: 'https://www.tiktok.com/@likesomejenna',
-  },
-  {
-    name: '크룽이',
-    title: '크리에이터',
-    src: '/assets/profiles/크룽이.jpg',
-  },
-  {
-    name: '태형',
-    title: '크리에이터',
-    src: '/assets/profiles/태형.jpg',
-  },
-]
+}
 
 export default function Creators({ lang }: { lang: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const creatorItems = [
+    {
+      name: '하즈',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/하즈.jpg',
+    },
+    {
+      name: '모카',
+      title: t(LS.creator, lang),
+      tiktok: 'https://www.tiktok.com/@mokadari',
+      src: '/assets/profiles/모카.jpg',
+    },
+    {
+      name: '키라(Kira)',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/키라.jpg',
+    },
+    {
+      name: '민또',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/민또.jpg',
+    },
+    {
+      name: '묭',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/묭.jpg',
+    },
+    {
+      name: '유미',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/유미.jpg',
+    },
+    {
+      name: '윤똥',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/윤똥.jpg',
+    },
+    {
+      name: '정이',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/정이.jpg',
+    },
+    {
+      name: '주디',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/주디.jpg',
+    },
+    {
+      name: '지토리',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/지토리.jpg',
+    },
+    {
+      name: '희지',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/희지.jpg',
+    },
+    {
+      name: '히닝',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/히닝.jpg',
+    },
+    {
+      name: '코미디마술사 영수',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/영수.png',
+    },
+    {
+      name: '수진',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/수진.jpg',
+    },
+    {
+      name: '염짱이',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/염짱이.jpg',
+    },
+    {
+      name: '뚜앙',
+      instagram: 'https://www.instagram.com/hyang2._.2?igsh=eTZ2cHFpNnNnc2J2&utm_source=qr',
+      tiktok: 'https://www.tiktok.com/@chloe_9128_?_t=ZS-8tpB5iAIfTO&_r=1',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/뚜앙/KakaoTalk_20250211_194256870_06.jpg',
+    },
+    {
+      name: '루이비둉',
+      instagram: 'https://www.instagram.com/lv_d_98?igsh=MXg5czBxZ29xMGtwMA==',
+      tiktok: 'https://www.tiktok.com/@lv_d98?_t=ZS-8tpAuCzwkab&_r=1',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/루이비둉/KakaoTalk_20250211_194154608_01.jpg',
+    },
+    {
+      name: '베라',
+      instagram: 'https://www.instagram.com/bera_piano?igsh=bTJ4ZHk0NjZtczVn&utm_source=qr',
+      tiktok: 'https://www.tiktok.com/@siho_1022?_t=ZS-8tpAtWhS0ZA&_r=1',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/베라/KakaoTalk_20250211_193315529.jpg',
+    },
+    {
+      name: '브링',
+      tiktok: 'https://www.tiktok.com/@lmpnw0?_t=ZS-8tpAvbg8g5q&_r=1',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/브링/KakaoTalk_20250212_100426030.jpg',
+    },
+    {
+      name: '어푸어풔',
+      tiktok: 'https://www.tiktok.com/@shs5473?_t=ZS-8tpB1L6mPZs&_r=1',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/어푸어풔/KakaoTalk_20250212_152743171.jpg',
+    },
+    {
+      name: '윤꼬',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/윤꼬/KakaoTalk_20250211_212916185_06.jpg',
+    },
+    {
+      name: '차니',
+      tiktok: 'https://www.tiktok.com/@_chan808?_t=ZS-8tpAsRDkEQ3&_r=1',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/차니/KakaoTalk_20250213_100319657.png',
+    },
+    {
+      name: '란이',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/란이.jpg',
+    },
+    {
+      name: '메이비',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/메이비.jpg',
+    },
+    {
+      name: '제나',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/제나.jpg',
+      instagram: 'https://www.instagram.com/likesomejenna?igsh=eWdvMGtlYjlmZHhy',
+      tiktok: 'https://www.tiktok.com/@likesomejenna',
+    },
+    {
+      name: '크룽이',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/크룽이.jpg',
+    },
+    {
+      name: '태형',
+      title: t(LS.creator, lang),
+      src: '/assets/profiles/태형.jpg',
+    },
+  ]
 
   return (
     <div id="creators" className="py-32 mx-auto max-w-7xl px-5 xl:px-0">
