@@ -3,7 +3,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import EmblaCarousel from './EmblaCarousel'
 
-const OPTIONS = { loop: false }
+const OPTIONS = { loop: false, startIndex: 1 }
 
 const SLIDES = [
   // {
