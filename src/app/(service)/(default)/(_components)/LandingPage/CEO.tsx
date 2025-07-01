@@ -57,7 +57,7 @@ const LS = {
     en: 'We want to create a home that everyone wants to find.',
   },
   companyIdeology4: {
-    ko: '크리에이터들이 품고 있는 가능성과 업주들이 펼쳤 나가는 꿈 이 두가지 가치 사이를 잇는 징검다리로 빅지 엔터테이먼트が常にあります。',
+    ko: '크리에이터들이 품고 있는 가능성과 업주들이 펼쳐나가는 꿈 이 두가지 가치 사이를 잇는 징검다리로 빅지 엔터테이먼트가 항상 서있겠습니다.',
     ja: 'クリエイター様のそれぞれの可能性と、広告主様が抱いている夢を繋ぐ「架け橋」として、BIG-Gが尽力いたします。',
     en: 'As a bridge connecting the potential of creators and the dreams of owners, BIG-G ENTERTAINMENT is always here.',
   },
