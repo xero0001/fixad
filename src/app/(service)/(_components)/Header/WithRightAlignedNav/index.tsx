@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navigation = [
-  { name: 'CREATORS', href: 'creators' },
+  { name: 'SERVICES', href: 'creators' },
   { name: 'WORKS', href: 'works' },
   { name: 'CEO', href: 'ceo' },
   { name: 'CONTACT', href: 'contact' },
@@ -36,8 +36,8 @@ export default function Example() {
     <header className="bg-white fixed z-10 w-full border-b border-b-gray-100">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-5 xl:px-0" aria-label="Global">
         <a href="#hero" className="-m-1.5 p-1.5">
-          <span className="sr-only">BIG-G ENTERTAINMENT</span>
-          <img className="h-10 w-auto" src="/blgg_logo_bottom_opt.webp" alt="logo" />
+          <span className="sr-only">FIXAD</span>
+          <img className="h-10 w-auto" src="/main_logo.png" alt="logo" />
         </a>
         <div className="flex lg:hidden">
           <button
@@ -60,7 +60,7 @@ export default function Example() {
               {item.name}
             </button>
           ))}
-          <div className="flex gap-2">
+          {/* <div className="flex gap-2">
             {languages.map(lang => {
               if (lang.code === 'ko') {
                 return (
@@ -76,7 +76,7 @@ export default function Example() {
                 </Link>
               )
             })}
-          </div>
+          </div> */}
           {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a> */}

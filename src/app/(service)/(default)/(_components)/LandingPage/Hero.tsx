@@ -3,7 +3,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import EmblaCarousel from './EmblaCarousel'
 
-const OPTIONS = { loop: false, startIndex: 1 }
+const OPTIONS = { loop: true, startIndex: 1 }
 
 const SLIDES = [
   // {
@@ -11,17 +11,26 @@ const SLIDES = [
   //   src: '/assets/profiles/이진세/ljs_2.webp',
   // },
   {
+    label: 'slide_1',
+    src: '/hero/1.png',
+  },
+  {
+    label: 'slide_5',
+    src: '/hero/5.png',
+  },
+  {
     label: 'slide_2',
-    src: '/assets/profiles/진다율/3.webp',
+    src: '/hero/2.jpeg',
   },
   {
     label: 'slide_3',
-    src: '/assets/profiles/진다율/2.webp',
+    src: '/hero/3.png',
   },
   {
     label: 'slide_4',
-    src: '/assets/works/eternal_2-2.webp',
+    src: '/hero/4.png',
   },
+
 ]
 
 export default function Hero({ lang }: { lang: string }) {
@@ -60,7 +69,7 @@ export default function Hero({ lang }: { lang: string }) {
           mixBlendMode: 'difference',
         }}>
         <img
-          src="/logo_white.png"
+          src="/hero/logo.png"
           alt="logo_center"
           style={{
             transform: 'translateY(-50%)',
