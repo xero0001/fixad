@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navigation = [
-  { name: 'SERVICES', href: 'creators' },
+  { name: 'SERVICES', href: 'services' },
   // { name: 'WORKS', href: 'works' },
   { name: 'COMPANY', href: 'company' },
   { name: 'CONTACT', href: 'contact' },
