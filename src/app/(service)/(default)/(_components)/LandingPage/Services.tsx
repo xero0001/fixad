@@ -44,7 +44,7 @@ export default function Services({ lang }: { lang: string }) {
               <div key={index} className="relative">
                 <div className="bg-gray-100 aspect-[5/4] w-full relative">
                   <div className="absolute w-full h-full">
-                    <img src={item.src} alt="ljs" className="w-full h-full object-cover" />
+                    {/* <img src={item.src} alt="ljs" className="w-full h-full object-cover" /> */}
                   </div>
                 </div>
                 <div
