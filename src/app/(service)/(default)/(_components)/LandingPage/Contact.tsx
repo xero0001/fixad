@@ -92,7 +92,7 @@ export default function Contact({ lang }: { lang: string }) {
   }
 
   return (
-    <div id="contact" className="py-32 mx-5 max-w-7xl border-t border-t-gray-400 xl:mx-auto">
+    <div id="contact" className="py-32 mx-5 border-t border-t-gray-400 xl:mx-auto bg-gray-50">
       {/* <div id="contact" className="relative isolate bg-white py-24 px-6 sm:py-32 lg:px-8 "> */}
       {/* <svg
         className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -128,7 +128,9 @@ export default function Contact({ lang }: { lang: string }) {
         {/* <p className="mt-2 text-lg leading-8 text-gray-600">
           We help companies and individuals build out their brand guidelines.
         </p> */}
-        <div className="text-xl font-medium tracking-tight text-center mt-16">" 기다리지 않으셔도 됩니다. 대표에게 직접 상담받으세요. "</div>
+        <div className="text-xl lg:text-2xl font-medium tracking-tight text-center mt-16" style={{
+          lineHeight: '1.6',
+        }}>" 기다리지 않으셔도 됩니다. 대표에게 직접 상담받으세요. "</div>
 
         <div className="flex justify-center mt-16 font-medium">
           <a
@@ -150,106 +152,7 @@ export default function Contact({ lang }: { lang: string }) {
           </a>
         </div>
 
-        <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
-          
-          {/* <div className="text-2xl font-bold tracking-tight sm:text-4xl text-center">
-            <a href="mailto:contact@fixad.co.kr">contact@fixad.co.kr</a>
-          </div> */}
-          {/* <form action="#" method="POST" className="lg:flex-auto" onSubmit={onSubmit}>
-            <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold leading-6 text-black">
-                  {t(LS.name, lang)}
-                  <sup>*</sup>
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-slate-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
-                    required
-                    onChange={handleInputChange}
-                    value={formState.name}
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold leading-6 text-black">
-                  {t(LS.email, lang)}
-                  <sup>*</sup>
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
-                    required
-                    onChange={handleInputChange}
-                    value={formState.email}
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="tel" className="block text-sm font-semibold leading-6 text-black">
-                  {t(LS.tel, lang)}
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    id="tel"
-                    name="tel"
-                    type="tel"
-                    className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
-                    onChange={handleInputChange}
-                    value={formState.tel}
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-semibold leading-6 text-black">
-                  {t(LS.company, lang)}
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    name="company"
-                    id="company"
-                    className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
-                    onChange={handleInputChange}
-                    value={formState.company}
-                  />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="message" className="block text-sm font-semibold leading-6 text-black">
-                  {t(LS.message, lang)}
-                  <sup>*</sup>
-                </label>
-                <div className="mt-2.5">
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="block w-full border-0 py-2 px-3.5 text-black shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
-                    required
-                    onChange={handleInputChange}
-                    value={formState.message}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="mt-10">
-              <button
-                type="submit"
-                className="block w-full bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
-                onChange={handleInputChange}
-                value={formState.message}>
-                {t(LS.submit, lang)}
-              </button>
-            </div>
-          </form> */}
-        </div>
+        
       </div>
     </div>
   )
