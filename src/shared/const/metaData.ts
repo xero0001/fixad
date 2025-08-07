@@ -8,8 +8,8 @@
 export const METADATA = {
   TITLE: 'BIG-G ENTERTAINMENT',
   DESC: '빅지 엔터테인먼트는 크리에이터와 광고주의 성장을 최우선으로 하는 MCN 회사입니다',
-  IMAGE: '/thumbnail_rectangle.webp',
-  IMAGE_RECTANGLE: '/thumbnail_square.webp',
+  IMAGE: '/thumbnail_rectangle.jpg',
+  // IMAGE_RECTANGLE: '/thumbnail_square.jpg',
   URL: '',
   IMAGE_WIDTH: '1200',
   IMAGE_HEIGHT: '628',
