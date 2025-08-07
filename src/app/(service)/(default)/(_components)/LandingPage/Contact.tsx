@@ -128,7 +128,7 @@ export default function Contact({ lang }: { lang: string }) {
         {/* <p className="mt-2 text-lg leading-8 text-gray-600">
           We help companies and individuals build out their brand guidelines.
         </p> */}
-        <div className="text-xl font-medium tracking-tight text-center mt-16">" 기다리지 않으셔도 됩니다. 김예진 대표에게 직접 문의해 주세요. "</div>
+        <div className="text-xl font-medium tracking-tight text-center mt-16">" 기다리지 않으셔도 됩니다. 대표에게 직접 문의해 주세요. "</div>
 
         <div className="flex justify-center mt-16 font-medium">
           <a
