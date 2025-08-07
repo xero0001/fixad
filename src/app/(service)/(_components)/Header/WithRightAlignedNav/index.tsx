@@ -85,9 +85,13 @@ export default function Example() {
       {mobileMenuOpen && (
         <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white p-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            {/* <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">BIG-G ENTERTAINMENT</span>
               <img className="h-10 w-auto" src="/blgg_logo_bottom_opt.webp" alt="logo" />
+            </a> */}
+            <a href="#hero" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <span className="sr-only">FIXAD</span>
+              <img className="h-10 w-auto" src="/main_logo.png" alt="logo" />
             </a>
             <button
               type="button"
@@ -115,7 +119,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-          <div className="mt-6 flex gap-2">
+          {/* <div className="mt-6 flex gap-2">
             <div className="flex gap-3">
               {languages.map(lang => (
                 <div
@@ -134,7 +138,7 @@ export default function Example() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       )}
       {/* <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
