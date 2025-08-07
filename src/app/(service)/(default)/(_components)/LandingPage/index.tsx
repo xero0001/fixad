@@ -8,6 +8,7 @@ import Works from './Works'
 import Feature from './Feature'
 import SecondaryFeature from './SecondaryFeature'
 import Contact from './Contact'
+import Services from './Services'
 import Process from './Process'
 import FAQSection from './FAQSection'
 import Testimonial from './Testimonial'
@@ -21,7 +22,7 @@ export default function LandingPage({ lang = 'ko' }: { lang: string }) {
   return (
     <>
       <Hero lang={lang} />
-      <Creators lang={lang} />
+      <Services lang={lang} />
       {/* <Works /> */}
       <CEO lang={lang} />
       {/* <Artists /> */}

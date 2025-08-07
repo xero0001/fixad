@@ -10,8 +10,8 @@ import Link from 'next/link'
 
 const navigation = [
   { name: 'SERVICES', href: 'creators' },
-  { name: 'WORKS', href: 'works' },
-  { name: 'CEO', href: 'ceo' },
+  // { name: 'WORKS', href: 'works' },
+  { name: 'COMPANY', href: 'company' },
   { name: 'CONTACT', href: 'contact' },
 ]
 

@@ -92,7 +92,7 @@ export default function Contact({ lang }: { lang: string }) {
   }
 
   return (
-    <div id="contact" className="py-32 mx-5 max-w-7xl border-t-2 border-t-black xl:mx-auto">
+    <div id="contact" className="py-32 mx-5 max-w-7xl border-t border-t-gray-400 xl:mx-auto">
       {/* <div id="contact" className="relative isolate bg-white py-24 px-6 sm:py-32 lg:px-8 "> */}
       {/* <svg
         className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -116,7 +116,14 @@ export default function Contact({ lang }: { lang: string }) {
         </svg>
         <rect width="100%" height="100%" strokeWidth={0} fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
       </svg> */}
-      <div className="text-4xl font-bold tracking-tight text-black sm:text-6xl text-center">CONTACT</div>
+      <div className="text-4xl font-bold tracking-tight sm:text-6xl text-center"
+      style={{
+        color: '#f47963',
+        // background: 'linear-gradient(135deg, #f47963, #d12a75)',
+        // WebkitBackgroundClip: 'text',
+        // WebkitTextFillColor: 'transparent',
+      }}
+      >CONTACT</div>
       <div className="mx-auto max-w-xl lg:max-w-4xl">
         {/* <p className="mt-2 text-lg leading-8 text-gray-600">
           We help companies and individuals build out their brand guidelines.

@@ -65,7 +65,7 @@ const LS = {
 
 export default function CEO({ lang }: { lang: string }) {
   return (
-    <div id="ceo" className="py-32 max-w-7xl border-t-2 border-t-black mx-5 xl:mx-auto">
+    <div id="company" className="py-32 max-w-7xl border-t border-t-gray-400 mx-5 xl:mx-auto">
       <div className="text-5xl font-bold tracking-tight text-black sm:text-6xl text-center "
       style={{
         color: '#f47963',
@@ -73,7 +73,7 @@ export default function CEO({ lang }: { lang: string }) {
         // WebkitBackgroundClip: 'text',
         // WebkitTextFillColor: 'transparent',
       }}
-      >PARTNERS</div>
+      >COMPANY</div>
       <div className="mt-16 grid grid-template lg:grid-cols-[2fr_1fr]">
         {/* CEO 사진 및 이름 */}
         <div className="lg:border-r border-l-black border-r-gray-400 w-full">

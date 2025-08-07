@@ -171,11 +171,12 @@ export default function FourColumns() {
           </div>
         </div> */}
         <div className="w-full">
-          <img className="mx-auto h-14" src="/bigg_logo_long_opt.webp" alt="BIG-G ENTERTAINMENT" />
+          
+          <img className="mx-auto h-28" src="/hero/logo.png" alt="FIXAD" />
         </div>
         <div className="mt-4  border-gray-900/10 pt-4">
           <p className="text-xs text-center leading-5 text-gray-500">
-            &copy; 2023 BIG-G ENTERTAINMENT, Co. All rights reserved.
+            &copy; 2025 FIXAD, Co. All rights reserved.
           </p>
         </div>
       </div>
