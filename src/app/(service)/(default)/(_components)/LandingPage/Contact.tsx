@@ -128,8 +128,34 @@ export default function Contact({ lang }: { lang: string }) {
         {/* <p className="mt-2 text-lg leading-8 text-gray-600">
           We help companies and individuals build out their brand guidelines.
         </p> */}
+        <div className="text-xl font-bold tracking-tight text-center mt-16">" 기다리지 않으셔도 됩니다. 김예진 대표에게 직접 문의해 주세요. "</div>
+
+        <div className="flex justify-center mt-16 font-medium">
+          <a
+            href="http://pf.kakao.com/_eCxoxoxj"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-[#FEE500] hover:bg-yellow-400 text-black font-medium text-sm rounded-lg shadow transition-colors duration-200"
+            style={{ fontSize: '1.25rem' }}
+          >
+            <img
+              src="/kakao.png"
+              alt="카카오톡"
+              className="w-7 h-7 mr-4"
+              style={{ display: 'inline-block', verticalAlign: 'middle' }}
+            />
+            <span className="text-lg">
+            카카오톡 문의하기
+            </span>
+          </a>
+        </div>
+
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
-          <form action="#" method="POST" className="lg:flex-auto" onSubmit={onSubmit}>
+          
+          {/* <div className="text-2xl font-bold tracking-tight sm:text-4xl text-center">
+            <a href="mailto:contact@fixad.co.kr">contact@fixad.co.kr</a>
+          </div> */}
+          {/* <form action="#" method="POST" className="lg:flex-auto" onSubmit={onSubmit}>
             <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold leading-6 text-black">
@@ -222,7 +248,7 @@ export default function Contact({ lang }: { lang: string }) {
                 {t(LS.submit, lang)}
               </button>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
