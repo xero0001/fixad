@@ -16,13 +16,23 @@ export default function Services({ lang }: { lang: string }) {
 
   const creatorItems = [
     {
-      title: '구글 지도',
-      description: '구글 지도 광고 솔루션',
+      title: '구글',
+      description: '구글 비즈니스 프로필',
       src: '',
     },
     {
-      title: '네이버 광고',
-      description: '네이버 광고 솔루션',
+      title: '네이버',
+      description: '플레이스, 퍼포먼스 광고 솔루션',
+      src: '',
+    },
+    {
+      title: '호랑이 아저씨 - 인스타그램',
+      description: '호랑이 아저씨, 광고기획, CPC',
+      src: '',
+    },
+    {
+      title: '행복 체험단',
+      description: '체험단 모집',
       src: '',
     },
   ]
