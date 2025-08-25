@@ -96,7 +96,7 @@ export default function Contact({ lang }: { lang: string }) {
       id="contact"
       className="py-32 mx-5 border-t border-t-gray-400 xl:mx-auto relative"
       style={{
-        backgroundImage: 'url(/contact2.png)',
+        backgroundImage: 'url(/contact4.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
