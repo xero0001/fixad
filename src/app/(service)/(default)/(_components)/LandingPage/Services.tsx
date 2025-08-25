@@ -14,47 +14,49 @@ const LS = {
 export default function Services({ lang }: { lang: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const creatorItems = [
+  const serviceItems = [
     {
       title: '구글',
       description: '구글 비즈니스 프로필',
-      src: '',
+      src: '/services/google.jpg',
     },
     {
       title: '네이버',
       description: '플레이스, 퍼포먼스 광고 솔루션',
-      src: '',
+      src: '/services/naver.png',
     },
     {
-      title: '호랑이 아저씨 - 인스타그램',
-      description: '호랑이 아저씨, 광고기획, CPC',
-      src: '',
+      title: '호랑이 아저씨',
+      description: '인스타그램, 컨텐츠 기획, CPC',
+      src: '/services/instagram.jpg',
     },
     {
-      title: '행복 체험단',
-      description: '체험단 모집',
-      src: '',
+      title: '체험단',
+      description: '샤오홍슈, 틱톡 체험단',
+      src: '/services/xiao.webp',
     },
   ]
 
   return (
     <div id="services" className="py-32 mx-auto max-w-7xl px-5 xl:px-0">
-      <div className="text-4xl font-bold tracking-tight sm:text-6xl text-center "
-      style={{
-        color: '#f47963',
-        // background: 'linear-gradient(135deg, #f47963, #d12a75)',
-        // WebkitBackgroundClip: 'text',
-        // WebkitTextFillColor: 'transparent',
-      }}
-      >SERVICES</div>
+      <div
+        className="text-4xl font-bold tracking-tight sm:text-6xl text-center "
+        style={{
+          color: '#f47963',
+          // background: 'linear-gradient(135deg, #f47963, #d12a75)',
+          // WebkitBackgroundClip: 'text',
+          // WebkitTextFillColor: 'transparent',
+        }}>
+        SERVICES
+      </div>
       <div className="mx-auto max-w-7xl mt-16">
         <div className="grid grid-cols-2 gap-3 lg:gap-6 mx-auto">
-          {creatorItems.map((item, index) => {
+          {serviceItems.map((item, index) => {
             return (
               <div key={index} className="relative">
                 <div className="bg-gray-100 aspect-[5/4] w-full relative">
                   <div className="absolute w-full h-full">
-                    {/* <img src={item.src} alt="ljs" className="w-full h-full object-cover" /> */}
+                    <img src={item.src} alt="ljs" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div
