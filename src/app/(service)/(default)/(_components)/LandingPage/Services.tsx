@@ -17,22 +17,22 @@ export default function Services({ lang }: { lang: string }) {
   const serviceItems = [
     {
       title: '구글',
-      description: '구글 비즈니스 프로필',
+      description: 'SEO, 비즈니스 프로필 등',
       src: '/services/google.jpg',
     },
     {
       title: '네이버',
-      description: '플레이스, 퍼포먼스 광고 솔루션',
+      description: 'SEO, 플레이스, 퍼포먼스 솔루션 등',
       src: '/services/naver.png',
     },
     {
       title: '호랑이 아저씨',
-      description: '인스타그램, 컨텐츠 기획, CPC',
+      description: '인스타그램 퍼널, 컨텐츠 기획, CPC 등',
       src: '/services/tiger.jpeg',
     },
     {
       title: '체험단',
-      description: '샤오홍슈, 틱톡 체험단',
+      description: '샤오홍슈, 틱톡 체험단 등',
       src: '/services/xiao.webp',
     },
   ]
