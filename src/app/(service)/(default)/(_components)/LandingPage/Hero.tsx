@@ -24,13 +24,12 @@ const SLIDES = [
   },
   {
     label: 'slide_3',
-    src: '/hero/3.png',
+    src: '/ceo/4.jpeg',
   },
   {
     label: 'slide_4',
     src: '/hero/4.png',
   },
-
 ]
 
 export default function Hero({ lang }: { lang: string }) {

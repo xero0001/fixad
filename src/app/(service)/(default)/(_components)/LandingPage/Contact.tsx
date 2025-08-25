@@ -96,13 +96,13 @@ export default function Contact({ lang }: { lang: string }) {
       id="contact"
       className="py-32 mx-5 border-t border-t-gray-400 xl:mx-auto relative"
       style={{
-        backgroundImage: 'url(/contact.png)',
+        backgroundImage: 'url(/contact2.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}>
       {/* 배경 오버레이를 추가하여 텍스트 가독성 향상 */}
-      <div className="absolute inset-0 bg-gray-900 bg-opacity-40" style={{ zIndex: 1 }}></div>
+      <div className="absolute inset-0 bg-gray-400 bg-opacity-40" style={{ zIndex: 1 }}></div>
 
       {/* 콘텐츠를 오버레이 위에 배치 */}
       <div className="relative z-10">
