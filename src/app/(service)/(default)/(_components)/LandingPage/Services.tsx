@@ -28,7 +28,7 @@ export default function Services({ lang }: { lang: string }) {
     {
       title: '호랑이 아저씨',
       description: '인스타그램, 컨텐츠 기획, CPC',
-      src: '/services/instagram.jpg',
+      src: '/services/tiger.jpeg',
     },
     {
       title: '체험단',
