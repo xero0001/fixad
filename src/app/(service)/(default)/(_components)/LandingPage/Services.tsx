@@ -17,12 +17,12 @@ export default function Services({ lang }: { lang: string }) {
   const serviceItems = [
     {
       title: '구글',
-      description: 'SEO, 비즈니스 프로필 등',
+      description: '구글 SEO, 비즈니스 프로필 등',
       src: '/services/google.jpg',
     },
     {
       title: '네이버',
-      description: 'SEO, 플레이스, 퍼포먼스 솔루션 등',
+      description: '네이버 SEO, 플레이스, 퍼포먼스 솔루션 등',
       src: '/services/naver.png',
     },
     {
