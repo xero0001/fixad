@@ -1,10 +1,10 @@
 import React from 'react'
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
+import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 type PropType = {
   slides: any[]
-  options?: EmblaOptionsType
+  options?: any
 }
 
 const autoplayOptions = {
@@ -27,13 +27,13 @@ const EmblaCarousel: React.FC<PropType> = props => {
               // style={{
               //   backgroundColor: '#1e3a8a',
               // }}
-              >
+            >
               <img
                 className="embla__slide__img object-cover w-full h-full aspect-square"
                 src={slide.src}
                 alt="Your alt text"
                 // style={{
-                  // filter: 'grayscale(100%) hue-rotate(200deg)',
+                // filter: 'grayscale(100%) hue-rotate(200deg)',
                 //   mixBlendMode: 'screen',
                 //   filter: 'grayscale(100%)',
                 //   opacity: 0.7,
